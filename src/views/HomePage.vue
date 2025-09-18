@@ -2,13 +2,13 @@
     <a-layout class="app-layout">
         <a-layout-content>
             <section class="hero-section">
-                <a-carousel arrows autoplay class="hero-carousel">
-                    <div><img src="../assets/bg1.png" alt="背景图1" class="carousel-image"></div>
-                    <div><img src="../assets/bg2.png" alt="背景图2" class="carousel-image"></div>
-                    <div><img src="../assets/bg3.png" alt="背景图3" class="carousel-image"></div>
+                <a-carousel autoplay class="hero-carousel">
+                    <div><img src="../assets/bg1.jpg" alt="背景图1" class="carousel-image"></div>
+                    <div><img src="../assets/bg2.jpg" alt="背景图2" class="carousel-image"></div>
+                    <div><img src="../assets/bg3.jpg" alt="背景图3" class="carousel-image"></div>
                 </a-carousel>
 
-                <div class="hero-overlay"></div>
+                <!-- <div class="hero-overlay"></div> -->
 
                 <div class="hero-content">
                     <a-typography-title class="hero-title">
@@ -23,10 +23,6 @@
                             width="200" data-canonical-src="https://get.microsoft.com/images/en-us%20dark.svg"
                             style="max-width: 100%;">
                     </a>
-                    <!-- <a-button type="primary" size="large" href="https://apps.microsoft.com/detail/9NFW1RPPT999"
-                        target="_blank">
-                        在微软商店获取
-                    </a-button> -->
                 </div>
             </section>
             <section class="hero-section">
@@ -85,10 +81,6 @@
                         width="200" data-canonical-src="https://get.microsoft.com/images/en-us%20dark.svg"
                         style="max-width: 100%;">
                 </a>
-                <!-- <a-button type="primary" size="large" href="https://apps.microsoft.com/store/detail/9PL2DSHJ79W7"
-                    target="_blank">
-                    立即下载
-                </a-button> -->
             </section>
         </a-layout-content>
 
@@ -111,9 +103,9 @@ import {
     TypographyTitle as ATypographyTitle,
     TypographyParagraph as ATypographyParagraph,
 } from 'ant-design-vue';
-import wasapiImage from '../assets/wasapi.png';
-import playing from '../assets/playing.png';
-import album from '../assets/album.png';
+import wasapiImage from '../assets/wasapi.jpg';
+import playing from '../assets/playing.jpg';
+import album from '../assets/album.jpg';
 </script>
 
 <style scoped>
@@ -184,7 +176,7 @@ import album from '../assets/album.png';
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
     /* 黑色半透明 */
     z-index: 10;
     /* 比文字内容低，比走马灯高 */
@@ -199,7 +191,7 @@ import album from '../assets/album.png';
     /* 精确居中 */
     max-width: 800px;
     /* 保持文字内容的宽度限制 */
-    padding: 0 24px;
+    padding: 24px;
     text-align: center;
     z-index: 20;
     /* 确保文字内容在蒙版和走马灯之上 */
@@ -207,6 +199,14 @@ import album from '../assets/album.png';
     /* 确保在 max-width 限制下，内容宽度也能响应 */
     box-sizing: border-box;
     /* 确保 padding 不会撑开宽度 */
+    /* 添加一个半透明的背景色 */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    /* 模糊背景，数值越大越模糊 */
+    -webkit-backdrop-filter: blur(10px);
+    /* 兼容 Safari 浏览器 */
+    border-radius: 20px;
+    /* 可选：添加圆角让效果更佳 */
 }
 
 .hero-title {
