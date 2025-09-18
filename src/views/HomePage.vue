@@ -189,9 +189,9 @@ import album from '../assets/album.jpg';
     left: 50%;
     transform: translate(-50%, -50%);
     /* 精确居中 */
-    max-width: 800px;
+    max-width: 40vw;
     /* 保持文字内容的宽度限制 */
-    padding: 24px;
+    padding: 2vw;
     text-align: center;
     z-index: 20;
     /* 确保文字内容在蒙版和走马灯之上 */
@@ -211,7 +211,7 @@ import album from '../assets/album.jpg';
 
 .hero-title {
     color: #fff !important;
-    font-size: 4vw !important;
+    font-size: 3vw !important;
     font-weight: 700 !important;
     line-height: 1.2 !important;
 }
@@ -224,7 +224,7 @@ import album from '../assets/album.jpg';
 
 /* 功能展示区样式 */
 .features-section {
-    padding: 80px 50px;
+    padding: 4vh 4vw;
     background-color: #161b22;
 }
 
