@@ -1,33 +1,46 @@
-# OriginalSoundPlayer
+# 原音HQ播放器
 
-This template should help get you started developing with Vue 3 in Vite.
+> **释放你的音乐灵魂，一款为现代简洁而生的本地音乐播放器，带来极致的沉浸式体验。**
 
-## Recommended IDE Setup
+**[点击此处访问产品介绍页]([Original HQ Sound Player](https://johnwikix.github.io/original-sound-player-page))**
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+------
 
-## Type Support for `.vue` Imports in TS
+## 🚀 产品简介
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+**原音HQ播放器** 是一款专注于本地音乐播放的桌面应用，旨在为音乐爱好者提供纯粹、高品质的聆听享受。我们摒弃了臃肿的功能，回归音乐本身，通过精心设计的现代化界面和对高保真音质的极致追求，让你的每一次播放都成为一场沉浸式的艺术之旅。
 
-## Customize configuration
+## ✨ 主要特色
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### 1. 沉浸式的现代界面
 
-## Project Setup
+- **流畅的交互体验**：精心设计的 UI，操作直观简洁。
+- **个性化主题**：支持多种 **亚克力效果** 和 **完全自定义模式**，让你的播放器独一无二。
 
-```sh
-npm install
-```
+### 2. 掌控你的音乐库
 
-### Compile and Hot-Reload for Development
+- **智能管理**：自动扫描并整理本地音乐文件。
+- **丰富的管理功能**：轻松按专辑、艺术家或文件夹浏览，支持元数据编辑、自动匹配歌词和歌曲封面。
 
-```sh
-npm run dev
-```
+### 3. 极致音质体验
 
-### Type-Check, Compile and Minify for Production
+- **多格式支持**：兼容 flac、wav、mp3、dsf、ape、m4a、wmv、aiff、oga 等多种主流和无损音频格式。
+- **高保真还原**：内置 **均衡器** 和 **WASAPI 独占模式**，确保声音输出的纯净性，还原音乐最本真的细节。
 
-```sh
-npm run build
-```
+------
+
+## 📦 下载与安装
+
+**原音HQ播放器** 已上架 Microsoft Store，推荐通过官方商店获取，以确保最佳的安装和更新体验。
+
+<img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="在 Microsoft Store 获取" width="200">
+
+------
+
+## 💖 贡献与支持
+
+如果你喜欢 **原音HQ播放器**，可以通过以下方式支持我们：
+
+- **⭐ Star** 本仓库，让我们知道你的喜爱！
+- **向我们提供反馈**：如果你在使用过程中遇到任何问题或有好的建议，欢迎提出 [Issue](https://www.google.com/search?q=https://github.com/你的GitHub用户名/你的仓库名/issues)。
+- **分享给你的朋友**：让更多人了解和使用这款播放器。
