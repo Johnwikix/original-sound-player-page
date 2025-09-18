@@ -17,10 +17,16 @@
                     <a-typography-paragraph class="hero-subtitle">
                         释放你的音乐灵魂，一款为现代简洁的本地音乐播放器，带来极致的沉浸式体验。
                     </a-typography-paragraph>
-                    <a-button type="primary" size="large" href="https://apps.microsoft.com/detail/9NFW1RPPT999"
+                    <a href="https://apps.microsoft.com/detail/9NFW1RPPT999?referrer=appbadge&amp;mode=direct"
+                        rel="nofollow">
+                        <img src="https://camo.githubusercontent.com/16f54569169711557fd6d3833dfaea3239506d7f8d673b07573c52855f1f2ee4/68747470733a2f2f6765742e6d6963726f736f66742e636f6d2f696d616765732f656e2d75732532306461726b2e737667"
+                            width="200" data-canonical-src="https://get.microsoft.com/images/en-us%20dark.svg"
+                            style="max-width: 100%;">
+                    </a>
+                    <!-- <a-button type="primary" size="large" href="https://apps.microsoft.com/detail/9NFW1RPPT999"
                         target="_blank">
                         在微软商店获取
-                    </a-button>
+                    </a-button> -->
                 </div>
             </section>
             <section class="hero-section">
@@ -73,10 +79,16 @@
                 <a-typography-title class="feature-card-title" :level="2">
                     音频可视化
                 </a-typography-title>
-                <a-button type="primary" size="large" href="https://apps.microsoft.com/store/detail/9PL2DSHJ79W7"
+                <a href="https://apps.microsoft.com/store/detail/9PL2DSHJ79W7?referrer=appbadge&amp;mode=direct"
+                    rel="nofollow">
+                    <img src="https://camo.githubusercontent.com/16f54569169711557fd6d3833dfaea3239506d7f8d673b07573c52855f1f2ee4/68747470733a2f2f6765742e6d6963726f736f66742e636f6d2f696d616765732f656e2d75732532306461726b2e737667"
+                        width="200" data-canonical-src="https://get.microsoft.com/images/en-us%20dark.svg"
+                        style="max-width: 100%;">
+                </a>
+                <!-- <a-button type="primary" size="large" href="https://apps.microsoft.com/store/detail/9PL2DSHJ79W7"
                     target="_blank">
                     立即下载
-                </a-button>
+                </a-button> -->
             </section>
         </a-layout-content>
 
