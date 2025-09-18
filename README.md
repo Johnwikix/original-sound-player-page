@@ -33,7 +33,11 @@
 
 **原音HQ播放器** 已上架 Microsoft Store，推荐通过官方商店获取，以确保最佳的安装和更新体验。
 
-<img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="在 Microsoft Store 获取" width="200">
+<p align="center">
+  <a href="https://apps.microsoft.com/detail/9NFW1RPPT999?referrer=appbadge&mode=direct">
+	<img src="https://get.microsoft.com/images/en-us%20dark.svg" width="200"/>
+  </a>
+</p>
 
 ------
 
