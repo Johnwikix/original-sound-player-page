@@ -34,7 +34,7 @@
                     <a-col :xs="24" :md="12" :lg="6">
                         <a-card class="feature-card">
                             <a-typography-title class="feature-card-title" :level="3"> {{ $t('features.feature1.title')
-                            }}</a-typography-title>
+                                }}</a-typography-title>
                             <a-typography-paragraph class="feature-card-content">
                                 {{ $t('features.feature1.content') }}
                             </a-typography-paragraph>
@@ -47,7 +47,7 @@
                     <a-col :xs="24" :md="12" :lg="6">
                         <a-card class="feature-card">
                             <a-typography-title class="feature-card-title" :level="3">{{ $t('features.feature2.title')
-                            }}</a-typography-title>
+                                }}</a-typography-title>
                             <a-typography-paragraph class="feature-card-content">
                                 {{ $t('features.feature2.content') }}
                             </a-typography-paragraph>
@@ -60,19 +60,20 @@
                     <a-col :xs="24" :md="12" :lg="6">
                         <a-card class="feature-card">
                             <a-typography-title class="feature-card-title" :level="3"> {{ $t('features.feature3.title')
-                            }}</a-typography-title>
+                                }}</a-typography-title>
                             <a-typography-paragraph class="feature-card-content">
                                 {{ $t('features.feature3.content') }}
                             </a-typography-paragraph>
                             <div class="feature-image-wrapper">
-                                <a-image :src="wasapiImage" :alt="$t('features.feature3.title')" class="feature-image" />
+                                <a-image :src="wasapiImage" :alt="$t('features.feature3.title')"
+                                    class="feature-image" />
                             </div>
                         </a-card>
                     </a-col>
                     <a-col :xs="24" :md="12" :lg="6">
                         <a-card class="feature-card">
                             <a-typography-title class="feature-card-title" :level="3"> {{ $t('features.feature4.title')
-                                }}</a-typography-title>
+                            }}</a-typography-title>
                             <a-typography-paragraph class="feature-card-content">
                                 {{ $t('features.feature4.content') }}
                             </a-typography-paragraph>
@@ -175,8 +176,7 @@ const { t } = useI18n();
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: radial-gradient(circle at 50% 120%, rgba(50, 150, 255, 0.1), transparent 50%),
-        url('/path/to/hero-background.jpg') no-repeat center center / cover;
+    background: radial-gradient(circle at 50% 120%, rgba(50, 150, 255, 0.1), transparent 50%);
     /* 你可以在这里添加背景动效 */
 }
 
