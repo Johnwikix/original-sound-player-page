@@ -39,7 +39,7 @@
                                 {{ t('features.feature1.content') }}
                             </a-typography-paragraph>
                             <div class="feature-image-wrapper">
-                                <a-image :src="playing" :alt="t('features.feature1.title')" class="feature-image" />
+                                <a-image :src="t('img.pic1')" :alt="t('features.feature1.title')" class="feature-image" />
                             </div>
                         </a-card>
                     </a-col>
@@ -52,7 +52,7 @@
                                 {{ t('features.feature2.content') }}
                             </a-typography-paragraph>
                             <div class="feature-image-wrapper">
-                                <a-image :src="album" :alt="t('features.feature2.title')" class="feature-image" />
+                                <a-image :src="t('img.pic2')" :alt="t('features.feature2.title')" class="feature-image" />
                             </div>
                         </a-card>
                     </a-col>
@@ -65,7 +65,7 @@
                                 {{ t('features.feature3.content') }}
                             </a-typography-paragraph>
                             <div class="feature-image-wrapper">
-                                <a-image :src="wasapiImage" :alt="t('features.feature3.title')" class="feature-image" />
+                                <a-image :src="t('img.pic3')" :alt="t('features.feature3.title')" class="feature-image" />
                             </div>
                         </a-card>
                     </a-col>
@@ -77,7 +77,7 @@
                                 {{ t('features.feature4.content') }}
                             </a-typography-paragraph>
                             <div class="feature-image-wrapper">
-                                <a-image :src="walkman" :alt="t('features.feature4.title')" class="feature-image" />
+                                <a-image :src="t('img.pic4')" :alt="t('features.feature4.title')" class="feature-image" />
                             </div>
                         </a-card>
                     </a-col>
@@ -137,10 +137,6 @@ import {
     TypographyTitle as ATypographyTitle,
     TypographyParagraph as ATypographyParagraph,
 } from 'ant-design-vue';
-import wasapiImage from '../assets/wasapi.jpg';
-import playing from '../assets/playing.jpg';
-import album from '../assets/album.jpg';
-import walkman from '../assets/album.jpg';
 import visualizationImage from '../assets/visualization.png';
 import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
@@ -327,10 +323,13 @@ console.log(t('hero.title'))
 
 .visualization-image-wrapper {
     margin: 4vw;
-    border-radius: 20px;
+    border-radius: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.visualization-image {
+    border-radius: 18px;
 }
 
 /* 响应式设计 */
