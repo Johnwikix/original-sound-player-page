@@ -1,0 +1,29 @@
+{
+  "hero": {
+    "title": "HQ Original Player",
+    "subtitle": "Unleash your musical soul. A modern, minimalist local music player that offers an ultimate immersive experience."
+  },
+  "features": {
+    "feature1": {
+      "title": "Immersive Modern UI",
+      "content": "A meticulously designed user interface that provides a fluid and intuitive interaction. Supports multiple acrylic effects to make your music journey visually pleasing. Multiple custom settings to create your exclusive music player."
+    },
+    "feature2": {
+      "title": "Master Your Music Library",
+      "content": "Automatically scan and manage your local music files. Easily browse by album, artist, or folder, and support creating, importing, and exporting custom playlists. You can also edit metadata and automatically match lyrics and album art."
+    },
+    "feature3": {
+      "title": "Ultimate Sound Quality",
+      "content": "Supports various audio formats including flac, wav, mp3, dsf, ape, m4a, wmv, aiff, oga, and more. Paired with an equalizer and WASAPI exclusive mode, it restores the most authentic details of the music."
+    },
+    "feature4": {
+      "title": "Walkman Companion",
+      "content": "Easily convert your music to WAV, MP3, FLAC, and other formats, and conveniently transfer them along with synchronized lyric files to your Walkman via USB, taking your portable listening experience to the next level."
+    }
+  },
+  "download": {
+    "title": "Audio Visualization",
+    "content": "A perfect blend of spectrum analysis and rich dynamic visual effects. Supports real-time audio data processing, making music not just an auditory feast, but a visual art experience."
+  },
+  "footer": "© 2025 Sennpei Studio All Rights Reserved."
+}

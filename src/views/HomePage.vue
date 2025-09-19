@@ -3,17 +3,17 @@
         <a-layout-content>
             <section class="hero-section">
                 <a-carousel autoplay class="hero-carousel">
-                    <div><img src="../assets/bg1.png" alt="背景图1" class="carousel-image"></div>
-                    <div><img src="../assets/bg2.png" alt="背景图2" class="carousel-image"></div>
-                    <div><img src="../assets/bg3.png" alt="背景图3" class="carousel-image"></div>
+                    <div><img src="../assets/bg1.png" class="carousel-image"></div>
+                    <div><img src="../assets/bg2.png" class="carousel-image"></div>
+                    <div><img src="../assets/bg3.png" class="carousel-image"></div>
                 </a-carousel>
 
                 <div class="hero-content">
                     <a-typography-title class="hero-title">
-                        原音HQ播放器
+                        {{ $t('hero.title') }}
                     </a-typography-title>
                     <a-typography-paragraph class="hero-subtitle">
-                        释放你的音乐灵魂，一款为现代简洁的本地音乐播放器，带来极致的沉浸式体验。
+                        {{ $t('hero.subtitle') }}
                     </a-typography-paragraph>
                     <a href="https://apps.microsoft.com/detail/9NFW1RPPT999?referrer=appbadge&amp;mode=direct"
                         rel="nofollow">
@@ -33,48 +33,51 @@
                 <a-row :gutter="[32, 32]" justify="center">
                     <a-col :xs="24" :md="12" :lg="6">
                         <a-card class="feature-card">
-                            <a-typography-title class="feature-card-title" :level="3">沉浸式的现代界面</a-typography-title>
+                            <a-typography-title class="feature-card-title" :level="3"> {{ $t('features.feature1.title')
+                            }}</a-typography-title>
                             <a-typography-paragraph class="feature-card-content">
-                                精心设计的用户界面，提供流畅、直观的交互体验。支持多种亚克力效果，让你的音乐之旅赏心悦目。多项自定义设置，打造你专属的音乐播放器。
+                                {{ $t('features.feature1.content') }}
                             </a-typography-paragraph>
                             <div class="feature-image-wrapper">
-                                <a-image :src="playing" alt="个性化主题" class="feature-image" />
+                                <a-image :src="playing" :alt="$t('features.feature1.title')" class="feature-image" />
                             </div>
                         </a-card>
                     </a-col>
 
                     <a-col :xs="24" :md="12" :lg="6">
                         <a-card class="feature-card">
-                            <a-typography-title class="feature-card-title" :level="3">掌控你的音乐库</a-typography-title>
+                            <a-typography-title class="feature-card-title" :level="3">{{ $t('features.feature2.title')
+                            }}</a-typography-title>
                             <a-typography-paragraph class="feature-card-content">
-                                自动扫描并管理你的本地音乐文件。轻松按专辑、艺术家或文件夹浏览，支持创建导入导出自定义播放列表，还能进行元数据编辑，自动匹配歌词和歌曲封面。
+                                {{ $t('features.feature2.content') }}
                             </a-typography-paragraph>
                             <div class="feature-image-wrapper">
-                                <a-image :src="album" alt="音乐库管理" class="feature-image" />
+                                <a-image :src="album" :alt="$t('features.feature2.title')" class="feature-image" />
                             </div>
                         </a-card>
                     </a-col>
 
                     <a-col :xs="24" :md="12" :lg="6">
                         <a-card class="feature-card">
-                            <a-typography-title class="feature-card-title" :level="3">极致音质体验</a-typography-title>
+                            <a-typography-title class="feature-card-title" :level="3"> {{ $t('features.feature3.title')
+                            }}</a-typography-title>
                             <a-typography-paragraph class="feature-card-content">
-                                支持包括 flac,wav,mp3,dsf,ape,m4a,wmv,aiff,oga 等多种音频格式，搭配均衡器和wasapi独占模式，还原音乐最本真的细节。
+                                {{ $t('features.feature3.content') }}
                             </a-typography-paragraph>
                             <div class="feature-image-wrapper">
-                                <a-image :src="wasapiImage" alt="极致音质体验" class="feature-image" />
+                                <a-image :src="wasapiImage" :alt="$t('features.feature3.title')" class="feature-image" />
                             </div>
                         </a-card>
                     </a-col>
                     <a-col :xs="24" :md="12" :lg="6">
                         <a-card class="feature-card">
-                            <a-typography-title class="feature-card-title" :level="3">Walkman 伴侣</a-typography-title>
+                            <a-typography-title class="feature-card-title" :level="3"> {{ $t('features.feature4.title')
+                                }}</a-typography-title>
                             <a-typography-paragraph class="feature-card-content">
-                                轻松将你的音乐转换为 WAV、MP3、FLAC 等格式，并方便地通过 USB 连同同步好的歌词文件一同传输到你的 Walkman
-                                上，让你的随身听体验更上一层楼。
+                                {{ $t('features.feature4.content') }}
                             </a-typography-paragraph>
                             <div class="feature-image-wrapper">
-                                <a-image :src="walkman" alt="Walkman 伴侣" class="feature-image" />
+                                <a-image :src="walkman" :alt="$t('features.feature4.title')" class="feature-image" />
                             </div>
                         </a-card>
                     </a-col>
@@ -86,11 +89,11 @@
                     <a-col :xs="24" :md="12">
                         <div class="visualization-content">
                             <a-typography-title class="feature-card-title" :level="2">
-                                音频可视化
+                                {{ $t('download.title') }}
                             </a-typography-title>
                             <a-typography-paragraph class="feature-card-content"
                                 style="font-size: 1.1vw; line-height: 1.6; margin: 24px 0;">
-                                频谱分析与丰富的动态视觉效果完美融合。支持实时音频数据处理,让音乐不仅仅是听觉的盛宴，更是视觉的艺术体验。
+                                {{ $t('download.content') }}
                             </a-typography-paragraph>
                             <a href="https://apps.microsoft.com/store/detail/9PL2DSHJ79W7?referrer=appbadge&amp;mode=direct"
                                 rel="nofollow">
@@ -102,7 +105,8 @@
                     </a-col>
                     <a-col :xs="24" :md="12">
                         <div class="visualization-image-wrapper">
-                            <a-image :src="visualizationImage" alt="音频可视化界面" class="visualization-image" />
+                            <a-image :src="visualizationImage" :alt="$t('download.title')"
+                                class="visualization-image" />
                         </div>
                     </a-col>
                 </a-row>
@@ -133,6 +137,8 @@ import playing from '../assets/playing.jpg';
 import album from '../assets/album.jpg';
 import walkman from '../assets/album.jpg';
 import visualizationImage from '../assets/visualization.png';
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 </script>
 
 <style scoped>
