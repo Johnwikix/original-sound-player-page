@@ -1,4 +1,9 @@
 {
+  "carousel": {
+    "bg1": "/original-sound-player-page/bg1-zh.png",
+    "bg2": "/original-sound-player-page/bg2-zh.png",
+    "bg3": "/original-sound-player-page/bg3-zh.png"
+  },
   "hero": {
     "title": "原音HQ播放器",
     "subtitle": "释放你的音乐灵魂，一款为现代简洁的本地音乐播放器，带来极致的沉浸式体验。"

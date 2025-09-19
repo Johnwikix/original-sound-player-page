@@ -1,4 +1,9 @@
 {
+  "carousel": {
+    "bg1": "/original-sound-player-page/bg1-en.png",
+    "bg2": "/original-sound-player-page/bg2-en.png",
+    "bg3": "/original-sound-player-page/bg3-en.png"
+  },
   "hero": {
     "title": "HQ Original Player",
     "subtitle": "Unleash your musical soul. A modern, minimalist local music player that offers an ultimate immersive experience."

@@ -3,9 +3,9 @@
         <a-layout-content>
             <section class="hero-section">
                 <a-carousel autoplay class="hero-carousel">
-                    <div><img src="../assets/bg1.png" class="carousel-image"></div>
-                    <div><img src="../assets/bg2.png" class="carousel-image"></div>
-                    <div><img src="../assets/bg3.png" class="carousel-image"></div>
+                    <div><img :src="t('carousel.bg1')" class="carousel-image"></div>
+                    <div><img :src="t('carousel.bg2')" class="carousel-image"></div>
+                    <div><img :src="t('carousel.bg3')" class="carousel-image"></div>
                 </a-carousel>
 
                 <div class="hero-content">
@@ -34,7 +34,7 @@
                     <a-col :xs="24" :md="12" :lg="6">
                         <a-card class="feature-card">
                             <a-typography-title class="feature-card-title" :level="3"> {{ t('features.feature1.title')
-                                }}</a-typography-title>
+                            }}</a-typography-title>
                             <a-typography-paragraph class="feature-card-content">
                                 {{ t('features.feature1.content') }}
                             </a-typography-paragraph>
@@ -47,7 +47,7 @@
                     <a-col :xs="24" :md="12" :lg="6">
                         <a-card class="feature-card">
                             <a-typography-title class="feature-card-title" :level="3">{{ t('features.feature2.title')
-                                }}</a-typography-title>
+                            }}</a-typography-title>
                             <a-typography-paragraph class="feature-card-content">
                                 {{ t('features.feature2.content') }}
                             </a-typography-paragraph>
@@ -60,7 +60,7 @@
                     <a-col :xs="24" :md="12" :lg="6">
                         <a-card class="feature-card">
                             <a-typography-title class="feature-card-title" :level="3"> {{ t('features.feature3.title')
-                                }}</a-typography-title>
+                            }}</a-typography-title>
                             <a-typography-paragraph class="feature-card-content">
                                 {{ t('features.feature3.content') }}
                             </a-typography-paragraph>
@@ -72,7 +72,7 @@
                     <a-col :xs="24" :md="12" :lg="6">
                         <a-card class="feature-card">
                             <a-typography-title class="feature-card-title" :level="3"> {{ t('features.feature4.title')
-                            }}</a-typography-title>
+                                }}</a-typography-title>
                             <a-typography-paragraph class="feature-card-content">
                                 {{ t('features.feature4.content') }}
                             </a-typography-paragraph>
@@ -260,11 +260,27 @@ console.log(t('hero.title'))
     background-color: #161b22;
 }
 
+.features-section .ant-row {
+    display: flex;
+    flex-wrap: wrap;
+    /* 确保换行 */
+}
+
 .feature-card {
     background-color: #0d1117;
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: #c9d1d9;
     transition: transform 0.3s ease-in-out;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card .ant-card-body {
+    height: 100%;
+    /* 确保body继承高度 */
+    display: flex;
+    flex-direction: column;
 }
 
 .feature-card-title {
@@ -282,15 +298,10 @@ console.log(t('hero.title'))
 }
 
 .feature-image-wrapper {
-    margin-top: 24px;
+    margin-top: auto;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.feature-image {
-    width: 100%;
-    height: auto;
 }
 
 /* 下载区域样式 */
