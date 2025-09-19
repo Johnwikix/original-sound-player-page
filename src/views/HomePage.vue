@@ -10,10 +10,10 @@
 
                 <div class="hero-content">
                     <a-typography-title class="hero-title">
-                        {{ t('hero.title') }}
+                        {{ $t('hero.title') }}
                     </a-typography-title>
                     <a-typography-paragraph class="hero-subtitle">
-                        {{ t('hero.subtitle') }}
+                        {{ $t('hero.subtitle') }}
                     </a-typography-paragraph>
                     <a href="https://apps.microsoft.com/detail/9NFW1RPPT999?referrer=appbadge&amp;mode=direct"
                         rel="nofollow">
@@ -33,51 +33,52 @@
                 <a-row :gutter="[32, 32]" justify="center">
                     <a-col :xs="24" :md="12" :lg="6">
                         <a-card class="feature-card">
-                            <a-typography-title class="feature-card-title" :level="3"> {{ t('features.feature1.title')
-                            }}</a-typography-title>
-                            <a-typography-paragraph class="feature-card-content">
-                                {{ t('features.feature1.content') }}
-                            </a-typography-paragraph>
-                            <div class="feature-image-wrapper">
-                                <a-image :src="playing" :alt="t('features.feature1.title')" class="feature-image" />
-                            </div>
-                        </a-card>
-                    </a-col>
-
-                    <a-col :xs="24" :md="12" :lg="6">
-                        <a-card class="feature-card">
-                            <a-typography-title class="feature-card-title" :level="3">{{ t('features.feature2.title')
-                            }}</a-typography-title>
-                            <a-typography-paragraph class="feature-card-content">
-                                {{ t('features.feature2.content') }}
-                            </a-typography-paragraph>
-                            <div class="feature-image-wrapper">
-                                <a-image :src="album" :alt="t('features.feature2.title')" class="feature-image" />
-                            </div>
-                        </a-card>
-                    </a-col>
-
-                    <a-col :xs="24" :md="12" :lg="6">
-                        <a-card class="feature-card">
-                            <a-typography-title class="feature-card-title" :level="3"> {{ t('features.feature3.title')
-                            }}</a-typography-title>
-                            <a-typography-paragraph class="feature-card-content">
-                                {{ t('features.feature3.content') }}
-                            </a-typography-paragraph>
-                            <div class="feature-image-wrapper">
-                                <a-image :src="wasapiImage" :alt="t('features.feature3.title')" class="feature-image" />
-                            </div>
-                        </a-card>
-                    </a-col>
-                    <a-col :xs="24" :md="12" :lg="6">
-                        <a-card class="feature-card">
-                            <a-typography-title class="feature-card-title" :level="3"> {{ t('features.feature4.title')
+                            <a-typography-title class="feature-card-title" :level="3"> {{ $t('features.feature1.title')
                                 }}</a-typography-title>
                             <a-typography-paragraph class="feature-card-content">
-                                {{ t('features.feature4.content') }}
+                                {{ $t('features.feature1.content') }}
                             </a-typography-paragraph>
                             <div class="feature-image-wrapper">
-                                <a-image :src="walkman" :alt="t('features.feature4.title')" class="feature-image" />
+                                <a-image :src="playing" :alt="$t('features.feature1.title')" class="feature-image" />
+                            </div>
+                        </a-card>
+                    </a-col>
+
+                    <a-col :xs="24" :md="12" :lg="6">
+                        <a-card class="feature-card">
+                            <a-typography-title class="feature-card-title" :level="3">{{ $t('features.feature2.title')
+                                }}</a-typography-title>
+                            <a-typography-paragraph class="feature-card-content">
+                                {{ $t('features.feature2.content') }}
+                            </a-typography-paragraph>
+                            <div class="feature-image-wrapper">
+                                <a-image :src="album" :alt="$t('features.feature2.title')" class="feature-image" />
+                            </div>
+                        </a-card>
+                    </a-col>
+
+                    <a-col :xs="24" :md="12" :lg="6">
+                        <a-card class="feature-card">
+                            <a-typography-title class="feature-card-title" :level="3"> {{ $t('features.feature3.title')
+                                }}</a-typography-title>
+                            <a-typography-paragraph class="feature-card-content">
+                                {{ $t('features.feature3.content') }}
+                            </a-typography-paragraph>
+                            <div class="feature-image-wrapper">
+                                <a-image :src="wasapiImage" :alt="$t('features.feature3.title')"
+                                    class="feature-image" />
+                            </div>
+                        </a-card>
+                    </a-col>
+                    <a-col :xs="24" :md="12" :lg="6">
+                        <a-card class="feature-card">
+                            <a-typography-title class="feature-card-title" :level="3"> {{ $t('features.feature4.title')
+                            }}</a-typography-title>
+                            <a-typography-paragraph class="feature-card-content">
+                                {{ $t('features.feature4.content') }}
+                            </a-typography-paragraph>
+                            <div class="feature-image-wrapper">
+                                <a-image :src="walkman" :alt="$t('features.feature4.title')" class="feature-image" />
                             </div>
                         </a-card>
                     </a-col>
@@ -89,11 +90,11 @@
                     <a-col :xs="24" :md="12">
                         <div class="visualization-content">
                             <a-typography-title class="feature-card-title" :level="2">
-                                {{ t('download.title') }}
+                                {{ $t('download.title') }}
                             </a-typography-title>
                             <a-typography-paragraph class="feature-card-content"
                                 style="font-size: 1.1vw; line-height: 1.6; margin: 24px 0;">
-                                {{ t('download.content') }}
+                                {{ $t('download.content') }}
                             </a-typography-paragraph>
                             <a href="https://apps.microsoft.com/store/detail/9PL2DSHJ79W7?referrer=appbadge&amp;mode=direct"
                                 rel="nofollow">
@@ -105,7 +106,8 @@
                     </a-col>
                     <a-col :xs="24" :md="12">
                         <div class="visualization-image-wrapper">
-                            <a-image :src="visualizationImage" :alt="t('download.title')" class="visualization-image" />
+                            <a-image :src="visualizationImage" :alt="$t('download.title')"
+                                class="visualization-image" />
                         </div>
                     </a-col>
                 </a-row>
@@ -136,9 +138,9 @@ import playing from '../assets/playing.jpg';
 import album from '../assets/album.jpg';
 import walkman from '../assets/album.jpg';
 import visualizationImage from '../assets/visualization.png';
-import { useI18n } from 'vue-i18n';
-const { t } = useI18n();
-console.log(t('hero.title'))
+// import { useI18n } from 'vue-i18n';
+// const { t } = useI18n();
+// console.log(t('hero.title'))
 </script>
 
 <style scoped>
