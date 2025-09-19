@@ -34,7 +34,7 @@
                     <a-col :xs="24" :md="12" :lg="6">
                         <a-card class="feature-card">
                             <a-typography-title class="feature-card-title" :level="3"> {{ t('features.feature1.title')
-                                }}</a-typography-title>
+                            }}</a-typography-title>
                             <a-typography-paragraph class="feature-card-content">
                                 {{ t('features.feature1.content') }}
                             </a-typography-paragraph>
@@ -47,7 +47,7 @@
                     <a-col :xs="24" :md="12" :lg="6">
                         <a-card class="feature-card">
                             <a-typography-title class="feature-card-title" :level="3">{{ t('features.feature2.title')
-                                }}</a-typography-title>
+                            }}</a-typography-title>
                             <a-typography-paragraph class="feature-card-content">
                                 {{ t('features.feature2.content') }}
                             </a-typography-paragraph>
@@ -60,20 +60,19 @@
                     <a-col :xs="24" :md="12" :lg="6">
                         <a-card class="feature-card">
                             <a-typography-title class="feature-card-title" :level="3"> {{ t('features.feature3.title')
-                                }}</a-typography-title>
+                            }}</a-typography-title>
                             <a-typography-paragraph class="feature-card-content">
                                 {{ t('features.feature3.content') }}
                             </a-typography-paragraph>
                             <div class="feature-image-wrapper">
-                                <a-image :src="wasapiImage" :alt="t('features.feature3.title')"
-                                    class="feature-image" />
+                                <a-image :src="wasapiImage" :alt="t('features.feature3.title')" class="feature-image" />
                             </div>
                         </a-card>
                     </a-col>
                     <a-col :xs="24" :md="12" :lg="6">
                         <a-card class="feature-card">
                             <a-typography-title class="feature-card-title" :level="3"> {{ t('features.feature4.title')
-                            }}</a-typography-title>
+                                }}</a-typography-title>
                             <a-typography-paragraph class="feature-card-content">
                                 {{ t('features.feature4.content') }}
                             </a-typography-paragraph>
@@ -106,8 +105,7 @@
                     </a-col>
                     <a-col :xs="24" :md="12">
                         <div class="visualization-image-wrapper">
-                            <a-image :src="visualizationImage" :alt="t('download.title')"
-                                class="visualization-image" />
+                            <a-image :src="visualizationImage" :alt="t('download.title')" class="visualization-image" />
                         </div>
                     </a-col>
                 </a-row>
@@ -140,6 +138,7 @@ import walkman from '../assets/album.jpg';
 import visualizationImage from '../assets/visualization.png';
 import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
+console.log(t('hero.title'))
 </script>
 
 <style scoped>
