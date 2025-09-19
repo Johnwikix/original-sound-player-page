@@ -3,9 +3,9 @@
         <a-layout-content>
             <section class="hero-section">
                 <a-carousel autoplay class="hero-carousel">
-                    <div><img src="../assets/bg1.jpg" alt="背景图1" class="carousel-image"></div>
-                    <div><img src="../assets/bg2.jpg" alt="背景图2" class="carousel-image"></div>
-                    <div><img src="../assets/bg3.jpg" alt="背景图3" class="carousel-image"></div>
+                    <div><img src="../assets/bg1.png" alt="背景图1" class="carousel-image"></div>
+                    <div><img src="../assets/bg2.png" alt="背景图2" class="carousel-image"></div>
+                    <div><img src="../assets/bg3.png" alt="背景图3" class="carousel-image"></div>
                 </a-carousel>
 
                 <!-- <div class="hero-overlay"></div> -->
@@ -37,7 +37,7 @@
                         <a-card class="feature-card">
                             <a-typography-title class="feature-card-title" :level="3">沉浸式的现代界面</a-typography-title>
                             <a-typography-paragraph class="feature-card-content">
-                                精心设计的用户界面，提供流畅、直观的交互体验。支持多种亚克力效果和完全自定义模式，让你的音乐之旅赏心悦目。
+                                精心设计的用户界面，提供流畅、直观的交互体验。支持多种亚克力效果等多项自定义设置，打造你专属的音乐播放器。
                             </a-typography-paragraph>
                             <div class="feature-image-wrapper">
                                 <a-image :src="playing" alt="个性化主题" class="feature-image" />
@@ -65,6 +65,18 @@
                             </a-typography-paragraph>
                             <div class="feature-image-wrapper">
                                 <a-image :src="wasapiImage" alt="极致音质体验" class="feature-image" />
+                            </div>
+                        </a-card>
+                    </a-col>
+                    <a-col :xs="24" :md="12" :lg="8">
+                        <a-card class="feature-card">
+                            <a-typography-title class="feature-card-title" :level="3">Walkman 伴侣</a-typography-title>
+                            <a-typography-paragraph class="feature-card-content">
+                                轻松将你的音乐转换为 **WAV、MP3、FLAC** 等格式，并方便地通过 USB 传输到你的 Walkman
+                                上。软件还能自动同步已匹配好的**元信息和歌词文件**，让你的随身听体验更上一层楼。
+                            </a-typography-paragraph>
+                            <div class="feature-image-wrapper">
+                                <a-image :src="walkman" alt="Walkman 伴侣" class="feature-image" />
                             </div>
                         </a-card>
                     </a-col>
@@ -106,6 +118,7 @@ import {
 import wasapiImage from '../assets/wasapi.jpg';
 import playing from '../assets/playing.jpg';
 import album from '../assets/album.jpg';
+import walkman from '../assets/album.jpg';
 </script>
 
 <style scoped>
