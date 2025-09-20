@@ -10,6 +10,9 @@
     "pic3": "/original-sound-player-page/p3-en.png",
     "pic4": "/original-sound-player-page/p4-en.png"
   },
+  "faq": {
+    "link": "https://github.com/Johnwikix/original-sound-player-page/blob/main/FAQ-en.md"
+  },
   "hero": {
     "title": "OriginalSound HQ Player",
     "subtitle": "Unleash your musical soul. A modern, minimalist local music player that offers an ultimate immersive experience."
