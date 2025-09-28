@@ -15,11 +15,8 @@
                     <a-typography-paragraph class="hero-subtitle">
                         {{ t('hero.subtitle') }}
                     </a-typography-paragraph>
-                    <a style="margin: 2dvh;" href="https://apps.microsoft.com/detail/9NFW1RPPT999?referrer=appbadge&amp;mode=direct"
-                        rel="nofollow">
-                        <img src="https://camo.githubusercontent.com/16f54569169711557fd6d3833dfaea3239506d7f8d673b07573c52855f1f2ee4/68747470733a2f2f6765742e6d6963726f736f66742e636f6d2f696d616765732f656e2d75732532306461726b2e737667"
-                            data-canonical-src="https://get.microsoft.com/images/en-us%20dark.svg"
-                            style="max-width: 100%;height: 6vh;">
+                    <a style="margin: 2dvh;" href="https://apps.microsoft.com/detail/9nfw1rppt999?referrer=appbadge&mode=direct" rel="nofollow">
+	                        <img src="https://get.microsoft.com/images/en-us%20dark.svg" style="max-width: 100%;height: 6vh;"/>
                     </a>
                     <a style="margin: 2dvh;" :href="t('faq.link')" rel="nofollow">
                                 <img src="../assets/faq.png" style="max-width: 100%;height: 6vh;">
@@ -101,12 +98,8 @@
                                 style="font-size: 1.1vw; line-height: 1.6; margin: 24px 0;">
                                 {{ t('download.content') }}
                             </a-typography-paragraph>
-                            <a tyle="margin: 2dvh;"
-                                href="https://apps.microsoft.com/store/detail/9PL2DSHJ79W7?referrer=appbadge&amp;mode=direct"
-                                rel="nofollow">
-                                <img src="https://camo.githubusercontent.com/16f54569169711557fd6d3833dfaea3239506d7f8d673b07573c52855f1f2ee4/68747470733a2f2f6765742e6d6963726f736f66742e636f6d2f696d616765732f656e2d75732532306461726b2e737667"
-                                    data-canonical-src="https://get.microsoft.com/images/en-us%20dark.svg"
-                                    style="max-width: 100%;height: 6vh;">
+                            <a style="margin: 2dvh;" href="https://apps.microsoft.com/detail/9pl2dshj79w7?referrer=appbadge&mode=direct" rel="nofollow">
+	                            <img src="https://get.microsoft.com/images/en-us%20dark.svg" style="max-width: 100%;height: 6vh;"/>
                             </a>
                             <a style="margin: 2dvh;" href="https://github.com/Johnwikix/SpectrumVisualization"
                                 rel="nofollow">
