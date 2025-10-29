@@ -24,6 +24,11 @@
                     <a style="margin: 2dvh;" href="https://www.bilibili.com/video/BV1f5pgzAEcs" rel="nofollow">
                         <img src="../assets/bilibili-color.png" style="max-width: 100%;height: 6vh;">
                     </a>
+                    <a style="margin: 2dvh;" href="https://github.com/Johnwikix/original-sound-hq-player"
+                                rel="nofollow">
+                                <img src="../assets/github-mark-white.png"
+                                    style="max-width: 100%;height: 5vh;">
+                    </a>
                 </div>
             </section>
             <section class="hero-section">
