@@ -692,7 +692,7 @@ onUnmounted(() => {
 
 .feature-card-title {
     color: #fff !important;
-    font-size: 1.3rem !important;
+    font-size: 1.5rem !important;
     margin-bottom: 0.8rem !important;
     font-weight: 600 !important;
     flex-shrink: 0;
@@ -701,7 +701,7 @@ onUnmounted(() => {
 
 .feature-card-content {
     color: #8b949e;
-    font-size: 0.95rem;
+    font-size: 1.1rem !important;
     line-height: 1.6;
     flex-shrink: 0;
     margin-bottom: auto;
