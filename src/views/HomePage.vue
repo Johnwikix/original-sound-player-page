@@ -361,6 +361,105 @@ onMounted(() => {
         opacity: 0,
         y: -30
     });
+
+    if (heroSection.value && videoSection.value) {
+        gsap.fromTo(heroSection.value, 
+            {
+                opacity: 1,
+                y: 0
+            },
+            {
+                scrollTrigger: {
+                    trigger: heroSection.value,
+                    start: 'center top',
+                    end: 'bottom top',
+                    scrub: 1
+                },
+                opacity: 0,
+                y: 100
+            }
+        );
+    }
+
+    if (heroContent.value && videoSection.value) {
+        gsap.fromTo(heroContent.value,
+            {
+                opacity: 1,
+                y: 0,
+                scale: 1
+            },
+            {
+                scrollTrigger: {
+                    trigger: heroSection.value,
+                    start: 'center top',
+                    end: 'bottom top',
+                    scrub: 1
+                },
+                opacity: 0,
+                y: 80,
+                scale: 0.95
+            }
+        );
+    }
+
+    const heroElements = [heroSubtitle.value, heroButtons.value, scrollIndicator.value].filter(Boolean);
+    if (heroElements.length > 0 && videoSection.value) {
+        gsap.fromTo(heroElements,
+            {
+                opacity: 1,
+                y: 0
+            },
+            {
+                scrollTrigger: {
+                    trigger: heroSection.value,
+                    start: 'center top',
+                    end: 'bottom top',
+                    scrub: 1
+                },
+                opacity: 0,
+                y: 50,
+                stagger: 0.1
+            }
+        );
+    }
+
+    if (videoSection.value && featuresSection.value) {
+        gsap.fromTo(videoSection.value,
+            {
+                opacity: 1,
+                y: 0
+            },
+            {
+                scrollTrigger: {
+                    trigger: videoSection.value,
+                    start: 'center top',
+                    end: 'bottom top',
+                    scrub: 1
+                },
+                opacity: 0,
+                y: 80
+            }
+        );
+    }
+
+    if (featuresSection.value && downloadSection.value) {
+        gsap.fromTo(featuresSection.value,
+            {
+                opacity: 1,
+                y: 0
+            },
+            {
+                scrollTrigger: {
+                    trigger: featuresSection.value,
+                    start: 'center top',
+                    end: 'bottom top',
+                    scrub: 1
+                },
+                opacity: 0,
+                y: 80
+            }
+        );
+    }
 });
 
 onUnmounted(() => {
