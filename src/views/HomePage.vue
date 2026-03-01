@@ -225,28 +225,15 @@ const handleCardHover = (event: MouseEvent, isEnter: boolean) => {
 onMounted(() => {
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
     
-    tl.from('.title-char', {
+    tl.from(['.title-char',heroSubtitle.value, heroButtons.value,scrollIndicator.value,], {
         opacity: 0,
         y: 50,
         rotateX: -90,
         stagger: 0.08,
         duration: 0.8
     })
-    .from(heroSubtitle.value, {
-        opacity: 0,
-        y: 30,
-        duration: 0.6
-    }, '-=0.3')
-    .from(heroButtons.value, {
-        opacity: 0,
-        y: 30,
-        duration: 0.6
-    }, '-=0.3')
-    .from(scrollIndicator.value, {
-        opacity: 0,
-        y: -20,
-        duration: 0.5
-    }, '-=0.2')
+
+
     .from([orb1.value, orb2.value, orb3.value], {
         scale: 0,
         opacity: 0,
