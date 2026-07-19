@@ -1,44 +1,163 @@
 {
-  "carousel": {
-    "bg1": "/original-sound-player-page/bg1-en.png",
-    "bg2": "/original-sound-player-page/bg2-en.png",
-    "bg3": "/original-sound-player-page/bg3-en.png"
+  "brand": {
+    "name": "OriginalSound HQ"
   },
-  "img": {
-    "pic1": "/original-sound-player-page/p1-en.png",
-    "pic2": "/original-sound-player-page/p2-en.png",
-    "pic3": "/original-sound-player-page/p3-en.png",
-    "pic4": "/original-sound-player-page/p4-en.png"
+  "nav": {
+    "home": "Home",
+    "guide": "User Guide",
+    "faq": "FAQ",
+    "visualization": "Visualization",
+    "download": "Download",
+    "lang": "Switch language"
   },
-  "faq": {
-    "link": "https://github.com/Johnwikix/original-sound-player-page/blob/main/FAQ-en.md"
-  },
-  "hero": {
-    "title": "OriginalSound HQ Player",
-    "subtitle": "Unleash your musical soul. A modern, minimalist local music player that offers an ultimate immersive experience.",
-    "sectionSubtitle": "Make music part of your lifestyle"
-  },
-  "features": {
-    "feature1": {
-      "title": "Immersive Modern UI",
-      "content": "A meticulously designed user interface that provides a fluid and intuitive interaction. Supports multiple acrylic effects to make your music journey visually pleasing. Multiple custom settings to create your exclusive music player."
+  "home": {
+    "hero": {
+      "eyebrow": "A desktop player built for music",
+      "title": "OriginalSound HQ",
+      "subtitle": "Unleash your musical soul. A modern, minimalist local music player that offers an ultimate immersive listening experience.",
+      "cta_primary": "Get on Microsoft Store",
+      "cta_secondary": "View on GitHub",
+      "scroll": "Scroll down"
     },
-    "feature2": {
-      "title": "Master Your Music Library",
-      "content": "Automatically scan and manage your local music files. Easily browse by album, artist, or folder, and support creating, importing, and exporting custom playlists. You can also edit metadata and automatically match lyrics and album art."
+    "meta": {
+      "formats": "Audio Formats",
+      "audio": "ASIO · WASAPI · DSD Raw/DoP"
     },
-    "feature3": {
-      "title": "Ultimate Sound Quality",
-      "content": "Supports various audio formats that including flac, wav, mp3, dsf, ape, m4a, wmv, aiff, oga, and more. Paired with an equalizer and WASAPI exclusive mode, it restores the most authentic details of the music."
+    "showcase": {
+      "window_title": "OriginalSound HQ",
+      "badge1": "On Microsoft Store",
+      "badge3": "Lightning fast"
     },
-    "feature4": {
-      "title": "Walkman Companion",
-      "content": "Easily convert your music to WAV, MP3, FLAC, and other formats, and conveniently transfer them along with synchronized lyric files to your Walkman via USB, taking your portable listening experience to the next level."
+    "features": {
+      "eyebrow": "Core features",
+      "title": "Built for listening",
+      "subtitle": "Four core capabilities covering every need of local music playback."
+    },
+    "spectrum": {
+      "eyebrow": "Companion tool",
+      "title": "Audio Visualization",
+      "content": "Spectrum analysis meets rich dynamic visual effects. Real-time audio processing turns music into both an auditory and visual art experience.",
+      "feat1_title": "Realtime spectrum",
+      "feat1_desc": "Realtime spectrum analysis from system audio stream",
+      "feat2_title": "Multiple presets",
+      "feat2_desc": "Built-in visual styles, switch with one click",
+      "feat3_title": "Low footprint",
+      "feat3_desc": "Powered by DirectX hardware acceleration",
+      "cta_primary": "Get the visualizer",
+      "cta_secondary": "Learn more"
     }
   },
-  "download": {
-    "title": "Audio Visualization",
-    "content": "A perfect blend of spectrum analysis and rich dynamic visual effects. Supports real-time audio data processing, making music not just an auditory feast, but a visual art experience."
+  "guide": {
+    "eyebrow": "Manual",
+    "title": "User Guide",
+    "intro": "Complete coverage of every setting and feature in OriginalSound HQ. Whether you're installing for the first time or a power user, you'll find what you need here.",
+    "stat": {
+      "chapters": "Chapters",
+      "settings": "Settings",
+      "langs": "Languages"
+    },
+    "footer_text": "If something is not covered here, please report it on GitHub Issues, or check the FAQ for more.",
+    "chapters": {
+      "getting-started": {
+        "title": "Getting Started",
+        "intro": "From scratch: system requirements, installation, and adding your music library."
+      },
+      "audio": {
+        "title": "Audio Settings",
+        "intro": "Output devices, buffer size, DSD handling, fade in/out, and other audio options."
+      },
+      "interface": {
+        "title": "Interface",
+        "intro": "Default entry page and the default music browsing view."
+      },
+      "advanced": {
+        "title": "Advanced",
+        "intro": "Folder watch, memory trim, window position reset, and other advanced behaviors."
+      },
+      "shortcuts": {
+        "title": "Hotkeys",
+        "intro": "Customizable global hotkeys that respond even when the app is not in focus."
+      },
+      "cover": {
+        "title": "Cover & Background",
+        "intro": "Cover size, cache, auto matching, shader backgrounds, effects, and palette algorithms."
+      },
+      "lyrics": {
+        "title": "Lyrics",
+        "intro": "Font, size, alignment, margins, animation effects, target frame rate, and colors."
+      },
+      "appearance": {
+        "title": "Appearance",
+        "intro": "Window backdrop materials, theme, and cover-based accent color."
+      },
+      "close-button": {
+        "title": "Close Button",
+        "intro": "The behavior when the window close button is clicked."
+      }
+    }
   },
-  "footer": "© 2025 Sennpei Studio All Rights Reserved."
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Frequently Asked Questions",
+    "subtitle": "A collection of the most common issues users encounter with their solutions. If you don't find an answer here, please open an issue on GitHub.",
+    "stat": {
+      "questions": "Questions",
+      "steps": "Steps"
+    },
+    "references": "References",
+    "sidebar": {
+      "title": "Still need help?",
+      "text": "The full user guide covers every setting in the app. For anything not addressed by the FAQ, feel free to open an issue.",
+      "guide": "Read the full user guide",
+      "issue": "Open a GitHub issue"
+    }
+  },
+  "visualization": {
+    "eyebrow": "Spectrum Visualization",
+    "title": "Audio Visualization",
+    "subtitle": "Spectrum analysis meets rich dynamic visual effects, turning music into both an auditory and visual art experience.",
+    "cta_primary": "Get on Microsoft Store",
+    "cta_secondary": "View on GitHub",
+    "features": {
+      "title": "Features",
+      "f1": {
+        "title": "Realtime Spectrum",
+        "desc": "Real-time FFT analysis on the system audio stream with smooth spectrum visualization."
+      },
+      "f2": {
+        "title": "High-performance",
+        "desc": "Hardware-accelerated rendering via DirectX 11 / Direct2D with low CPU footprint."
+      },
+      "f3": {
+        "title": "Multiple styles",
+        "desc": "Built-in visual presets including spectrum bars, waveforms, and particle effects."
+      },
+      "f4": {
+        "title": "Lightweight & standalone",
+        "desc": "Runs independently of the main player. Can be used on its own."
+      }
+    }
+  },
+  "footer": {
+    "tagline": "A modern local music player built for listening. Immersive UI, ultimate sound quality, fully customizable.",
+    "rights": "All rights reserved",
+    "col": {
+      "product": "Product",
+      "resource": "Resources",
+      "legal": "Legal",
+      "social": "Community"
+    },
+    "product": {
+      "main": "OriginalSound HQ",
+      "vis": "Spectrum Visualization"
+    },
+    "resource": {
+      "guide": "User Guide",
+      "faq": "FAQ",
+      "gh": "GitHub Repo"
+    },
+    "legal": {
+      "policy": "Project Policy"
+    }
+  }
 }

@@ -1,44 +1,163 @@
 {
-  "carousel": {
-    "bg1": "/original-sound-player-page/bg1-zh.png",
-    "bg2": "/original-sound-player-page/bg2-zh.png",
-    "bg3": "/original-sound-player-page/bg3-zh.png"
+  "brand": {
+    "name": "原音HQ播放器"
   },
-  "img": {
-    "pic1": "/original-sound-player-page/p1-zh.png",
-    "pic2": "/original-sound-player-page/p2-zh.png",
-    "pic3": "/original-sound-player-page/p3-zh.png",
-    "pic4": "/original-sound-player-page/p4-zh.png"
+  "nav": {
+    "home": "首页",
+    "guide": "用户指南",
+    "faq": "常见问题",
+    "visualization": "可视化工具",
+    "download": "下载",
+    "lang": "切换语言"
   },
-  "faq": {
-    "link": "https://gitee.com/people_1/original-sound-player-page/blob/main/FAQ-zh.md"
-  },
-  "hero": {
-    "title": "原音HQ播放器",
-    "subtitle": "释放你的音乐灵魂，一款为现代简洁的本地音乐播放器，带来极致的沉浸式体验。",
-    "sectionSubtitle": "让音乐成为你的生活方式"
-  },
-  "features": {
-    "feature1": {
-      "title": "沉浸式的现代界面",
-      "content": "精心设计的用户界面，提供流畅、直观的交互体验。支持多种亚克力效果，让你的音乐之旅赏心悦目。多项自定义设置，打造你专属的音乐播放器。"
+  "home": {
+    "hero": {
+      "eyebrow": "为音乐而生的桌面播放器",
+      "title": "原音HQ播放器",
+      "subtitle": "释放你的音乐灵魂。一款为现代简洁而生的本地音乐播放器，带来极致的沉浸式聆听体验。",
+      "cta_primary": "前往 Microsoft Store",
+      "cta_secondary": "在 GitHub 查看",
+      "scroll": "向下滚动"
     },
-    "feature2": {
-      "title": "掌控你的音乐库",
-      "content": "自动扫描并管理你的本地音乐文件。轻松按专辑、艺术家或文件夹浏览，支持创建导入导出自定义播放列表，还能进行元数据编辑，自动匹配歌词和歌曲封面。"
+    "meta": {
+      "formats": "音频格式",
+      "audio": "ASIO · WASAPI · DSD Raw/DoP"
     },
-    "feature3": {
-      "title": "极致音质体验",
-      "content": "支持包括 flac,wav,mp3,dsf,ape,m4a,wmv,aiff,oga 等多种音频格式，搭配均衡器和wasapi独占模式，还原音乐最本真的细节。"
+    "showcase": {
+      "window_title": "原音HQ播放器",
+      "badge1": "微软商店上架",
+      "badge3": "极速体验"
     },
-    "feature4": {
-      "title": "Walkman 伴侣",
-      "content": "轻松将你的音乐转换为 WAV、MP3、FLAC 等格式，并方便地通过 USB 连同同步好的歌词文件一同传输到你的 Walkman 上，让你的随身听体验更上一层楼。"
+    "features": {
+      "eyebrow": "核心特性",
+      "title": "为聆听而生",
+      "subtitle": "四大核心能力，覆盖本地音乐播放的完整需求。"
+    },
+    "spectrum": {
+      "eyebrow": "配套工具",
+      "title": "音频可视化",
+      "content": "频谱分析与丰富的动态视觉效果完美融合。支持实时音频数据处理，让音乐不仅仅是听觉的盛宴，更是视觉的艺术体验。",
+      "feat1_title": "实时频谱",
+      "feat1_desc": "基于系统音频流的实时频谱分析",
+      "feat2_title": "多款预设",
+      "feat2_desc": "内置多种视觉效果，一键切换",
+      "feat3_title": "低占用",
+      "feat3_desc": "基于 DirectX 硬件加速",
+      "cta_primary": "下载可视化工具",
+      "cta_secondary": "了解更多"
     }
   },
-  "download": {
-    "title": "音频可视化",
-    "content": "频谱分析与丰富的动态视觉效果完美融合。支持实时音频数据处理,让音乐不仅仅是听觉的盛宴，更是视觉的艺术体验。"
+  "guide": {
+    "eyebrow": "使用手册",
+    "title": "用户指南",
+    "intro": "完整覆盖原音HQ播放器的全部设置项与功能。无论你是首次安装还是深度玩家，都能在这里找到你需要的信息。",
+    "stat": {
+      "chapters": "章节",
+      "settings": "配置项",
+      "langs": "语言"
+    },
+    "footer_text": "如有未覆盖的问题，请前往 GitHub Issues 反馈，或在「常见问题」中查看更多。",
+    "chapters": {
+      "getting-started": {
+        "title": "快速上手",
+        "intro": "从零开始：系统要求、安装方式、添加音乐库。"
+      },
+      "audio": {
+        "title": "音频设置",
+        "intro": "输出设备、缓冲区、DSD 处理、淡入淡出等音频相关配置。"
+      },
+      "interface": {
+        "title": "界面设置",
+        "intro": "应用启动时默认显示的入口与音乐浏览视图。"
+      },
+      "advanced": {
+        "title": "高级选项",
+        "intro": "文件夹监听、内存释放、窗口位置重置等高级行为。"
+      },
+      "shortcuts": {
+        "title": "快捷键",
+        "intro": "可自定义的全局快捷键，支持应用未获焦时响应。"
+      },
+      "cover": {
+        "title": "封面与背景",
+        "intro": "封面尺寸、缓存、自动匹配、着色器背景、特效与调色算法。"
+      },
+      "lyrics": {
+        "title": "歌词显示",
+        "intro": "字体、字号、对齐、边距、动效效果、目标帧率与颜色。"
+      },
+      "appearance": {
+        "title": "外观主题",
+        "intro": "窗口背景材质、应用主题与封面取色。"
+      },
+      "close-button": {
+        "title": "关闭按钮",
+        "intro": "点击窗口关闭按钮时的行为。"
+      }
+    }
   },
-  "footer": "© 2025 Sennpei Studio All Rights Reserved."
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "常见问题",
+    "subtitle": "收集了用户最常遇到的问题与解决方案。如果你在这里没有找到答案，欢迎前往 GitHub Issues 反馈。",
+    "stat": {
+      "questions": "问题",
+      "steps": "解决步骤"
+    },
+    "references": "相关链接",
+    "sidebar": {
+      "title": "仍然需要帮助？",
+      "text": "详细的使用文档涵盖了播放器的全部设置项；常见问题没有覆盖的问题，欢迎提交 Issue。",
+      "guide": "查看完整使用文档",
+      "issue": "提交 GitHub Issue"
+    }
+  },
+  "visualization": {
+    "eyebrow": "Spectrum Visualization",
+    "title": "音频可视化",
+    "subtitle": "频谱分析与丰富动态视觉效果的完美融合，让音乐成为听觉与视觉的双重艺术体验。",
+    "cta_primary": "前往 Microsoft Store",
+    "cta_secondary": "在 GitHub 查看",
+    "features": {
+      "title": "特性一览",
+      "f1": {
+        "title": "实时频谱分析",
+        "desc": "基于系统音频流的实时 FFT 分析，提供流畅的频谱可视化效果。"
+      },
+      "f2": {
+        "title": "高性能渲染",
+        "desc": "采用 DirectX 11 / Direct2D 硬件加速渲染，低 CPU 占用。"
+      },
+      "f3": {
+        "title": "多种视觉风格",
+        "desc": "内置多种视觉预设，包括频谱条、波形、粒子等风格。"
+      },
+      "f4": {
+        "title": "轻量独立",
+        "desc": "独立运行的桌面应用，不依赖主播放器，可单独使用。"
+      }
+    }
+  },
+  "footer": {
+    "tagline": "为现代聆听而生的本地音乐播放器。沉浸式界面、极致音质、高度可定制。",
+    "rights": "保留所有权利",
+    "col": {
+      "product": "产品",
+      "resource": "资源",
+      "legal": "法律",
+      "social": "社区"
+    },
+    "product": {
+      "main": "原音HQ播放器",
+      "vis": "音频可视化工具"
+    },
+    "resource": {
+      "guide": "用户指南",
+      "faq": "常见问题",
+      "gh": "GitHub 仓库"
+    },
+    "legal": {
+      "policy": "项目政策"
+    }
+  }
 }
