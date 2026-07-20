@@ -112,7 +112,7 @@ function render() {
 function resize() {
   if (!gl || !canvasRef.value) return
   const canvas = canvasRef.value
-  const dpr = window.devicePixelRatio || 1
+  const dpr = Math.min(window.devicePixelRatio || 1, 1.4)
   const w = canvas.clientWidth * dpr
   const h = canvas.clientHeight * dpr
   if (canvas.width !== w || canvas.height !== h) {

@@ -14,7 +14,7 @@ out vec4 fragColor;
 #define MIN_DIST .04
 #define MAX_DIST 40.
 #define MAX_DRAWS 40
-#define AA 2
+#define AA 1
 #define M_PI 3.1415926535897932384626433832795
 
 float hash12(vec2 p)
@@ -70,9 +70,9 @@ float get_dust(vec2 p, vec2 size, float f)
         pow(.64+.46*cos(p.x*6.28), 1.7)*
         f*
     (
-        get_stars(.1*pp+iTime*vec2(20.,-10.1),.11,.71)*4. + 
-        get_stars(.2*pp+iTime*vec2(30.,-10.1),.1,.31)*5. + 
-        get_stars(.32*pp+iTime*vec2(40.,-10.1),.1,.91)*2.
+        get_stars(.1*pp+iTime*vec2(20.,10.1),.11,.71)*4. +
+        get_stars(.2*pp+iTime*vec2(30.,10.1),.1,.31)*5. +
+        get_stars(.32*pp+iTime*vec2(40.,10.1),.1,.91)*2.
     );
 }
 
