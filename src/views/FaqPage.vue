@@ -10,7 +10,7 @@ const openId = ref<number | null>(1);
 
 const items = computed(() =>
   faqData
-    .filter((item) => item.id !== 7 || locale.value === 'zh')
+    .filter((item) => item.id !== 9 || locale.value === 'zh')
     .map((item) => ({
     ...item,
     question: locale.value === 'en' ? item.questionEn : item.question,

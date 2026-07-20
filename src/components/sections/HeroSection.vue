@@ -164,7 +164,7 @@ onMounted(() => {
 .hero-title {
   font-size: clamp(48px, 8vw, 96px);
   font-weight: 800;
-  line-height: 1.05;
+  line-height: 1.2;
   letter-spacing: -0.04em;
   color: var(--text-primary);
   margin: 0;
@@ -182,6 +182,7 @@ onMounted(() => {
   opacity: 0;
   transform: translateY(20px);
   animation: char-rise 0.6s var(--ease-out) forwards;
+  padding-bottom: 10px;
 }
 
 @keyframes char-rise {

@@ -150,16 +150,6 @@ export const faqData: FaqItem[] = [
   },
   {
     id: 8,
-    question: '有交流讨论群吗？',
-    questionEn: 'QQ discussion groups (Chinese users)',
-    steps: [
-      '欢迎加入 QQ 群 1：1009034363',
-      '若群 1 已满，请加 QQ 群 2：1033738779'
-    ],
-    stepsEn: []
-  },
-  {
-    id: 9,
     question: '如何联系开发者？',
     questionEn: 'How to contact the developer?',
     steps: [
@@ -171,5 +161,15 @@ export const faqData: FaqItem[] = [
     links: [
       { label: '邮件联系', labelEn: 'Contact via Email', url: 'mailto:dannypan9709@foxmail.com' }
     ]
+  },
+  {
+    id: 9,
+    question: '有交流讨论群吗？',
+    questionEn: 'QQ discussion groups (Chinese users)',
+    steps: [
+      '欢迎加入 QQ 群 1：1009034363',
+      '若群 1 已满，请加 QQ 群 2：1033738779'
+    ],
+    stepsEn: []
   }
 ];
