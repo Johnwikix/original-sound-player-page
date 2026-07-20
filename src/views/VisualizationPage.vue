@@ -45,7 +45,14 @@ const { t } = useI18n();
       <section class="viz-showcase">
         <div class="viz-container">
           <div class="viz-image-frame">
-            <img :src="visualizationImage" :alt="t('visualization.title')" />
+            <img
+              :src="visualizationImage"
+              :alt="t('visualization.title')"
+              width="1280"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
 
           <div class="viz-features">
@@ -107,7 +114,10 @@ const { t } = useI18n();
 
 .viz-hero {
   position: relative;
-  padding: calc(var(--header-height) + var(--space-8)) var(--space-6) var(--space-8);
+  padding:
+    calc(env(safe-area-inset-top, 0px) + var(--header-height) + var(--space-8))
+    var(--space-6)
+    var(--space-8);
   overflow: hidden;
   border-bottom: 1px solid var(--border-subtle);
 }
@@ -116,6 +126,7 @@ const { t } = useI18n();
   position: absolute;
   inset: 0;
   z-index: 0;
+  pointer-events: none;
 }
 
 .viz-blob {
@@ -141,6 +152,25 @@ const { t } = useI18n();
   left: -100px;
 }
 
+@media (max-width: 720px) {
+  .viz-blob {
+    filter: blur(80px);
+    opacity: 0.3;
+  }
+  .viz-blob-1 {
+    width: 360px;
+    height: 360px;
+    top: -120px;
+    right: -80px;
+  }
+  .viz-blob-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -120px;
+    left: -60px;
+  }
+}
+
 .viz-hero-inner {
   position: relative;
   z-index: 1;
@@ -159,7 +189,7 @@ const { t } = useI18n();
 }
 
 .viz-title {
-  font-size: clamp(40px, 6vw, 80px);
+  font-size: clamp(32px, 6vw, 80px);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.03em;
@@ -169,6 +199,8 @@ const { t } = useI18n();
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-wrap: balance;
+  word-break: break-word;
 }
 
 .viz-subtitle {
@@ -214,11 +246,14 @@ const { t } = useI18n();
     0 0 80px rgba(6, 182, 212, 0.15),
     0 30px 80px rgba(0, 0, 0, 0.5);
   margin-bottom: var(--space-8);
+  aspect-ratio: 16 / 9;
 }
 
 .viz-image-frame img {
   width: 100%;
+  height: 100%;
   display: block;
+  object-fit: cover;
 }
 
 .viz-section-title {
@@ -277,6 +312,21 @@ const { t } = useI18n();
 @media (max-width: 720px) {
   .viz-feature-grid {
     grid-template-columns: 1fr;
+  }
+  .viz-hero,
+  .viz-showcase {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+  .viz-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .viz-actions :deep(.glow-button) {
+    width: 100%;
+  }
+  .viz-bars-wrap {
+    padding: var(--space-3);
   }
 }
 </style>

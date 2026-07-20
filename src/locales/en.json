@@ -8,7 +8,11 @@
     "faq": "FAQ",
     "visualization": "Visualization",
     "download": "Download",
-    "lang": "Switch language"
+    "lang": "Switch language",
+    "open_menu": "Open navigation menu",
+    "close_menu": "Close navigation menu",
+    "menu_label": "Navigation",
+    "skip": "Skip to main content"
   },
   "home": {
     "hero": {

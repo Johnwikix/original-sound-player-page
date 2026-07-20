@@ -7,22 +7,32 @@ import { heroFragmentSource } from './shaders/hero';
 
 const { t, locale } = useI18n();
 const title = ref<HTMLElement | null>(null);
+const reducedMotion = ref(false);
 
 const titleChars = computed(() => {
   const text = t('home.hero.title');
   return text.split('');
 });
 
+const charDelay = computed(() =>
+  reducedMotion.value ? 0 : Math.min(0.04, 0.6 / Math.max(titleChars.value.length, 1))
+);
+
 onMounted(() => {
   if (title.value) {
     title.value.classList.add('animate-in');
   }
+  const mql = window.matchMedia('(prefers-reduced-motion: reduce)');
+  reducedMotion.value = mql.matches;
+  mql.addEventListener('change', (ev) => {
+    reducedMotion.value = ev.matches;
+  });
 });
 </script>
 
 <template>
   <section class="hero-section">
-    <div class="hero-bg">
+    <div class="hero-bg" aria-hidden="true">
       <ShaderBackground :fragment-source="heroFragmentSource" />
     </div>
 
@@ -35,10 +45,10 @@ onMounted(() => {
       <h1 class="hero-title" ref="title">
         <span
           v-for="(char, index) in titleChars"
-          :key="index"
+          :key="`${locale}-${index}`"
           class="title-char"
-          :style="{ animationDelay: `${index * 0.04}s` }"
-        >{{ char === ' ' ? ' ' : char }}</span>
+          :style="{ animationDelay: `${index * charDelay}s` }"
+        >{{ char === ' ' ? ' ' : char }}</span>
       </h1>
 
       <p class="hero-subtitle">{{ t('home.hero.subtitle') }}</p>
@@ -48,7 +58,7 @@ onMounted(() => {
           href="https://apps.microsoft.com/detail/9nfw1rppt999?referrer=appbadge&mode=direct"
           variant="primary"
         >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
             <polyline points="7 10 12 15 17 10" />
             <line x1="12" y1="15" x2="12" y2="3" />
@@ -59,8 +69,9 @@ onMounted(() => {
         <GlowButton
           href="https://github.com/Johnwikix/original-sound-hq-player"
           variant="secondary"
+          rel="noopener"
         >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z"/>
           </svg>
           {{ t('home.hero.cta_secondary') }}
@@ -69,25 +80,25 @@ onMounted(() => {
 
       <div class="hero-meta">
         <span class="meta-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <rect x="2" y="3" width="20" height="14" rx="2" />
             <line x1="8" y1="21" x2="16" y2="21" />
             <line x1="12" y1="17" x2="12" y2="21" />
           </svg>
           WinUI 3
         </span>
-        <span class="meta-divider">·</span>
+        <span class="meta-divider" aria-hidden="true">·</span>
         <span class="meta-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M9 18V5l12-2v13" />
             <circle cx="6" cy="18" r="3" />
             <circle cx="18" cy="16" r="3" />
           </svg>
           10+ {{ t('home.meta.formats') }}
         </span>
-        <span class="meta-divider">·</span>
+        <span class="meta-divider" aria-hidden="true">·</span>
         <span class="meta-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <rect x="3" y="11" width="18" height="11" rx="2" />
             <path d="M7 11V7a5 5 0 0 1 10 0v4" />
           </svg>
@@ -106,20 +117,30 @@ onMounted(() => {
 <style scoped>
 .hero-section {
   position: relative;
-  min-height: 100vh;
+  min-height: 100dvh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-9) var(--space-6);
+  padding:
+    calc(env(safe-area-inset-top, 0px) + var(--header-height) + var(--space-7))
+    var(--space-6)
+    calc(env(safe-area-inset-bottom, 0px) + var(--space-7));
   overflow: hidden;
+}
+
+@supports not (height: 100dvh) {
+  .hero-section {
+    min-height: 100vh;
+  }
 }
 
 .hero-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
+  pointer-events: none;
 }
-
 
 .hero-content {
   position: relative;
@@ -130,6 +151,7 @@ onMounted(() => {
   flex-direction: column;
   align-items: center;
   gap: var(--space-5);
+  width: 100%;
 }
 
 .hero-eyebrow {
@@ -162,7 +184,7 @@ onMounted(() => {
 }
 
 .hero-title {
-  font-size: clamp(48px, 8vw, 96px);
+  font-size: clamp(36px, 8vw, 96px);
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.04em;
@@ -171,10 +193,12 @@ onMounted(() => {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  text-wrap: balance;
   background: linear-gradient(180deg, #ffffff 0%, #c9d1d9 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  word-break: break-word;
 }
 
 .title-char {
@@ -192,12 +216,21 @@ onMounted(() => {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .title-char {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .hero-subtitle {
-  font-size: clamp(16px, 1.4vw, 20px);
+  font-size: clamp(15px, 1.4vw, 20px);
   line-height: 1.6;
   color: var(--text-secondary);
   max-width: 640px;
   margin: 0;
+  text-wrap: pretty;
 }
 
 .hero-cta {
@@ -223,6 +256,7 @@ onMounted(() => {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
+  white-space: nowrap;
 }
 
 .meta-divider {
@@ -231,7 +265,7 @@ onMounted(() => {
 
 .scroll-indicator {
   position: absolute;
-  bottom: var(--space-6);
+  bottom: calc(env(safe-area-inset-bottom, 0px) + var(--space-6));
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -272,9 +306,17 @@ onMounted(() => {
   100% { transform: translateY(200%); }
 }
 
+@media (max-width: 768px) {
+  .hero-meta {
+    font-size: 12px;
+    gap: var(--space-2);
+  }
+}
+
 @media (max-width: 640px) {
   .hero-section {
-    padding: var(--space-8) var(--space-4);
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
   }
 
   .hero-cta {
@@ -284,6 +326,18 @@ onMounted(() => {
 
   .hero-cta :deep(.glow-button) {
     width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-meta {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .meta-divider {
+    display: none;
   }
 }
 </style>

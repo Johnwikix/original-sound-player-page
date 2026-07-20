@@ -23,6 +23,8 @@ let animFrameId = 0
 let startTime = 0
 let frameCount = 0
 let vao: WebGLVertexArrayObject | null = null
+let reducedMotion = false
+let mql: MediaQueryList | null = null
 
 function compileShader(type: number, source: string): WebGLShader | null {
   if (!gl) return null
@@ -146,7 +148,15 @@ function init() {
   startTime = performance.now()
   frameCount = 0
   resize()
-  render()
+  if (!reducedMotion) {
+    render()
+  } else {
+    render()
+    if (animFrameId) {
+      cancelAnimationFrame(animFrameId)
+      animFrameId = 0
+    }
+  }
 }
 
 function cleanup() {
@@ -167,7 +177,7 @@ function cleanup() {
 
 function onVisibilityChange() {
   if (!gl || !program || !vao) return
-  if (document.hidden) {
+  if (document.hidden || reducedMotion) {
     if (animFrameId) {
       cancelAnimationFrame(animFrameId)
       animFrameId = 0
@@ -179,7 +189,24 @@ function onVisibilityChange() {
   }
 }
 
+function onMotionChange(ev: MediaQueryListEvent) {
+  reducedMotion = ev.matches
+  if (reducedMotion) {
+    if (animFrameId) {
+      cancelAnimationFrame(animFrameId)
+      animFrameId = 0
+    }
+  } else if (!document.hidden) {
+    if (!animFrameId) {
+      render()
+    }
+  }
+}
+
 onMounted(() => {
+  mql = window.matchMedia('(prefers-reduced-motion: reduce)')
+  reducedMotion = mql.matches
+  mql.addEventListener('change', onMotionChange)
   init()
   resizeObserver = new ResizeObserver(resize)
   if (canvasRef.value) {
@@ -195,6 +222,9 @@ onUnmounted(() => {
     resizeObserver = null
   }
   document.removeEventListener('visibilitychange', onVisibilityChange)
+  if (mql) {
+    mql.removeEventListener('change', onMotionChange)
+  }
 })
 
 watch(() => props.fragmentSource, () => {
@@ -204,7 +234,7 @@ watch(() => props.fragmentSource, () => {
 </script>
 
 <template>
-  <canvas ref="canvasRef" class="shader-canvas" />
+  <canvas ref="canvasRef" class="shader-canvas" aria-hidden="true" />
 </template>
 
 <style scoped>
@@ -212,5 +242,12 @@ watch(() => props.fragmentSource, () => {
   display: block;
   width: 100%;
   height: 100%;
+  contain: strict;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shader-canvas {
+    display: none;
+  }
 }
 </style>

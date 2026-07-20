@@ -65,7 +65,14 @@ const { t } = useI18n();
         <div class="spectrum-visual">
           <div class="visual-card">
             <div class="visual-image-wrapper">
-              <img :src="visualizationImage" :alt="t('home.spectrum.title')" loading="lazy" />
+              <img
+                :src="visualizationImage"
+                :alt="t('home.spectrum.title')"
+                width="1280"
+                height="800"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div class="visual-spectrogram">
               <SpectrumBars :bars="48" :height="64" />
@@ -137,12 +144,14 @@ const { t } = useI18n();
 }
 
 .section-title {
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(28px, 4vw, 48px);
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.03em;
   color: var(--text-primary);
   margin: 0 0 var(--space-4);
+  text-wrap: balance;
+  word-break: break-word;
 }
 
 .section-description {
@@ -231,6 +240,35 @@ const { t } = useI18n();
 @media (max-width: 900px) {
   .spectrum-grid {
     grid-template-columns: 1fr;
+  }
+  .spectrum-section {
+    padding: var(--space-8) var(--space-4);
+  }
+  .spectrum-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .spectrum-actions :deep(.glow-button) {
+    width: 100%;
+  }
+}
+
+@media (max-width: 720px) {
+  .spectrum-blob {
+    filter: blur(70px);
+    opacity: 0.25;
+  }
+  .spectrum-blob-1 {
+    width: 360px;
+    height: 360px;
+    top: -120px;
+    right: -120px;
+  }
+  .spectrum-blob-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -120px;
+    left: -80px;
   }
 }
 </style>

@@ -11,9 +11,13 @@ const { t } = useI18n();
         <img
           src="https://store-images.s-microsoft.com/image/apps.35883.13587170393988356.9cd84e64-f1af-4f6c-9b56-2ffe0193367b.403829cc-e424-428f-8e09-5d19de04b034"
           :alt="t('home.showcase.window_title')"
+          width="1280"
+          height="800"
           loading="lazy"
+          decoding="async"
+          fetchpriority="low"
         />
-        <div class="screenshot-glow"></div>
+        <div class="screenshot-glow" aria-hidden="true"></div>
       </div>
 
       <div class="showcase-badges">
@@ -48,6 +52,12 @@ const { t } = useI18n();
   position: relative;
 }
 
+@media (max-width: 640px) {
+  .showcase-section {
+    padding: var(--space-8) var(--space-4);
+  }
+}
+
 .showcase-container {
   max-width: 1100px;
   margin: 0 auto;
@@ -63,15 +73,20 @@ const { t } = useI18n();
     0 0 80px rgba(131, 54, 230, 0.12),
     0 30px 80px rgba(0, 0, 0, 0.5);
   transition: transform var(--duration-base) var(--ease-out);
+  aspect-ratio: 16 / 10;
 }
 
-.screenshot-frame:hover {
-  transform: translateY(-4px);
+@media (hover: hover) {
+  .screenshot-frame:hover {
+    transform: translateY(-4px);
+  }
 }
 
 .screenshot-frame img {
   width: 100%;
+  height: 100%;
   display: block;
+  object-fit: cover;
 }
 
 .screenshot-glow {

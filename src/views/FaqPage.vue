@@ -58,17 +58,29 @@ const toggle = (id: number) => {
             class="faq-item"
             :class="{ open: openId === item.id }"
           >
-            <button class="faq-trigger" @click="toggle(item.id)">
+            <button
+              class="faq-trigger"
+              @click="toggle(item.id)"
+              :aria-expanded="openId === item.id"
+              :aria-controls="`faq-body-${item.id}`"
+              :id="`faq-trigger-${item.id}`"
+            >
               <span class="faq-number">Q{{ item.id }}</span>
               <span class="faq-question">{{ item.question }}</span>
-              <span class="faq-icon">
+              <span class="faq-icon" aria-hidden="true">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <polyline points="6 9 12 15 18 9" />
                 </svg>
               </span>
             </button>
 
-            <div v-show="openId === item.id" class="faq-body">
+            <div
+              v-show="openId === item.id"
+              class="faq-body"
+              :id="`faq-body-${item.id}`"
+              role="region"
+              :aria-labelledby="`faq-trigger-${item.id}`"
+            >
               <div class="faq-body-inner">
                 <ol class="faq-steps">
                   <li v-for="(step, idx) in item.steps" :key="idx">{{ step }}</li>
@@ -82,10 +94,10 @@ const toggle = (id: number) => {
                       :key="link.url"
                       :href="link.url"
                       target="_blank"
-                      rel="nofollow"
+                      rel="nofollow noopener noreferrer"
                       class="faq-link"
                     >
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                         <polyline points="15 3 21 3 21 9" />
                         <line x1="10" y1="14" x2="21" y2="3" />
@@ -110,7 +122,7 @@ const toggle = (id: number) => {
               <a
                 href="https://github.com/Johnwikix/original-sound-hq-player/issues"
                 target="_blank"
-                rel="nofollow"
+                rel="nofollow noopener noreferrer"
                 class="sidebar-link"
               >
                 {{ t('faq.sidebar.issue') }} →
@@ -129,7 +141,10 @@ const toggle = (id: number) => {
 }
 
 .faq-hero {
-  padding: calc(var(--header-height) + var(--space-8)) var(--space-6) var(--space-7);
+  padding:
+    calc(env(safe-area-inset-top, 0px) + var(--header-height) + var(--space-8))
+    var(--space-6)
+    var(--space-7);
   border-bottom: 1px solid var(--border-subtle);
   position: relative;
   overflow: hidden;
@@ -247,6 +262,13 @@ const toggle = (id: number) => {
   text-align: left;
   cursor: pointer;
   font-family: inherit;
+  min-height: 56px;
+  color: var(--text-primary);
+}
+
+.faq-trigger:hover .faq-question,
+.faq-trigger:focus-visible .faq-question {
+  color: var(--accent);
 }
 
 .faq-number {
@@ -262,9 +284,11 @@ const toggle = (id: number) => {
 
 .faq-question {
   flex: 1;
+  min-width: 0;
   font-size: 16px;
   font-weight: 600;
   color: var(--text-primary);
+  word-break: break-word;
 }
 
 .faq-icon {
@@ -357,7 +381,7 @@ const toggle = (id: number) => {
 
 .faq-sidebar {
   position: sticky;
-  top: calc(var(--header-height) + var(--space-5));
+  top: calc(env(safe-area-inset-top, 0px) + var(--header-height) + var(--space-5));
   align-self: flex-start;
 }
 
@@ -398,12 +422,37 @@ const toggle = (id: number) => {
   color: var(--accent);
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1100px) {
   .faq-content {
     grid-template-columns: 1fr;
   }
   .faq-sidebar {
     position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .faq-hero {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+  .faq-content {
+    padding: var(--space-6) var(--space-4);
+  }
+  .faq-trigger {
+    padding: var(--space-4);
+    gap: var(--space-3);
+  }
+  .faq-question {
+    font-size: 15px;
+  }
+  .faq-steps li {
+    padding-left: var(--space-6);
+  }
+  .faq-link,
+  .sidebar-link {
+    min-height: 44px;
+    padding: var(--space-2) 0;
   }
 }
 </style>

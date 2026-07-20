@@ -4,5 +4,11 @@
   margin: 0;
   padding: 0;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+@supports not (height: 100dvh) {
+  #app {
+    min-height: 100vh;
+  }
 }

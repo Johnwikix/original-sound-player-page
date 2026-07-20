@@ -39,7 +39,14 @@ const features = computed(() =>
 
           <div class="feature-visual">
             <div class="feature-image-frame">
-              <img :src="feature.image" :alt="feature.title" loading="lazy" />
+              <img
+                :src="feature.image"
+                :alt="feature.title"
+                width="1280"
+                height="800"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </div>
         </div>
@@ -75,12 +82,14 @@ const features = computed(() =>
 }
 
 .section-title {
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(28px, 4vw, 48px);
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.03em;
   color: var(--text-primary);
   margin: 0 0 var(--space-4);
+  text-wrap: balance;
+  word-break: break-word;
 }
 
 .section-subtitle {
@@ -174,10 +183,13 @@ const features = computed(() =>
   border: 1px solid var(--border-default);
   box-shadow: var(--shadow-lg);
   transition: transform var(--duration-base) var(--ease-out);
+  aspect-ratio: 16 / 10;
 }
 
-.feature-image-frame:hover {
-  transform: translateY(-4px);
+@media (hover: hover) {
+  .feature-image-frame:hover {
+    transform: translateY(-4px);
+  }
 }
 
 .feature-image-frame::before {
@@ -191,7 +203,9 @@ const features = computed(() =>
 
 .feature-image-frame img {
   width: 100%;
+  height: 100%;
   display: block;
+  object-fit: cover;
 }
 
 .feature-amber .feature-image-frame {
@@ -219,6 +233,12 @@ const features = computed(() =>
   }
   .feature-row.reverse {
     direction: ltr;
+  }
+  .features-section {
+    padding: var(--space-8) var(--space-4);
+  }
+  .features-list {
+    gap: var(--space-7);
   }
 }
 </style>

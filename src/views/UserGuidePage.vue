@@ -111,7 +111,10 @@ watch(locale, () => {
 
 .guide-hero {
   position: relative;
-  padding: calc(var(--header-height) + var(--space-8)) var(--space-6) var(--space-8);
+  padding:
+    calc(env(safe-area-inset-top, 0px) + var(--header-height) + var(--space-8))
+    var(--space-6)
+    var(--space-8);
   border-bottom: 1px solid var(--border-subtle);
   overflow: hidden;
 }
@@ -141,12 +144,14 @@ watch(locale, () => {
 }
 
 .guide-title {
-  font-size: clamp(36px, 5vw, 64px);
+  font-size: clamp(28px, 5vw, 64px);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.03em;
   color: var(--text-primary);
   margin: 0 0 var(--space-4);
+  text-wrap: balance;
+  word-break: break-word;
 }
 
 .guide-intro {
@@ -214,6 +219,16 @@ watch(locale, () => {
   padding-bottom: var(--space-5);
   margin-bottom: var(--space-6);
   border-bottom: 1px solid var(--border-subtle);
+}
+
+.chapter-header > div:last-child {
+  min-width: 0;
+}
+
+.chapter-title,
+.chapter-intro {
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .chapter-number {
@@ -286,6 +301,22 @@ watch(locale, () => {
   .guide-stats {
     flex-wrap: wrap;
     gap: var(--space-5);
+  }
+}
+
+@media (max-width: 640px) {
+  .guide-hero {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+  .guide-content {
+    padding: var(--space-6) var(--space-4);
+  }
+  .chapter-header {
+    gap: var(--space-3);
+  }
+  .chapter-title {
+    font-size: clamp(22px, 7vw, 30px);
   }
 }
 </style>

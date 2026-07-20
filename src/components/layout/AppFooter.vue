@@ -84,7 +84,7 @@ const socialLinks = computed(() => [
           <h4 class="footer-title">{{ t('footer.col.social') }}</h4>
           <ul class="footer-list">
             <li v-for="link in socialLinks" :key="link.key">
-              <a :href="link.href" rel="nofollow" target="_blank">{{ link.label }}</a>
+              <a :href="link.href" rel="nofollow noopener noreferrer" target="_blank">{{ link.label }}</a>
             </li>
           </ul>
         </div>
@@ -101,7 +101,9 @@ const socialLinks = computed(() => [
 .app-footer {
   background: linear-gradient(180deg, var(--bg-base) 0%, #020203 100%);
   border-top: 1px solid var(--border-subtle);
-  padding: var(--space-8) 0 var(--space-5);
+  padding:
+    var(--space-8) 0
+    calc(env(safe-area-inset-bottom, 0px) + var(--space-5));
   margin-top: var(--space-9);
 }
 
@@ -160,16 +162,20 @@ const socialLinks = computed(() => [
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-2);
 }
 
 .footer-list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
   font-size: 13px;
   color: var(--text-muted);
   transition: color var(--duration-fast) var(--ease-out);
 }
 
-.footer-list a:hover {
+.footer-list a:hover,
+.footer-list a:focus-visible {
   color: var(--accent);
 }
 
@@ -194,6 +200,12 @@ const socialLinks = computed(() => [
 @media (max-width: 480px) {
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+  .footer-inner {
+    padding: 0 var(--space-4);
+  }
+  .footer-list a {
+    min-height: 44px;
   }
 }
 </style>

@@ -6,7 +6,7 @@ import AppFooter from './AppFooter.vue';
 <template>
   <div class="page-layout">
     <AppHeader />
-    <main class="page-main">
+    <main id="main-content" class="page-main" tabindex="-1">
       <slot />
     </main>
     <AppFooter />
@@ -15,13 +15,23 @@ import AppFooter from './AppFooter.vue';
 
 <style scoped>
 .page-layout {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
+}
+
+@supports not (height: 100dvh) {
+  .page-layout {
+    min-height: 100vh;
+  }
 }
 
 .page-main {
   flex: 1;
   width: 100%;
+}
+
+.page-main:focus {
+  outline: none;
 }
 </style>
