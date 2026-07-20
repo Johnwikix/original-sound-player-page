@@ -2,6 +2,8 @@
 import { computed, onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import GlowButton from '../ui/GlowButton.vue';
+import ShaderBackground from './ShaderBackground.vue';
+import { heroFragmentSource } from './shaders/hero';
 
 const { t, locale } = useI18n();
 const title = ref<HTMLElement | null>(null);
@@ -21,10 +23,7 @@ onMounted(() => {
 <template>
   <section class="hero-section">
     <div class="hero-bg">
-      <div class="gradient-mesh"></div>
-      <div class="grid-overlay"></div>
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
+      <ShaderBackground :fragment-source="heroFragmentSource" />
     </div>
 
     <div class="hero-content">
@@ -121,65 +120,6 @@ onMounted(() => {
   z-index: 0;
 }
 
-.gradient-mesh {
-  position: absolute;
-  inset: -20%;
-  background:
-    radial-gradient(at 20% 30%, rgba(131, 54, 230, 0.15) 0px, transparent 50%),
-    radial-gradient(at 80% 20%, rgba(6, 182, 212, 0.12) 0px, transparent 50%),
-    radial-gradient(at 60% 70%, rgba(167, 139, 250, 0.1) 0px, transparent 50%);
-  animation: mesh-drift 20s ease-in-out infinite alternate;
-}
-
-@keyframes mesh-drift {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  100% {
-    transform: translate(5%, -3%) rotate(8deg);
-  }
-}
-
-.grid-overlay {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
-}
-
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.4;
-  animation: orb-float 12s ease-in-out infinite;
-}
-
-.orb-1 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, var(--accent), transparent 70%);
-  top: 10%;
-  left: -10%;
-}
-
-.orb-2 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, var(--accent-2), transparent 70%);
-  bottom: 10%;
-  right: -10%;
-  animation-delay: -4s;
-}
-
-@keyframes orb-float {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(30px, -40px); }
-}
 
 .hero-content {
   position: relative;
