@@ -130,7 +130,7 @@ const features = computed(() =>
 
 .feature-amber .feature-number {
   color: var(--accent);
-  border-color: rgba(124, 58, 237, 0.4);
+  border-color: rgba(131, 54, 230, 0.4);
   background: var(--accent-soft);
 }
 
@@ -144,12 +144,6 @@ const features = computed(() =>
   color: var(--accent-violet);
   border-color: rgba(167, 139, 250, 0.4);
   background: rgba(167, 139, 250, 0.1);
-}
-
-.feature-rose .feature-number {
-  color: #f472b6;
-  border-color: rgba(244, 114, 182, 0.4);
-  background: rgba(244, 114, 182, 0.1);
 }
 
 .feature-title {
@@ -190,7 +184,7 @@ const features = computed(() =>
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, transparent, rgba(124, 58, 237, 0.04));
+  background: linear-gradient(135deg, transparent, rgba(131, 54, 230, 0.04));
   pointer-events: none;
   z-index: 1;
 }
@@ -203,7 +197,7 @@ const features = computed(() =>
 .feature-amber .feature-image-frame {
   box-shadow:
     0 16px 60px rgba(0, 0, 0, 0.5),
-    0 0 80px rgba(124, 58, 237, 0.15);
+    0 0 80px rgba(131, 54, 230, 0.15);
 }
 
 .feature-cyan .feature-image-frame {
@@ -216,12 +210,6 @@ const features = computed(() =>
   box-shadow:
     0 16px 60px rgba(0, 0, 0, 0.5),
     0 0 80px rgba(167, 139, 250, 0.15);
-}
-
-.feature-rose .feature-image-frame {
-  box-shadow:
-    0 16px 60px rgba(0, 0, 0, 0.5),
-    0 0 80px rgba(244, 114, 182, 0.15);
 }
 
 @media (max-width: 900px) {

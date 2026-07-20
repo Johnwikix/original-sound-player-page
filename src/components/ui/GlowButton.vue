@@ -71,16 +71,16 @@ defineProps<{
 }
 
 .variant-primary {
-  color: var(--bg-base);
-  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.25);
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(131, 54, 230, 0.25);
 }
 
 .variant-primary .glow-button-bg {
-  background: linear-gradient(135deg, var(--accent), #6d28d9);
+  background: linear-gradient(135deg, var(--accent), #5e1bb8);
 }
 
 .variant-primary:hover {
-  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.4);
+  box-shadow: 0 8px 32px rgba(131, 54, 230, 0.4);
 }
 
 .variant-secondary {
@@ -94,7 +94,7 @@ defineProps<{
 
 .variant-secondary:hover {
   border-color: var(--accent);
-  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.15);
+  box-shadow: 0 8px 24px rgba(131, 54, 230, 0.15);
 }
 
 .variant-ghost {

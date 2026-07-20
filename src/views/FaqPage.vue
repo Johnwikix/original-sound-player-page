@@ -233,7 +233,7 @@ const toggle = (id: number) => {
 }
 
 .faq-item.open {
-  border-color: rgba(124, 58, 237, 0.3);
+  border-color: rgba(131, 54, 230, 0.3);
   background: linear-gradient(180deg, var(--bg-elevated), #11111a);
 }
 

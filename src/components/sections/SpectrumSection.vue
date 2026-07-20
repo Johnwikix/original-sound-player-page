@@ -204,7 +204,7 @@ const { t } = useI18n();
   border-radius: var(--r-lg);
   padding: var(--space-3);
   box-shadow:
-    0 0 80px rgba(124, 58, 237, 0.1),
+    0 0 80px rgba(131, 54, 230, 0.1),
     0 30px 80px rgba(0, 0, 0, 0.4);
 }
 

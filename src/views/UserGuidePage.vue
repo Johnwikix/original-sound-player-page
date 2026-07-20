@@ -222,7 +222,7 @@ watch(locale, () => {
   font-weight: 700;
   color: var(--accent);
   padding: var(--space-2) var(--space-3);
-  border: 1px solid rgba(124, 58, 237, 0.3);
+  border: 1px solid rgba(131, 54, 230, 0.3);
   background: var(--accent-soft);
   border-radius: var(--r-sm);
   letter-spacing: 0.05em;

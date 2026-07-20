@@ -129,7 +129,7 @@ const localizedChapters = computed(() =>
 
 .sidebar-item.active {
   background: var(--accent-soft);
-  border-color: rgba(124, 58, 237, 0.3);
+  border-color: rgba(131, 54, 230, 0.3);
 }
 
 .item-number {

@@ -125,7 +125,7 @@ onMounted(() => {
   position: absolute;
   inset: -20%;
   background:
-    radial-gradient(at 20% 30%, rgba(124, 58, 237, 0.15) 0px, transparent 50%),
+    radial-gradient(at 20% 30%, rgba(131, 54, 230, 0.15) 0px, transparent 50%),
     radial-gradient(at 80% 20%, rgba(6, 182, 212, 0.12) 0px, transparent 50%),
     radial-gradient(at 60% 70%, rgba(167, 139, 250, 0.1) 0px, transparent 50%);
   animation: mesh-drift 20s ease-in-out infinite alternate;
@@ -198,7 +198,7 @@ onMounted(() => {
   gap: var(--space-2);
   padding: var(--space-2) var(--space-4);
   background: var(--accent-soft);
-  border: 1px solid rgba(124, 58, 237, 0.3);
+  border: 1px solid rgba(131, 54, 230, 0.3);
   border-radius: var(--r-full);
   font-size: 12px;
   font-weight: 600;

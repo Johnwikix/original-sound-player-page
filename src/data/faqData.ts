@@ -127,6 +127,29 @@ export const faqData: FaqItem[] = [
   },
   {
     id: 7,
+    question: '歌词和翻译显示异常？',
+    questionEn: 'Lyrics and translation display incorrectly?',
+    steps: [
+      '在播放页面右键点击歌曲封面，进入「音乐属性」窗口。',
+      '在底部歌词编辑区域，将原始歌词填写在 Lrc 标签页的文本框中。',
+      '将翻译歌词（与原始 LRC 使用相同的时间戳）填写在「Lrc 翻译」标签页的文本框中。',
+      '点击右侧的 💾 保存按钮。',
+      '如果使用本地 .lrc 文件，翻译文件应命名为 {原文件名}_Translated.lrc，放在同一目录下。',
+      '应用会自动按时间戳匹配原始歌词和翻译，分别显示在主歌词（上方较大）和翻译（下方较小）位置。'
+    ],
+    stepsEn: [
+      'Right-click the album art on the playing page, then select "Music Properties".',
+      'In the lyrics editing section at the bottom, enter the original lyrics in the Lrc tab.',
+      'Enter the translated lyrics (using the same timestamps as the original) in the "Lrc Translation" tab.',
+      'Click the 💾 save button on the right.',
+      'If using local .lrc files, name the translation file {original_filename}_Translated.lrc and place it in the same directory.',
+      'The app automatically matches original and translated lines by timestamp and displays them in two lines (original above, translation below in smaller text).'
+    ],
+    note: '歌词的「翻译文本」需要单独填写在「Lrc 翻译」标签页中，与原始 Lrc 使用相同的时间戳即可自动匹配。',
+    noteEn: 'The translation text must be entered separately in the "Lrc Translation" tab. Use the same timestamps as the original Lrc for automatic matching.'
+  },
+  {
+    id: 8,
     question: '有交流讨论群吗？',
     questionEn: 'QQ discussion groups (Chinese users)',
     steps: [
@@ -136,7 +159,7 @@ export const faqData: FaqItem[] = [
     stepsEn: []
   },
   {
-    id: 8,
+    id: 9,
     question: '如何联系开发者？',
     questionEn: 'How to contact the developer?',
     steps: [

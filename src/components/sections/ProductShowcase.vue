@@ -9,7 +9,7 @@ const { t } = useI18n();
     <div class="showcase-container">
       <div class="screenshot-frame">
         <img
-          src="/app-screenshot.png"
+          src="https://store-images.s-microsoft.com/image/apps.35883.13587170393988356.9cd84e64-f1af-4f6c-9b56-2ffe0193367b.403829cc-e424-428f-8e09-5d19de04b034"
           :alt="t('home.showcase.window_title')"
           loading="lazy"
         />
@@ -60,7 +60,7 @@ const { t } = useI18n();
   background: var(--bg-elevated);
   border: 1px solid var(--border-default);
   box-shadow:
-    0 0 80px rgba(124, 58, 237, 0.12),
+    0 0 80px rgba(131, 54, 230, 0.12),
     0 30px 80px rgba(0, 0, 0, 0.5);
   transition: transform var(--duration-base) var(--ease-out);
 }
@@ -77,7 +77,7 @@ const { t } = useI18n();
 .screenshot-glow {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.06), transparent 50%);
+  background: linear-gradient(135deg, rgba(131, 54, 230, 0.06), transparent 50%);
   pointer-events: none;
 }
 

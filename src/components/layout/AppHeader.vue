@@ -198,8 +198,8 @@ const toggleLocale = () => {
   padding: 0 var(--space-4);
   height: 36px;
   border-radius: var(--r-full);
-  background: linear-gradient(135deg, var(--accent), #6d28d9);
-  color: var(--bg-base);
+  background: linear-gradient(135deg, var(--accent), #5e1bb8);
+  color: #ffffff;
   font-size: 13px;
   font-weight: 600;
   transition: transform var(--duration-fast) var(--ease-out),
@@ -208,7 +208,7 @@ const toggleLocale = () => {
 
 .cta-download:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.35);
+  box-shadow: 0 8px 24px rgba(131, 54, 230, 0.35);
 }
 
 @media (max-width: 768px) {
