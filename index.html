@@ -29,6 +29,15 @@
   <meta name="twitter:description" content="为现代聆听而生的本地音乐播放器。" />
 
   <title>原音HQ播放器 · OriginalSound HQ</title>
+
+  <script>
+    (function() {
+      var hash = location.hash;
+      if (hash.indexOf('#/') === 0) {
+        history.replaceState(null, '', hash.replace('#', ''));
+      }
+    })();
+  </script>
 </head>
 
 <body>
