@@ -127,9 +127,6 @@ export const faqData: FaqItem[] = [
       'Restart the application. The app will start with default settings; all custom preferences will be reset.',
       'If the issue persists, send the log to dannypan9709@foxmail.com.',
     ],
-    links: [
-      { label: '邮件联系', labelEn: 'Contact via Email', url: 'mailto:dannypan9709@foxmail.com' },
-    ],
   },
   {
     id: 7,
@@ -161,9 +158,6 @@ export const faqData: FaqItem[] = [
     questionEn: 'How to contact the developer?',
     steps: ['可通过邮箱 dannypan9709@foxmail.com 反馈问题或建议。'],
     stepsEn: ['Send feedback or suggestions to dannypan9709@foxmail.com.'],
-    links: [
-      { label: '邮件联系', labelEn: 'Contact via Email', url: 'mailto:dannypan9709@foxmail.com' },
-    ],
   },
   {
     id: 9,

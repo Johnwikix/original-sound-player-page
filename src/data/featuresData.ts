@@ -19,9 +19,9 @@ export const featuresData: Feature[] = [
     contentEn:
       'A meticulously designed user interface that provides a fluid and intuitive interaction. Supports multiple acrylic effects to make your music journey visually pleasing. Multiple custom settings to create your exclusive music player.',
     image:
-      'https://store-images.s-microsoft.com/image/apps.27363.13587170393988356.9cd84e64-f1af-4f6c-9b56-2ffe0193367b.b82d1815-3c22-4018-929f-302c2c5ee2b6',
+      'https://store-images.s-microsoft.com/image/apps.37428.13587170393988356.0a486ee0-c00e-471b-87ee-c60857221b6d.b57a0120-daa9-40b6-8658-2c77b769f3fb',
     imageEn:
-      'https://store-images.s-microsoft.com/image/apps.27363.13587170393988356.9cd84e64-f1af-4f6c-9b56-2ffe0193367b.b82d1815-3c22-4018-929f-302c2c5ee2b6',
+      'https://store-images.s-microsoft.com/image/apps.37428.13587170393988356.0a486ee0-c00e-471b-87ee-c60857221b6d.b57a0120-daa9-40b6-8658-2c77b769f3fb',
     accent: 'violet',
   },
   {
@@ -33,9 +33,9 @@ export const featuresData: Feature[] = [
     contentEn:
       'Automatically scan and manage your local music files. Easily browse by album, artist, or folder, and support creating, importing, and exporting custom playlists. You can also edit metadata and automatically match lyrics and album art.',
     image:
-      'https://store-images.s-microsoft.com/image/apps.61090.13587170393988356.9cd84e64-f1af-4f6c-9b56-2ffe0193367b.4b41e520-4cbc-4c3a-814e-c2dfa266bbeb',
+      'https://store-images.s-microsoft.com/image/apps.3479.13587170393988356.0a486ee0-c00e-471b-87ee-c60857221b6d.b377d4f3-52b5-4446-abd1-07ef2f469dd5',
     imageEn:
-      'https://store-images.s-microsoft.com/image/apps.61090.13587170393988356.9cd84e64-f1af-4f6c-9b56-2ffe0193367b.4b41e520-4cbc-4c3a-814e-c2dfa266bbeb',
+      'https://store-images.s-microsoft.com/image/apps.3479.13587170393988356.0a486ee0-c00e-471b-87ee-c60857221b6d.b377d4f3-52b5-4446-abd1-07ef2f469dd5',
     accent: 'cyan',
   },
   {
@@ -47,9 +47,9 @@ export const featuresData: Feature[] = [
     contentEn:
       'Supports various audio formats including FLAC, WAV, MP3, DSF, APE, M4A, WMV, AIFF, OGA, and more. Paired with an equalizer and WASAPI exclusive mode, it restores the most authentic details of the music.',
     image:
-      'https://store-images.s-microsoft.com/image/apps.60735.13587170393988356.9cd84e64-f1af-4f6c-9b56-2ffe0193367b.f9f7b72e-b655-4fb7-8b53-5d6c76f92edf',
+      'https://store-images.s-microsoft.com/image/apps.20203.13587170393988356.0a486ee0-c00e-471b-87ee-c60857221b6d.b229f4c3-63e4-44e6-9bfb-8c5df64e61f5',
     imageEn:
-      'https://store-images.s-microsoft.com/image/apps.60735.13587170393988356.9cd84e64-f1af-4f6c-9b56-2ffe0193367b.f9f7b72e-b655-4fb7-8b53-5d6c76f92edf',
+      'https://store-images.s-microsoft.com/image/apps.20203.13587170393988356.0a486ee0-c00e-471b-87ee-c60857221b6d.b229f4c3-63e4-44e6-9bfb-8c5df64e61f5',
     accent: 'amber',
   },
 ]

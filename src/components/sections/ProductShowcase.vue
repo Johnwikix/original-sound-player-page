@@ -11,7 +11,7 @@ const { elementRef, isVisible } = useReveal()
     <div class="showcase-container">
       <div class="screenshot-frame" data-reveal-child :style="{ '--i': 0 }">
         <img
-          src="https://store-images.s-microsoft.com/image/apps.35883.13587170393988356.9cd84e64-f1af-4f6c-9b56-2ffe0193367b.403829cc-e424-428f-8e09-5d19de04b034"
+          src="https://store-images.s-microsoft.com/image/apps.48216.13587170393988356.0a486ee0-c00e-471b-87ee-c60857221b6d.bbe8af58-d979-4705-af17-e0f0152f81f2"
           :alt="t('home.showcase.window_title')"
           width="1280"
           height="800"
