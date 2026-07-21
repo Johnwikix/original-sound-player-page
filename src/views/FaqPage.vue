@@ -1,30 +1,30 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
-import { useI18n } from 'vue-i18n';
-import PageLayout from '../components/layout/PageLayout.vue';
-import GlowButton from '../components/ui/GlowButton.vue';
-import { faqData } from '../data/faqData';
+import { computed, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+import PageLayout from '../components/layout/PageLayout.vue'
+import GlowButton from '../components/ui/GlowButton.vue'
+import { faqData } from '../data/faqData'
 
-const { locale, t } = useI18n();
-const openId = ref<number | null>(1);
+const { locale, t } = useI18n()
+const openId = ref<number | null>(1)
 
 const items = computed(() =>
   faqData
     .filter((item) => item.id !== 9 || locale.value === 'zh')
     .map((item) => ({
-    ...item,
-    question: locale.value === 'en' ? item.questionEn : item.question,
-    steps: locale.value === 'en' ? item.stepsEn : item.steps,
-    links: item.links?.map((l) => ({
-      ...l,
-      label: locale.value === 'en' ? l.labelEn : l.label
-    }))
-  }))
-);
+      ...item,
+      question: locale.value === 'en' ? item.questionEn : item.question,
+      steps: locale.value === 'en' ? item.stepsEn : item.steps,
+      links: item.links?.map((l) => ({
+        ...l,
+        label: locale.value === 'en' ? l.labelEn : l.label,
+      })),
+    })),
+)
 
 const toggle = (id: number) => {
-  openId.value = openId.value === id ? null : id;
-};
+  openId.value = openId.value === id ? null : id
+}
 </script>
 
 <template>
@@ -43,7 +43,9 @@ const toggle = (id: number) => {
             </div>
             <div class="faq-stat-divider"></div>
             <div class="faq-stat">
-              <span class="faq-stat-num">{{ items.reduce((sum, i) => sum + i.steps.length, 0) }}+</span>
+              <span class="faq-stat-num"
+                >{{ items.reduce((sum, i) => sum + i.steps.length, 0) }}+</span
+              >
               <span class="faq-stat-label">{{ t('faq.stat.steps') }}</span>
             </div>
           </div>
@@ -68,22 +70,38 @@ const toggle = (id: number) => {
               <span class="faq-number">Q{{ item.id }}</span>
               <span class="faq-question">{{ item.question }}</span>
               <span class="faq-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
                   <polyline points="6 9 12 15 18 9" />
                 </svg>
               </span>
             </button>
 
             <div
-              v-show="openId === item.id"
               class="faq-body"
+              :class="{ 'is-open': openId === item.id }"
               :id="`faq-body-${item.id}`"
               role="region"
               :aria-labelledby="`faq-trigger-${item.id}`"
+              :aria-hidden="openId !== item.id"
+              :inert="openId !== item.id"
             >
               <div class="faq-body-inner">
                 <ol class="faq-steps">
-                  <li v-for="(step, idx) in item.steps" :key="idx">{{ step }}</li>
+                  <li
+                    v-for="(step, idx) in item.steps"
+                    :key="idx"
+                    class="faq-step"
+                    :style="{ '--i': idx }"
+                  >
+                    {{ step }}
+                  </li>
                 </ol>
 
                 <div v-if="item.links && item.links.length" class="faq-links">
@@ -97,7 +115,15 @@ const toggle = (id: number) => {
                       rel="nofollow noopener noreferrer"
                       class="faq-link"
                     >
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                      >
                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                         <polyline points="15 3 21 3 21 9" />
                         <line x1="10" y1="14" x2="21" y2="3" />
@@ -141,10 +167,8 @@ const toggle = (id: number) => {
 }
 
 .faq-hero {
-  padding:
-    calc(env(safe-area-inset-top, 0px) + var(--header-height) + var(--space-8))
-    var(--space-6)
-    var(--space-7);
+  padding: calc(env(safe-area-inset-top, 0px) + var(--header-height) + var(--space-8))
+    var(--space-6) var(--space-7);
   border-bottom: 1px solid var(--border-subtle);
   position: relative;
   overflow: hidden;
@@ -293,7 +317,9 @@ const toggle = (id: number) => {
 
 .faq-icon {
   color: var(--text-muted);
-  transition: transform var(--duration-base) var(--ease-out);
+  transition:
+    transform 400ms cubic-bezier(0.16, 1, 0.3, 1),
+    color var(--duration-base) var(--ease-out);
   flex-shrink: 0;
 }
 
@@ -303,10 +329,30 @@ const toggle = (id: number) => {
 }
 
 .faq-body {
-  border-top: 1px solid var(--border-subtle);
+  display: grid;
+  grid-template-rows: 0fr;
+  border-top: 1px solid transparent;
+  opacity: 0;
+  transition:
+    grid-template-rows var(--duration-base) var(--ease-out),
+    opacity var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
+}
+
+.faq-body.is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  border-top-color: var(--border-subtle);
 }
 
 .faq-body-inner {
+  overflow: hidden;
+  min-height: 0;
+  padding: 0 var(--space-5);
+  transition: padding var(--duration-base) var(--ease-out);
+}
+
+.faq-body.is-open .faq-body-inner {
   padding: var(--space-5);
 }
 
@@ -317,16 +363,27 @@ const toggle = (id: number) => {
   margin: 0;
 }
 
-.faq-steps li {
+.faq-step {
   position: relative;
   padding-left: var(--space-7);
   margin-bottom: var(--space-3);
   font-size: 14px;
   line-height: 1.7;
   color: var(--text-secondary);
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out);
 }
 
-.faq-steps li::before {
+.faq-body.is-open .faq-step {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: calc(var(--i, 0) * 40ms + 80ms);
+}
+
+.faq-step::before {
   counter-increment: step;
   content: counter(step);
   position: absolute;
@@ -350,6 +407,16 @@ const toggle = (id: number) => {
   margin-top: var(--space-5);
   padding-top: var(--space-5);
   border-top: 1px solid var(--border-subtle);
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity var(--duration-base) var(--ease-out) 200ms,
+    transform var(--duration-base) var(--ease-out) 200ms;
+}
+
+.faq-body.is-open .faq-links {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .links-label {
@@ -446,13 +513,26 @@ const toggle = (id: number) => {
   .faq-question {
     font-size: 15px;
   }
-  .faq-steps li {
+  .faq-step {
     padding-left: var(--space-6);
   }
   .faq-link,
   .sidebar-link {
     min-height: 44px;
     padding: var(--space-2) 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-step,
+  .faq-icon,
+  .faq-body,
+  .faq-body-inner,
+  .faq-body.is-open .faq-links {
+    transition: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 </style>

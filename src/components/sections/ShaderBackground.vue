@@ -1,19 +1,22 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 
-const props = withDefaults(defineProps<{
-  fragmentSource: string
-  vertexSource?: string
-}>(), {
-  vertexSource: `#version 300 es
+const props = withDefaults(
+  defineProps<{
+    fragmentSource: string
+    vertexSource?: string
+  }>(),
+  {
+    vertexSource: `#version 300 es
 in vec2 aPosition;
 out vec2 vUv;
 void main() {
     vUv = aPosition * 0.5 + 0.5;
     gl_Position = vec4(aPosition, 0.0, 1.0);
 }
-`
-})
+`,
+  },
+)
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 
@@ -65,14 +68,7 @@ function createProgram(vertSrc: string, fragSrc: string): WebGLProgram | null {
 function setupGeometry() {
   if (!gl || !program) return
 
-  const vertices = new Float32Array([
-    -1, -1,
-     1, -1,
-    -1,  1,
-     1, -1,
-     1,  1,
-    -1,  1,
-  ])
+  const vertices = new Float32Array([-1, -1, 1, -1, -1, 1, 1, -1, 1, 1, -1, 1])
 
   vao = gl.createVertexArray()
   gl.bindVertexArray(vao)
@@ -95,14 +91,21 @@ function render() {
   const now = performance.now()
   const time = (now - startTime) / 1000
   const d = new Date()
-  const secs = d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds() + d.getMilliseconds() / 1000
+  const secs =
+    d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds() + d.getMilliseconds() / 1000
 
   gl.useProgram(program)
 
   gl.uniform2f(gl.getUniformLocation(program, 'iResolution'), gl.canvas.width, gl.canvas.height)
   gl.uniform1f(gl.getUniformLocation(program, 'iTime'), time)
   gl.uniform1f(gl.getUniformLocation(program, 'iFrame'), frameCount)
-  gl.uniform4f(gl.getUniformLocation(program, 'iDate'), d.getFullYear(), d.getMonth() + 1, d.getDate(), secs)
+  gl.uniform4f(
+    gl.getUniformLocation(program, 'iDate'),
+    d.getFullYear(),
+    d.getMonth() + 1,
+    d.getDate(),
+    secs,
+  )
 
   gl.bindVertexArray(vao)
   gl.drawArrays(gl.TRIANGLES, 0, 6)
@@ -227,10 +230,13 @@ onUnmounted(() => {
   }
 })
 
-watch(() => props.fragmentSource, () => {
-  cleanup()
-  init()
-})
+watch(
+  () => props.fragmentSource,
+  () => {
+    cleanup()
+    init()
+  },
+)
 </script>
 
 <template>

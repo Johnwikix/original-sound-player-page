@@ -1,22 +1,24 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n';
-import GlowButton from '../ui/GlowButton.vue';
-import SpectrumBars from '../ui/SpectrumBars.vue';
-import visualizationImage from '../../assets/visualization.png';
+import { useI18n } from 'vue-i18n'
+import GlowButton from '../ui/GlowButton.vue'
+import SpectrumBars from '../ui/SpectrumBars.vue'
+import visualizationImage from '../../assets/visualization.png'
+import { useReveal } from '../../composables/useReveal'
 
-const { t } = useI18n();
+const { t } = useI18n()
+const { elementRef, isVisible } = useReveal()
 </script>
 
 <template>
   <section class="spectrum-section">
-    <div class="spectrum-bg">
+    <div class="spectrum-bg" aria-hidden="true">
       <div class="spectrum-blob spectrum-blob-1"></div>
       <div class="spectrum-blob spectrum-blob-2"></div>
     </div>
 
-    <div class="spectrum-container">
+    <div ref="elementRef" class="spectrum-container reveal-base" :class="{ revealed: isVisible }">
       <div class="spectrum-grid">
-        <div class="spectrum-content">
+        <div class="spectrum-content" data-reveal-child :style="{ '--i': 0 }">
           <div class="section-eyebrow">{{ t('home.spectrum.eyebrow') }}</div>
           <h2 class="section-title">{{ t('home.spectrum.title') }}</h2>
           <p class="section-description">{{ t('home.spectrum.content') }}</p>
@@ -54,7 +56,14 @@ const { t } = useI18n();
             </GlowButton>
             <GlowButton to="/visualization" variant="secondary">
               {{ t('home.spectrum.cta_secondary') }}
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
                 <path d="M5 12h14" />
                 <path d="m12 5 7 7-7 7" />
               </svg>
@@ -62,7 +71,7 @@ const { t } = useI18n();
           </div>
         </div>
 
-        <div class="spectrum-visual">
+        <div class="spectrum-visual" data-reveal-child :style="{ '--i': 1 }">
           <div class="visual-card">
             <div class="visual-image-wrapper">
               <img

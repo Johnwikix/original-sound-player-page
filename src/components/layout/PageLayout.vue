@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import AppHeader from './AppHeader.vue';
-import AppFooter from './AppFooter.vue';
+import AppFooter from './AppFooter.vue'
 </script>
 
 <template>
   <div class="page-layout">
-    <AppHeader />
     <main id="main-content" class="page-main" tabindex="-1">
       <slot />
     </main>

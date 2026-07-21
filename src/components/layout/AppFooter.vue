@@ -1,36 +1,48 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { useI18n } from 'vue-i18n';
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n();
+const { t } = useI18n()
 
 const productLinks = computed(() => [
-  { key: 'main', label: t('footer.product.main'), href: 'https://apps.microsoft.com/detail/9nfw1rppt999' },
-  { key: 'vis', label: t('footer.product.vis'), to: '/visualization' }
-]);
+  {
+    key: 'main',
+    label: t('footer.product.main'),
+    href: 'https://apps.microsoft.com/detail/9nfw1rppt999',
+  },
+  { key: 'vis', label: t('footer.product.vis'), to: '/visualization' },
+])
 
 const resourceLinks = computed(() => [
   { key: 'guide', label: t('footer.resource.guide'), to: '/guide' },
   { key: 'faq', label: t('footer.resource.faq'), to: '/faq' },
-  { key: 'gh', label: t('footer.resource.gh'), href: 'https://github.com/Johnwikix/original-sound-hq-player' }
-]);
+  {
+    key: 'gh',
+    label: t('footer.resource.gh'),
+    href: 'https://github.com/Johnwikix/original-sound-hq-player',
+  },
+])
 
 const legalLinks = computed(() => [
-  { key: 'policy', label: t('footer.legal.policy'), href: 'https://github.com/Johnwikix/original-sound-hq-player/blob/main/policy.md' }
-]);
+  {
+    key: 'policy',
+    label: t('footer.legal.policy'),
+    href: 'https://github.com/Johnwikix/original-sound-hq-player/blob/main/policy.md',
+  },
+])
 
 const socialLinks = computed(() => [
   {
     key: 'bili',
     label: 'Bilibili',
-    href: 'https://www.bilibili.com/video/BV1f5pgzAEcs'
+    href: 'https://www.bilibili.com/video/BV1f5pgzAEcs',
   },
   {
     key: 'gh',
     label: 'GitHub',
-    href: 'https://github.com/Johnwikix'
-  }
-]);
+    href: 'https://github.com/Johnwikix',
+  },
+])
 </script>
 
 <template>
@@ -39,13 +51,7 @@ const socialLinks = computed(() => [
       <div class="footer-grid">
         <div class="footer-col footer-brand-col">
           <div class="footer-brand">
-            <img
-              src="/logo.png"
-              alt="OriginalSound HQ"
-              class="brand-logo"
-              width="32"
-              height="32"
-            />
+            <img src="/logo.png" alt="OriginalSound HQ" class="brand-logo" width="32" height="32" />
             <span>{{ t('brand.name') }}</span>
           </div>
           <p class="footer-tagline">{{ t('footer.tagline') }}</p>
@@ -84,7 +90,9 @@ const socialLinks = computed(() => [
           <h4 class="footer-title">{{ t('footer.col.social') }}</h4>
           <ul class="footer-list">
             <li v-for="link in socialLinks" :key="link.key">
-              <a :href="link.href" rel="nofollow noopener noreferrer" target="_blank">{{ link.label }}</a>
+              <a :href="link.href" rel="nofollow noopener noreferrer" target="_blank">{{
+                link.label
+              }}</a>
             </li>
           </ul>
         </div>
@@ -101,9 +109,7 @@ const socialLinks = computed(() => [
 .app-footer {
   background: linear-gradient(180deg, var(--bg-base) 0%, #020203 100%);
   border-top: 1px solid var(--border-subtle);
-  padding:
-    var(--space-8) 0
-    calc(env(safe-area-inset-bottom, 0px) + var(--space-5));
+  padding: var(--space-8) 0 calc(env(safe-area-inset-bottom, 0px) + var(--space-5));
   margin-top: var(--space-9);
 }
 

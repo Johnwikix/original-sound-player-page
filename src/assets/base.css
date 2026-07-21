@@ -55,8 +55,9 @@
   --sidebar-width: 260px;
 
   /* ============ Typography ============ */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    'Microsoft YaHei', 'PingFang SC', Roboto, sans-serif;
+  --font-sans:
+    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC',
+    Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace;
   --font-display: 'Inter', -apple-system, sans-serif;
 
@@ -202,6 +203,45 @@ video {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* ============ Scroll Reveal ============ */
+.reveal-base {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+  will-change: opacity, transform;
+}
+
+.reveal-base.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-base [data-reveal-child] {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 60ms);
+  will-change: opacity, transform;
+}
+
+.reveal-base.revealed [data-reveal-child] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-base,
+  .reveal-base [data-reveal-child] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
 

@@ -1,52 +1,70 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { useI18n } from 'vue-i18n';
-import type { DocChapter, SettingItem } from '../../data/settingsDocs';
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import type { DocChapter, SettingItem } from '../../data/settingsDocs'
 
 const props = defineProps<{
-  chapters: DocChapter[];
-  activeKey: string;
-}>();
+  chapters: DocChapter[]
+  activeKey: string
+}>()
 
 const emit = defineEmits<{
-  (e: 'select', key: string): void;
-}>();
+  (e: 'select', key: string): void
+}>()
 
-const { locale, t } = useI18n();
+const { locale, t } = useI18n()
 
 const typeLabel = (type: SettingItem['type']) => {
   if (locale.value === 'en') {
     switch (type) {
-      case 'select': return 'Select';
-      case 'toggle': return 'Toggle';
-      case 'number': return 'Number';
-      case 'slider': return 'Slider';
-      case 'text': return 'Text';
-      case 'color': return 'Color';
-      case 'shortcut': return 'Shortcut';
-      case 'radio': return 'Radio';
-      default: return type;
+      case 'select':
+        return 'Select'
+      case 'toggle':
+        return 'Toggle'
+      case 'number':
+        return 'Number'
+      case 'slider':
+        return 'Slider'
+      case 'text':
+        return 'Text'
+      case 'color':
+        return 'Color'
+      case 'shortcut':
+        return 'Shortcut'
+      case 'radio':
+        return 'Radio'
+      default:
+        return type
     }
   }
   switch (type) {
-    case 'select': return '下拉';
-    case 'toggle': return '开关';
-    case 'number': return '数值';
-    case 'slider': return '滑块';
-    case 'text': return '文本';
-    case 'color': return '颜色';
-    case 'shortcut': return '快捷键';
-    case 'radio': return '单选';
-    default: return type;
+    case 'select':
+      return '下拉'
+    case 'toggle':
+      return '开关'
+    case 'number':
+      return '数值'
+    case 'slider':
+      return '滑块'
+    case 'text':
+      return '文本'
+    case 'color':
+      return '颜色'
+    case 'shortcut':
+      return '快捷键'
+    case 'radio':
+      return '单选'
+    default:
+      return type
   }
-};
+}
 
 const localizedChapters = computed(() =>
   props.chapters.map((c) => ({
     ...c,
-    title: c.titleKey
-  }))
-);
+    title: c.titleKey,
+  })),
+)
 </script>
 
 <template>
@@ -127,7 +145,8 @@ const localizedChapters = computed(() =>
   border: 1px solid transparent;
   text-align: left;
   cursor: pointer;
-  transition: background-color var(--duration-fast) var(--ease-out),
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
     border-color var(--duration-fast) var(--ease-out),
     color var(--duration-fast) var(--ease-out);
   font-family: inherit;

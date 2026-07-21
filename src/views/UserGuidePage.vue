@@ -1,38 +1,38 @@
 <script setup lang="ts">
-import { computed, ref, watch, nextTick } from 'vue';
-import { useI18n } from 'vue-i18n';
-import PageLayout from '../components/layout/PageLayout.vue';
-import DocSidebar from '../components/doc/DocSidebar.vue';
-import SettingItem from '../components/doc/SettingItem.vue';
-import { settingsDocs } from '../data/settingsDocs';
+import { computed, ref, watch, nextTick } from 'vue'
+import { useI18n } from 'vue-i18n'
+import PageLayout from '../components/layout/PageLayout.vue'
+import DocSidebar from '../components/doc/DocSidebar.vue'
+import SettingItem from '../components/doc/SettingItem.vue'
+import { settingsDocs } from '../data/settingsDocs'
 
-const { locale, t } = useI18n();
+const { locale, t } = useI18n()
 
-const chapterRefs = ref<Record<string, HTMLElement | null>>({});
-const activeKey = ref(settingsDocs[0].key);
+const chapterRefs = ref<Record<string, HTMLElement | null>>({})
+const activeKey = ref(settingsDocs[0].key)
 
 const localizedChapters = computed(() =>
   settingsDocs.map((c) => ({
     ...c,
     title: t(`guide.chapters.${c.key}.title`),
-    intro: t(`guide.chapters.${c.key}.intro`)
-  }))
-);
+    intro: t(`guide.chapters.${c.key}.intro`),
+  })),
+)
 
 const handleSelect = (key: string) => {
-  activeKey.value = key;
+  activeKey.value = key
   nextTick(() => {
-    const el = chapterRefs.value[key];
+    const el = chapterRefs.value[key]
     if (el) {
-      const top = el.getBoundingClientRect().top + window.scrollY - 100;
-      window.scrollTo({ top, behavior: 'smooth' });
+      const top = el.getBoundingClientRect().top + window.scrollY - 100
+      window.scrollTo({ top, behavior: 'smooth' })
     }
-  });
-};
+  })
+}
 
 watch(locale, () => {
   // re-render localized titles
-});
+})
 </script>
 
 <template>
@@ -50,7 +50,9 @@ watch(locale, () => {
               <div class="stat-label">{{ t('guide.stat.chapters') }}</div>
             </div>
             <div class="guide-stat">
-              <div class="stat-num">{{ settingsDocs.reduce((sum, c) => sum + c.items.length, 0) }}+</div>
+              <div class="stat-num">
+                {{ settingsDocs.reduce((sum, c) => sum + c.items.length, 0) }}+
+              </div>
               <div class="stat-label">{{ t('guide.stat.settings') }}</div>
             </div>
             <div class="guide-stat">
@@ -62,18 +64,18 @@ watch(locale, () => {
       </div>
 
       <div class="guide-content">
-        <DocSidebar
-          :chapters="settingsDocs"
-          :active-key="activeKey"
-          @select="handleSelect"
-        />
+        <DocSidebar :chapters="settingsDocs" :active-key="activeKey" @select="handleSelect" />
 
         <main class="guide-main">
           <section
             v-for="chapter in localizedChapters"
             :id="`chapter-${chapter.key}`"
             :key="chapter.key"
-            :ref="(el) => { chapterRefs[chapter.key] = el as HTMLElement; }"
+            :ref="
+              (el) => {
+                chapterRefs[chapter.key] = el as HTMLElement
+              }
+            "
             class="chapter"
           >
             <header class="chapter-header">
@@ -86,11 +88,7 @@ watch(locale, () => {
             </header>
 
             <div class="chapter-items">
-              <SettingItem
-                v-for="(item, idx) in chapter.items"
-                :key="idx"
-                :item="item"
-              />
+              <SettingItem v-for="(item, idx) in chapter.items" :key="idx" :item="item" />
             </div>
           </section>
 
@@ -111,10 +109,8 @@ watch(locale, () => {
 
 .guide-hero {
   position: relative;
-  padding:
-    calc(env(safe-area-inset-top, 0px) + var(--header-height) + var(--space-8))
-    var(--space-6)
-    var(--space-8);
+  padding: calc(env(safe-area-inset-top, 0px) + var(--header-height) + var(--space-8))
+    var(--space-6) var(--space-8);
   border-bottom: 1px solid var(--border-subtle);
   overflow: hidden;
 }
@@ -123,8 +119,7 @@ watch(locale, () => {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at top, var(--accent-soft), transparent 60%);
+  background: radial-gradient(ellipse at top, var(--accent-soft), transparent 60%);
   pointer-events: none;
 }
 

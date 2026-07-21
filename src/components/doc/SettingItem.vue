@@ -1,23 +1,25 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { useI18n } from 'vue-i18n';
-import type { SettingItem } from '../../data/settingsDocs';
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import type { SettingItem } from '../../data/settingsDocs'
 
 const props = defineProps<{
-  item: SettingItem;
-}>();
+  item: SettingItem
+}>()
 
-const { locale } = useI18n();
+const { locale } = useI18n()
 
-const name = computed(() => (locale.value === 'en' ? props.item.nameEn : props.item.name));
-const description = computed(() => (locale.value === 'en' ? props.item.descriptionEn : props.item.description));
+const name = computed(() => (locale.value === 'en' ? props.item.nameEn : props.item.name))
+const description = computed(() =>
+  locale.value === 'en' ? props.item.descriptionEn : props.item.description,
+)
 const options = computed(() =>
   props.item.options
     ? locale.value === 'en'
       ? props.item.optionsEn || props.item.options
       : props.item.options
-    : undefined
-);
+    : undefined,
+)
 
 const typeLabel = computed(() => {
   const map: Record<SettingItem['type'], { zh: string; en: string }> = {
@@ -28,19 +30,19 @@ const typeLabel = computed(() => {
     text: { zh: '文本', en: 'Text' },
     color: { zh: '颜色选择', en: 'Color Picker' },
     shortcut: { zh: '快捷键', en: 'Shortcut' },
-    radio: { zh: '单选', en: 'Radio' }
-  };
-  return map[props.item.type][locale.value === 'en' ? 'en' : 'zh'];
-});
+    radio: { zh: '单选', en: 'Radio' },
+  }
+  return map[props.item.type][locale.value === 'en' ? 'en' : 'zh']
+})
 
 const rangeLabel = computed(() => {
-  if (!props.item.range) return '';
-  const { min, max, step, unit } = props.item.range;
-  const stepStr = step < 1 ? step.toString() : step.toString();
-  let s = `${min} ~ ${max} (step ${stepStr})`;
-  if (unit) s += ` ${unit}`;
-  return s;
-});
+  if (!props.item.range) return ''
+  const { min, max, step, unit } = props.item.range
+  const stepStr = step < 1 ? step.toString() : step.toString()
+  let s = `${min} ~ ${max} (step ${stepStr})`
+  if (unit) s += ` ${unit}`
+  return s
+})
 </script>
 
 <template>
@@ -73,7 +75,14 @@ const rangeLabel = computed(() => {
       <template v-else-if="item.type === 'select'">
         <div class="select-mock">
           <span>{{ options ? options[0] : '...' }}</span>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
             <polyline points="6 9 12 15 18 9" />
           </svg>
         </div>
@@ -85,7 +94,10 @@ const rangeLabel = computed(() => {
             <div class="slider-fill"></div>
             <div class="slider-knob"></div>
           </div>
-          <span class="slider-value">{{ item.range ? Math.round((item.range.min + item.range.max) / 2) : '0' }}{{ item.range?.unit || '' }}</span>
+          <span class="slider-value"
+            >{{ item.range ? Math.round((item.range.min + item.range.max) / 2) : '0'
+            }}{{ item.range?.unit || '' }}</span
+          >
         </div>
       </template>
 
@@ -125,7 +137,8 @@ const rangeLabel = computed(() => {
   background: var(--bg-elevated);
   border: 1px solid var(--border-subtle);
   border-radius: var(--r-md);
-  transition: border-color var(--duration-fast) var(--ease-out),
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
     background-color var(--duration-fast) var(--ease-out);
 }
 
@@ -311,8 +324,12 @@ const rangeLabel = computed(() => {
   border: 2px solid var(--border-default);
 }
 
-.color-swatch-2 { background: var(--accent-2); }
-.color-swatch-3 { background: var(--accent-violet); }
+.color-swatch-2 {
+  background: var(--accent-2);
+}
+.color-swatch-3 {
+  background: var(--accent-violet);
+}
 
 .shortcut-mock {
   display: inline-flex;
@@ -381,5 +398,7 @@ const rangeLabel = computed(() => {
   width: 100%;
 }
 
-.text-line.short { width: 60%; }
+.text-line.short {
+  width: 60%;
+}
 </style>

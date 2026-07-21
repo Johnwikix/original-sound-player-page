@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n';
+import { useI18n } from 'vue-i18n'
+import { useReveal } from '../../composables/useReveal'
 
-const { t } = useI18n();
+const { t } = useI18n()
+const { elementRef, isVisible } = useReveal()
 </script>
 
 <template>
-  <section class="showcase-section">
+  <section ref="elementRef" class="showcase-section reveal-base" :class="{ revealed: isVisible }">
     <div class="showcase-container">
-      <div class="screenshot-frame">
+      <div class="screenshot-frame" data-reveal-child :style="{ '--i': 0 }">
         <img
           src="https://store-images.s-microsoft.com/image/apps.35883.13587170393988356.9cd84e64-f1af-4f6c-9b56-2ffe0193367b.403829cc-e424-428f-8e09-5d19de04b034"
           :alt="t('home.showcase.window_title')"
@@ -21,22 +23,43 @@ const { t } = useI18n();
       </div>
 
       <div class="showcase-badges">
-        <div class="badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <div class="badge" data-reveal-child :style="{ '--i': 1 }">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
             <rect x="2" y="3" width="20" height="14" rx="2" />
             <line x1="8" y1="21" x2="16" y2="21" />
           </svg>
           <span>WinUI 3</span>
         </div>
-        <div class="badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <div class="badge" data-reveal-child :style="{ '--i': 2 }">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
             <rect x="3" y="11" width="18" height="11" rx="2" />
             <path d="M7 11V7a5 5 0 0 1 10 0v4" />
           </svg>
           <span>{{ t('home.showcase.badge1') }}</span>
         </div>
-        <div class="badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <div class="badge" data-reveal-child :style="{ '--i': 3 }">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
           </svg>
           <span>{{ t('home.showcase.badge3') }}</span>

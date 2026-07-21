@@ -1,24 +1,26 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { useI18n } from 'vue-i18n';
-import { featuresData } from '../../data/featuresData';
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { featuresData } from '../../data/featuresData'
+import { useReveal } from '../../composables/useReveal'
 
-const { locale } = useI18n();
+const { locale } = useI18n()
+const { elementRef, isVisible } = useReveal()
 
 const features = computed(() =>
   featuresData.map((f) => ({
     ...f,
     title: locale.value === 'en' ? f.titleEn : f.title,
     content: locale.value === 'en' ? f.contentEn : f.content,
-    image: locale.value === 'en' ? f.imageEn : f.image
-  }))
-);
+    image: locale.value === 'en' ? f.imageEn : f.image,
+  })),
+)
 </script>
 
 <template>
   <section class="features-section">
-    <div class="features-container">
-      <div class="section-header">
+    <div ref="elementRef" class="features-container reveal-base" :class="{ revealed: isVisible }">
+      <div class="section-header" data-reveal-child :style="{ '--i': 0 }">
         <div class="section-eyebrow">{{ $t('home.features.eyebrow') }}</div>
         <h2 class="section-title">{{ $t('home.features.title') }}</h2>
         <p class="section-subtitle">{{ $t('home.features.subtitle') }}</p>
@@ -30,6 +32,8 @@ const features = computed(() =>
           :key="feature.id"
           class="feature-row"
           :class="[`feature-${feature.accent}`, { reverse: index % 2 === 1 }]"
+          data-reveal-child
+          :style="{ '--i': index + 1 }"
         >
           <div class="feature-text">
             <div class="feature-number">{{ String(index + 1).padStart(2, '0') }}</div>

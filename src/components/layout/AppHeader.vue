@@ -1,111 +1,111 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount, computed, watch, nextTick } from 'vue';
-import { useRoute } from 'vue-router';
-import { useI18n } from 'vue-i18n';
+import { ref, onMounted, onBeforeUnmount, computed, watch, nextTick } from 'vue'
+import { useRoute } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 
-const { locale, t } = useI18n();
-const route = useRoute();
-const scrolled = ref(false);
-const menuOpen = ref(false);
-const menuButtonRef = ref<HTMLButtonElement | null>(null);
-const firstLinkRef = ref<HTMLAnchorElement | null>(null);
-const reducedMotion = ref(false);
+const { locale, t } = useI18n()
+const route = useRoute()
+const scrolled = ref(false)
+const menuOpen = ref(false)
+const menuButtonRef = ref<HTMLButtonElement | null>(null)
+const firstLinkRef = ref<HTMLAnchorElement | null>(null)
+const reducedMotion = ref(false)
 
 const navLinks = computed(() => [
   { key: 'home', to: '/', label: t('nav.home') },
   { key: 'guide', to: '/guide', label: t('nav.guide') },
   { key: 'visualization', to: '/visualization', label: t('nav.visualization') },
-  { key: 'faq', to: '/faq', label: t('nav.faq') }
-]);
+  { key: 'faq', to: '/faq', label: t('nav.faq') },
+])
 
 const onScroll = () => {
-  scrolled.value = window.scrollY > 20;
-};
+  scrolled.value = window.scrollY > 20
+}
 
-let savedScrollY = 0;
+let savedScrollY = 0
 
 const lockBody = () => {
-  savedScrollY = window.scrollY;
-  document.body.style.position = 'fixed';
-  document.body.style.top = `-${savedScrollY}px`;
-  document.body.style.left = '0';
-  document.body.style.right = '0';
-  document.body.style.width = '100%';
-};
+  savedScrollY = window.scrollY
+  document.body.style.position = 'fixed'
+  document.body.style.top = `-${savedScrollY}px`
+  document.body.style.left = '0'
+  document.body.style.right = '0'
+  document.body.style.width = '100%'
+}
 
 const unlockBody = () => {
-  document.body.style.position = '';
-  document.body.style.top = '';
-  document.body.style.left = '';
-  document.body.style.right = '';
-  document.body.style.width = '';
-  window.scrollTo({ top: savedScrollY, behavior: reducedMotion.value ? 'auto' : 'smooth' });
-};
+  document.body.style.position = ''
+  document.body.style.top = ''
+  document.body.style.left = ''
+  document.body.style.right = ''
+  document.body.style.width = ''
+  window.scrollTo({ top: savedScrollY, behavior: reducedMotion.value ? 'auto' : 'smooth' })
+}
 
 const closeMenu = () => {
-  if (!menuOpen.value) return;
-  menuOpen.value = false;
-  unlockBody();
-  nextTick(() => menuButtonRef.value?.focus());
-};
+  if (!menuOpen.value) return
+  menuOpen.value = false
+  unlockBody()
+  nextTick(() => menuButtonRef.value?.focus())
+}
 
 const toggleMenu = () => {
   if (menuOpen.value) {
-    closeMenu();
-    return;
+    closeMenu()
+    return
   }
-  menuOpen.value = true;
-  lockBody();
-  nextTick(() => firstLinkRef.value?.focus());
-};
+  menuOpen.value = true
+  lockBody()
+  nextTick(() => firstLinkRef.value?.focus())
+}
 
 const onKeydown = (e: KeyboardEvent) => {
   if (e.key === 'Escape' && menuOpen.value) {
-    closeMenu();
+    closeMenu()
   }
-};
+}
 
 onMounted(() => {
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('keydown', onKeydown);
-  onScroll();
-  const mql = window.matchMedia('(prefers-reduced-motion: reduce)');
-  reducedMotion.value = mql.matches;
+  window.addEventListener('scroll', onScroll, { passive: true })
+  window.addEventListener('keydown', onKeydown)
+  onScroll()
+  const mql = window.matchMedia('(prefers-reduced-motion: reduce)')
+  reducedMotion.value = mql.matches
   const onMq = (ev: MediaQueryListEvent) => {
-    reducedMotion.value = ev.matches;
-  };
-  mql.addEventListener('change', onMq);
-  onMountedStop = () => mql.removeEventListener('change', onMq);
-});
+    reducedMotion.value = ev.matches
+  }
+  mql.addEventListener('change', onMq)
+  onMountedStop = () => mql.removeEventListener('change', onMq)
+})
 
-let onMountedStop: (() => void) | null = null;
+let onMountedStop: (() => void) | null = null
 
 onBeforeUnmount(() => {
-  window.removeEventListener('scroll', onScroll);
-  window.removeEventListener('keydown', onKeydown);
-  onMountedStop?.();
-  if (menuOpen.value) unlockBody();
-});
+  window.removeEventListener('scroll', onScroll)
+  window.removeEventListener('keydown', onKeydown)
+  onMountedStop?.()
+  if (menuOpen.value) unlockBody()
+})
 
 watch(
   () => route.fullPath,
   () => {
-    if (menuOpen.value) closeMenu();
-  }
-);
+    if (menuOpen.value) closeMenu()
+  },
+)
 
 watch(locale, (val) => {
-  document.documentElement.lang = val === 'zh' ? 'zh-CN' : 'en';
-});
+  document.documentElement.lang = val === 'zh' ? 'zh-CN' : 'en'
+})
 
 const isActive = (to: string) => {
-  if (to === '/') return route.path === '/';
-  return route.path.startsWith(to);
-};
+  if (to === '/') return route.path === '/'
+  return route.path.startsWith(to)
+}
 
 const toggleLocale = () => {
-  locale.value = locale.value === 'zh' ? 'en' : 'zh';
-};
+  locale.value = locale.value === 'zh' ? 'en' : 'zh'
+}
 </script>
 
 <template>
@@ -113,13 +113,7 @@ const toggleLocale = () => {
   <header class="app-header" :class="{ scrolled, 'menu-open': menuOpen }">
     <div class="header-inner">
       <router-link to="/" class="brand" @click="closeMenu">
-        <img
-          src="/logo.png"
-          alt="OriginalSound HQ"
-          class="brand-logo"
-          width="32"
-          height="32"
-        />
+        <img src="/logo.png" alt="OriginalSound HQ" class="brand-logo" width="32" height="32" />
         <span class="brand-name">{{ t('brand.name') }}</span>
       </router-link>
 
@@ -149,7 +143,15 @@ const toggleLocale = () => {
           rel="nofollow noopener"
           class="cta-download"
         >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            aria-hidden="true"
+          >
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
             <polyline points="7 10 12 15 17 10" />
             <line x1="12" y1="15" x2="12" y2="3" />
@@ -198,12 +200,7 @@ const toggleLocale = () => {
 
     <Teleport to="body">
       <Transition :name="reducedMotion ? '' : 'drawer-fade'">
-        <div
-          v-if="menuOpen"
-          class="drawer-backdrop"
-          @click="closeMenu"
-          aria-hidden="true"
-        ></div>
+        <div v-if="menuOpen" class="drawer-backdrop" @click="closeMenu" aria-hidden="true"></div>
       </Transition>
       <Transition :name="reducedMotion ? '' : 'drawer-slide'">
         <aside
@@ -224,7 +221,11 @@ const toggleLocale = () => {
               :to="link.to"
               class="drawer-link"
               :class="{ active: isActive(link.to) }"
-              :ref="(el) => { if (i === 0) firstLinkRef = el as HTMLAnchorElement; }"
+              :ref="
+                (el) => {
+                  if (i === 0) firstLinkRef = el as HTMLAnchorElement
+                }
+              "
               @click="closeMenu"
             >
               <span class="drawer-link-index">{{ String(i + 1).padStart(2, '0') }}</span>
@@ -257,7 +258,8 @@ const toggleLocale = () => {
   height: calc(var(--header-height) + env(safe-area-inset-top, 0px));
   padding-top: env(safe-area-inset-top, 0px);
   background: transparent;
-  transition: background-color var(--duration-base) var(--ease-out),
+  transition:
+    background-color var(--duration-base) var(--ease-out),
     backdrop-filter var(--duration-base) var(--ease-out),
     border-color var(--duration-base) var(--ease-out);
   border-bottom: 1px solid transparent;
@@ -321,7 +323,8 @@ const toggleLocale = () => {
   font-weight: 500;
   color: var(--text-muted);
   border-radius: var(--r-full);
-  transition: color var(--duration-fast) var(--ease-out),
+  transition:
+    color var(--duration-fast) var(--ease-out),
     background-color var(--duration-fast) var(--ease-out);
 }
 
@@ -353,7 +356,8 @@ const toggleLocale = () => {
   color: var(--text-secondary);
   font-size: 12px;
   font-weight: 600;
-  transition: color var(--duration-fast) var(--ease-out),
+  transition:
+    color var(--duration-fast) var(--ease-out),
     border-color var(--duration-fast) var(--ease-out);
 }
 
@@ -374,7 +378,8 @@ const toggleLocale = () => {
   color: #ffffff;
   font-size: 13px;
   font-weight: 600;
-  transition: transform var(--duration-fast) var(--ease-out),
+  transition:
+    transform var(--duration-fast) var(--ease-out),
     box-shadow var(--duration-fast) var(--ease-out);
 }
 
@@ -465,9 +470,7 @@ const toggleLocale = () => {
   bottom: 0;
   z-index: 110;
   width: min(86vw, 360px);
-  padding:
-    calc(env(safe-area-inset-top, 0px) + var(--space-6))
-    var(--space-6)
+  padding: calc(env(safe-area-inset-top, 0px) + var(--space-6)) var(--space-6)
     calc(env(safe-area-inset-bottom, 0px) + var(--space-6));
   background: var(--bg-elevated);
   border-left: 1px solid var(--border-default);
@@ -511,7 +514,8 @@ const toggleLocale = () => {
   color: var(--text-secondary);
   font-size: 16px;
   font-weight: 500;
-  transition: color var(--duration-fast) var(--ease-out),
+  transition:
+    color var(--duration-fast) var(--ease-out),
     background-color var(--duration-fast) var(--ease-out),
     border-color var(--duration-fast) var(--ease-out);
 }

@@ -1,11 +1,11 @@
 <script setup lang="ts">
 defineProps<{
-  href?: string;
-  to?: string;
-  variant?: 'primary' | 'secondary' | 'ghost';
-  external?: boolean;
-  rel?: string;
-}>();
+  href?: string
+  to?: string
+  variant?: 'primary' | 'secondary' | 'ghost'
+  external?: boolean
+  rel?: string
+}>()
 </script>
 
 <template>
@@ -56,7 +56,8 @@ defineProps<{
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  transition: transform var(--duration-fast) var(--ease-out),
+  transition:
+    transform var(--duration-fast) var(--ease-out),
     box-shadow var(--duration-fast) var(--ease-out);
   isolation: isolate;
   -webkit-tap-highlight-color: transparent;

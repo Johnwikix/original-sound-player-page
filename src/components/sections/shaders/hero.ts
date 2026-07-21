@@ -197,4 +197,4 @@ void main()
 
     fragColor = vec4(totalColor, 1.0);
 }
-`;
+`

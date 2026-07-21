@@ -1,23 +1,31 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { useI18n } from 'vue-i18n';
-import { statsData } from '../../data/featuresData';
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { statsData } from '../../data/featuresData'
+import { useReveal } from '../../composables/useReveal'
 
-const { locale } = useI18n();
+const { locale } = useI18n()
+const { elementRef, isVisible } = useReveal()
 
 const stats = computed(() =>
   statsData.map((s) => ({
     ...s,
-    label: locale.value === 'en' ? s.labelEn : s.label
-  }))
-);
+    label: locale.value === 'en' ? s.labelEn : s.label,
+  })),
+)
 </script>
 
 <template>
   <section class="stats-section">
-    <div class="stats-container">
+    <div ref="elementRef" class="stats-container reveal-base" :class="{ revealed: isVisible }">
       <div class="stats-grid">
-        <div v-for="(stat, index) in stats" :key="index" class="stat-item">
+        <div
+          v-for="(stat, index) in stats"
+          :key="index"
+          class="stat-item"
+          data-reveal-child
+          :style="{ '--i': index }"
+        >
           <div class="stat-value">{{ stat.value }}</div>
           <div class="stat-divider"></div>
           <div class="stat-label">{{ stat.label }}</div>

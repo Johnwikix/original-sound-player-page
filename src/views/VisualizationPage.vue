@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n';
-import PageLayout from '../components/layout/PageLayout.vue';
-import GlowButton from '../components/ui/GlowButton.vue';
-import SpectrumBars from '../components/ui/SpectrumBars.vue';
-import visualizationImage from '../assets/visualization.png';
+import { useI18n } from 'vue-i18n'
+import PageLayout from '../components/layout/PageLayout.vue'
+import GlowButton from '../components/ui/GlowButton.vue'
+import SpectrumBars from '../components/ui/SpectrumBars.vue'
+import visualizationImage from '../assets/visualization.png'
 
-const { t } = useI18n();
+const { t } = useI18n()
 </script>
 
 <template>
@@ -60,7 +60,14 @@ const { t } = useI18n();
             <div class="viz-feature-grid">
               <div class="viz-feature">
                 <div class="viz-feature-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
                     <line x1="6" y1="20" x2="6" y2="14" />
                     <line x1="12" y1="20" x2="12" y2="8" />
                     <line x1="18" y1="20" x2="18" y2="4" />
@@ -71,7 +78,14 @@ const { t } = useI18n();
               </div>
               <div class="viz-feature">
                 <div class="viz-feature-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
                     <circle cx="12" cy="12" r="10" />
                     <path d="M12 6v6l4 2" />
                   </svg>
@@ -81,7 +95,14 @@ const { t } = useI18n();
               </div>
               <div class="viz-feature">
                 <div class="viz-feature-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
                     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                   </svg>
                 </div>
@@ -90,7 +111,14 @@ const { t } = useI18n();
               </div>
               <div class="viz-feature">
                 <div class="viz-feature-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
                     <rect x="3" y="3" width="18" height="18" rx="2" />
                     <line x1="9" y1="9" x2="15" y2="15" />
                     <line x1="15" y1="9" x2="9" y2="15" />
@@ -114,10 +142,8 @@ const { t } = useI18n();
 
 .viz-hero {
   position: relative;
-  padding:
-    calc(env(safe-area-inset-top, 0px) + var(--header-height) + var(--space-8))
-    var(--space-6)
-    var(--space-8);
+  padding: calc(env(safe-area-inset-top, 0px) + var(--header-height) + var(--space-8))
+    var(--space-6) var(--space-8);
   overflow: hidden;
   border-bottom: 1px solid var(--border-subtle);
 }
