@@ -2,7 +2,7 @@
 import { useI18n } from 'vue-i18n'
 import GlowButton from '../ui/GlowButton.vue'
 import SpectrumBars from '../ui/SpectrumBars.vue'
-import visualizationImage from '../../assets/visualization.png'
+
 import { useReveal } from '../../composables/useReveal'
 
 const { t } = useI18n()
@@ -75,7 +75,7 @@ const { elementRef, isVisible } = useReveal()
           <div class="visual-card">
             <div class="visual-image-wrapper">
               <img
-                :src="visualizationImage"
+                src="https://store-images.s-microsoft.com/image/apps.53500.14251122581188954.3f2cb392-8351-43be-862f-9c8d47c72a76.8d1b8b95-c774-4bdc-b4c7-6ec91ea776fb"
                 :alt="t('home.spectrum.title')"
                 width="1280"
                 height="800"

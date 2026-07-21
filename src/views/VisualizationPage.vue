@@ -3,7 +3,6 @@ import { useI18n } from 'vue-i18n'
 import PageLayout from '../components/layout/PageLayout.vue'
 import GlowButton from '../components/ui/GlowButton.vue'
 import SpectrumBars from '../components/ui/SpectrumBars.vue'
-import visualizationImage from '../assets/visualization.png'
 
 const { t } = useI18n()
 </script>
@@ -46,7 +45,7 @@ const { t } = useI18n()
         <div class="viz-container">
           <div class="viz-image-frame">
             <img
-              :src="visualizationImage"
+              src="https://store-images.s-microsoft.com/image/apps.53500.14251122581188954.3f2cb392-8351-43be-862f-9c8d47c72a76.8d1b8b95-c774-4bdc-b4c7-6ec91ea776fb"
               :alt="t('visualization.title')"
               width="1280"
               height="720"
