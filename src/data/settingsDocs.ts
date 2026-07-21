@@ -31,9 +31,9 @@ export const settingsDocs: DocChapter[] = [
         nameEn: 'System Requirements',
         type: 'text',
         description:
-          '需要 Windows 10 1809 或更高版本（包括 Windows 11）。建议使用 Windows 11 以获得完整的 Mica / Acrylic 视觉效果。',
+          '需要 Windows 10 2004 或更高版本（包括 Windows 11）。建议使用 Windows 11 以获得完整的 Mica / Acrylic 视觉效果。',
         descriptionEn:
-          'Requires Windows 10 version 1809 or later (including Windows 11). Windows 11 is recommended for full Mica / Acrylic visual effects.',
+          'Requires Windows 10 version 2004 or later (including Windows 11). Windows 11 is recommended for full Mica / Acrylic visual effects.',
       },
       {
         name: '安装方式',

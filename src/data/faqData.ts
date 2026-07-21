@@ -15,12 +15,12 @@ export const faqData: FaqItem[] = [
     question: '应用无法启动？',
     questionEn: "App won't launch?",
     steps: [
-      '请检查您的系统是否满足最低要求：Windows 10 版本 1809 或更高。',
+      '请检查您的系统是否满足最低要求：Windows 10 版本 2004 或更高。',
       '如果满足最低要求，请从 Microsoft Learn 下载 C++ Runtime (Desktop Bridge) 与最新 Windows App SDK 的 x64 依赖，使用管理员权限安装。',
       '如果问题仍然存在，请打开日志目录查看崩溃日志（设置 → 关于 → 日志路径）。',
     ],
     stepsEn: [
-      'Check if your system meets the minimum requirements: Windows 10, version 1809 or later.',
+      'Check if your system meets the minimum requirements: Windows 10, version 2004 or later.',
       'If you meet the requirements, download the x64 dependencies of C++ Runtime (Desktop Bridge) and the latest Windows App SDK from Microsoft Learn, then install them with administrator privileges.',
       'If the problem persists, open the log directory (Settings → About → Log Path) to check the crash log.',
     ],
@@ -115,13 +115,13 @@ export const faqData: FaqItem[] = [
     question: '应用运行时出现怪异行为？',
     questionEn: 'App behaving strangely?',
     steps: [
-      '关闭应用进程（在任务管理器中结束 WinUIMusicPlayer.exe）。',
+      '关闭应用进程（在任务管理器中结束 OriginalSound HIFI Player.exe）。',
       '按 Win + R 打开「运行」，输入 %USERPROFILE%\\Documents\\OriginalSoundPlayer\\Settings 后回车，打开设置所在目录。',
       '删除（或重命名备份）Settings.json 文件。',
       '重新启动应用。首次启动会使用默认设置，所有自定义项将被重置。',
     ],
     stepsEn: [
-      'Close the application (end WinUIMusicPlayer.exe in Task Manager).',
+      'Close the application (end OriginalSound HIFI Player.exe in Task Manager).',
       'Press Win + R, enter %USERPROFILE%\\Documents\\OriginalSoundPlayer\\Settings and press Enter to open the settings directory.',
       'Delete (or rename as backup) the Settings.json file.',
       'Restart the application. The app will start with default settings; all custom preferences will be reset.',
