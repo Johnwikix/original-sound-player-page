@@ -275,7 +275,6 @@ const toggleLocale = () => {
 
 .header-inner {
   height: var(--header-height);
-  max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--space-6);
   display: flex;

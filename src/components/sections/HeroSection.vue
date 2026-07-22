@@ -178,7 +178,6 @@ onMounted(() => {
 .hero-content {
   position: relative;
   z-index: 1;
-  max-width: 880px;
   text-align: center;
   display: flex;
   flex-direction: column;
