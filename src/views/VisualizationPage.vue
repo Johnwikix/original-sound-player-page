@@ -17,7 +17,7 @@ const { t } = useI18n()
         </div>
         <div class="viz-hero-inner">
           <div class="viz-eyebrow">{{ t('visualization.eyebrow') }}</div>
-          <h1 class="viz-title">{{ t('visualization.title') }}</h1>
+          <h2 class="viz-title">{{ t('visualization.title') }}</h2>
           <p class="viz-subtitle">{{ t('visualization.subtitle') }}</p>
 
           <div class="viz-actions">

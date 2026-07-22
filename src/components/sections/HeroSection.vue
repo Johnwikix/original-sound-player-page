@@ -42,7 +42,7 @@ onMounted(() => {
         {{ t('home.hero.eyebrow') }}
       </div>
 
-      <h1 class="hero-title" ref="title">
+      <h2 class="hero-title" ref="title">
         <span
           v-for="(char, index) in titleChars"
           :key="`${locale}-${index}`"
@@ -50,7 +50,7 @@ onMounted(() => {
           :style="{ animationDelay: `${index * charDelay}s` }"
           >{{ char === ' ' ? ' ' : char }}</span
         >
-      </h1>
+      </h2>
 
       <p class="hero-subtitle">{{ t('home.hero.subtitle') }}</p>
 

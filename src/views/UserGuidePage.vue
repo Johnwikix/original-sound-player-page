@@ -41,7 +41,7 @@ watch(locale, () => {
       <div class="guide-hero">
         <div class="guide-hero-inner">
           <div class="guide-eyebrow">{{ t('guide.eyebrow') }}</div>
-          <h1 class="guide-title">{{ t('guide.title') }}</h1>
+          <h2 class="guide-title">{{ t('guide.title') }}</h2>
           <p class="guide-intro">{{ t('guide.intro') }}</p>
 
           <div class="guide-stats">

@@ -33,7 +33,7 @@ const toggle = (id: number) => {
       <div class="faq-hero">
         <div class="faq-hero-inner">
           <div class="faq-eyebrow">{{ t('faq.eyebrow') }}</div>
-          <h1 class="faq-title">{{ t('faq.title') }}</h1>
+          <h2 class="faq-title">{{ t('faq.title') }}</h2>
           <p class="faq-subtitle">{{ t('faq.subtitle') }}</p>
 
           <div class="faq-stats">
