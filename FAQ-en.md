@@ -6,6 +6,7 @@
 
 1. First, check if your system meets the minimum requirements: Windows 10, version 1809.
 2. If you meet the requirements, try downloading the dependencies for your x64 architecture from **C++ Runtime packages for Desktop Bridge - Visual C++ | Microsoft Learn** and **Latest Windows App SDK Downloads - Windows apps | Microsoft Learn**. Make sure you install them with administrator privileges.
+3. If the problem persists, press `Win + R` to open the Run dialog and enter `%USERPROFILE%\Documents\OriginalSoundPlayer\Logs` to navigate to the log directory and inspect the crash log.
 
 ---
 

@@ -161,7 +161,71 @@
       "gh": "GitHub Repo"
     },
     "legal": {
-      "policy": "Project Policy"
+      "policy": "Project Policy",
+      "disclaimer": "Disclaimer"
+    }
+  },
+  "disclaimer": {
+    "eyebrow": "Legal",
+    "title": "Disclaimer",
+    "subtitle": "Please read the following terms carefully before using OriginalSound HQ. Installing, running, or otherwise using this application indicates that you have read, understood, and agreed to all contents of this statement.",
+    "lastUpdated": "Last updated: August 2026",
+    "sections": {
+      "nature": {
+        "title": "1. Nature and Scope",
+        "paragraphs": [
+          "OriginalSound HQ (hereinafter \"the Application\") is a local music player for Windows 10 and Windows 11. It reads and processes only the music files and system audio streams that you authorize on your own device.",
+          "The Application does not upload your music files, personal information, or playback history to any remote server. All data, except for local logs, remains on your device and is managed by you."
+        ]
+      },
+      "warranty": {
+        "title": "2. Provided \"As-Is\", No Warranty",
+        "paragraphs": [
+          "The Application is provided on an \"AS IS\" basis. Sennpei Studio and its developer make no express or implied warranties regarding its fitness for a particular purpose, stability, compatibility, security, uninterrupted operation, absence of errors or defects, or ability to meet your specific requirements.",
+          "You are responsible for evaluating whether the Application meets your needs and for assuming all risks arising from its use."
+        ]
+      },
+      "responsibility": {
+        "title": "3. User Responsibilities",
+        "paragraphs": [
+          "Please safeguard your music files and important data on your own device. Uninstalling or resetting the Application will not actively delete your personal files; however, you should understand that any software behavior carries inherent, unpredictable risks."
+        ]
+      },
+      "system": {
+        "title": "4. System Component Interaction Risks",
+        "paragraphs": [
+          "During operation, the Application interacts with the following Windows system components: registering a system tray icon, creating WASAPI audio sessions, reading and writing log and settings files under your user profile directory, and invoking WASAPI / DirectSound interfaces.",
+          "Audio driver interaction: Exclusive modes (WASAPI Exclusive, ASIO, DSD Raw / DoP) bypass the system mixer and communicate directly with the audio driver. They may conflict with third-party audio enhancement software (system-wide equalizers, virtual sound cards, spatial audio plugins), which can result in no sound, audio glitches, sample rate anomalies, or Windows Audio Service restarts.",
+          "Third-party beautification and enhancement tools: If you have software such as StartAllBack, Rainmeter, TranslucentTB, third-party antivirus, or system optimization / theme tools installed, they may modify the same system components (such as DWM composition, Shell hooks, file associations) and cause anomalies in the Application's window backdrop, tray icon, hotkey response, or drag-and-drop behavior.",
+          "If you experience system anomalies—such as audio silence, missing tray icon, unresponsive hotkeys, or the application window failing to stay on top—after installing, updating, or uninstalling the Application, please first collect logs from Settings → About → Log Path (%USERPROFILE%\\Documents\\OriginalSoundPlayer\\Logs) and contact the developer for troubleshooting. Do not perform system-level rollbacks or reinstalls before the cause is identified."
+        ]
+      },
+      "liability": {
+        "title": "5. Limitation of Liability",
+        "paragraphs": [
+          "To the maximum extent permitted by applicable law, Sennpei Studio and its developer shall not be liable for any direct, indirect, incidental, special, punitive, or consequential damages (including but not limited to data loss, equipment damage, system component anomalies, business interruption, loss of profits, or loss of goodwill) arising from the use of, or inability to use, the Application.",
+          "Because the Application is provided free of charge, the developer's total liability shall not exceed the amount you have paid for using the Application at zero cost."
+        ]
+      },
+      "thirdparty": {
+        "title": "6. Third-Party Components and Open-Source Licenses",
+        "paragraphs": [
+          "The Application uses several open-source third-party components, including but not limited to .NET, Windows App SDK, NAudio, FFmpeg, and others. Each component is governed by its own license. See the credits and licenses list on the in-app About page for details.",
+          "Any issues caused by third-party components are the responsibility of their original authors and corresponding license agreements. This statement does not assume additional responsibility for defects, security issues, or service interruptions in third-party components."
+        ]
+      },
+      "changes": {
+        "title": "7. Changes to This Statement",
+        "paragraphs": [
+          "Sennpei Studio reserves the right to update this statement at any time. Updated statements will take effect on this page, with the date noted in the \"Last updated\" field. Continued use of the Application constitutes acceptance of the updated statement."
+        ]
+      },
+      "contact": {
+        "title": "8. Contact",
+        "paragraphs": [
+          "If you have any questions about the terms of this statement, or need assistance with system anomalies encountered while using the Application, please contact the developer at dannypan9709@foxmail.com."
+        ]
+      }
     }
   }
 }

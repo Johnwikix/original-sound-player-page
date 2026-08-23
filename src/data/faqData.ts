@@ -18,11 +18,13 @@ export const faqData: FaqItem[] = [
       '请检查您的系统是否满足最低要求：Windows 10 版本 2004 或更高。',
       '如果满足最低要求，请从 Microsoft Learn 下载 C++ Runtime (Desktop Bridge) 与最新 Windows App SDK 的 x64 依赖，使用管理员权限安装。',
       '如果问题仍然存在，请打开日志目录查看崩溃日志（设置 → 关于 → 日志路径）。',
+      '日志路径：%USERPROFILE%\\Documents\\OriginalSoundPlayer\\Logs，按 Win + R 输入该路径可直接打开。',
     ],
     stepsEn: [
       'Check if your system meets the minimum requirements: Windows 10, version 2004 or later.',
       'If you meet the requirements, download the x64 dependencies of C++ Runtime (Desktop Bridge) and the latest Windows App SDK from Microsoft Learn, then install them with administrator privileges.',
       'If the problem persists, open the log directory (Settings → About → Log Path) to check the crash log.',
+      'Log path: %USERPROFILE%\\Documents\\OriginalSoundPlayer\\Logs (press Win + R and enter the path to open it directly).',
     ],
     links: [
       {

@@ -3,6 +3,7 @@ import HomePage from '@/views/HomePage.vue'
 import UserGuidePage from '@/views/UserGuidePage.vue'
 import FaqPage from '@/views/FaqPage.vue'
 import VisualizationPage from '@/views/VisualizationPage.vue'
+import DisclaimerPage from '@/views/DisclaimerPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: '/visualization',
       name: 'visualization',
       component: VisualizationPage,
+    },
+    {
+      path: '/disclaimer',
+      name: 'disclaimer',
+      component: DisclaimerPage,
     },
   ],
   scrollBehavior(_to, _from, savedPosition) {

@@ -4,6 +4,7 @@
 
 1. 请检查您的系统是否满足最低要求：win10 1809
 2. 如果满足最低要求，请尝试从[C++ Runtime packages for Desktop Bridge - Visual C++ | Microsoft Learn](https://learn.microsoft.com/en-us/troubleshoot/developer/visualstudio/cpp/libraries/c-runtime-packages-desktop-bridge#how-to-install-and-update-desktop-framework-packages) 和 [最新 Windows 应用 SDK 下载 - Windows apps | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/apps/windows-app-sdk/downloads) 下载您的x64架构对应的依赖，并使用管理员权限安装。
+3. 如果问题仍然存在，可按 `Win + R` 打开「运行」并输入 `%USERPROFILE%\Documents\OriginalSoundPlayer\Logs` 进入日志目录查看崩溃日志。
 
 ## 2. win10系统缺少字体图标？
 
