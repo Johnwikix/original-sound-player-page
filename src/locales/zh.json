@@ -176,13 +176,13 @@
         "paragraphs": [
           "原音HQ播放器（以下简称「本应用」）是一款面向 Windows 10 与 Windows 11 的本地音乐播放应用，仅在你的设备上读取和处理你授权的音乐文件及系统音频流。",
           "本应用不会主动将你的音乐文件、个人信息或播放记录上传至任何远程服务器；除本地日志外，所有数据均保存在你的设备上，由你自行管理。",
-          "本应用以三种形态分发：（一）通过 Microsoft Store 上架的官方预构建版本，采用「60 天免费试用 + 付费授权」的商业模式；（二）通过 GitHub 公开仓库（https://github.com/Johnwikix/original-sound-hq-player）发布的源代码，依据 GNU Affero 通用公共许可证第三版（AGPL-3.0）向公众开放；（三）由 Sennpei Studio 不定期在 GitHub Releases 中以 Pre-release 标签发布的测试版本，按「原状」免费提供，仅供测试与评估使用。"
+          "本应用以三种形态分发：（一）通过 Microsoft Store 上架的官方预构建版本，采用「30 天免费试用 + 付费授权」的商业模式；（二）通过 GitHub 公开仓库（https://github.com/Johnwikix/original-sound-hq-player）发布的源代码，依据 GNU Affero 通用公共许可证第三版（AGPL-3.0）向公众开放；（三）由 Sennpei Studio 不定期在 GitHub Releases 中以 Pre-release 标签发布的测试版本，按「原状」免费提供，仅供测试与评估使用。"
         ]
       },
       "license": {
         "title": "2. 许可模式与商业条款",
         "paragraphs": [
-          "官方版本（Microsoft Store）：官方预构建版本提供 60 天免费试用，期满后须通过 Microsoft Store 购买有效授权方可解锁完整功能并继续使用。试用期内功能完整，仅在到期后施加限制。授权价格、续费与退款政策以 Microsoft Store 平台公示内容为准。",
+          "官方版本（Microsoft Store）：官方预构建版本提供 30 天免费试用，期满后须通过 Microsoft Store 购买有效授权方可解锁完整功能并继续使用。试用期内功能完整，仅在到期后施加限制。授权价格、续费与退款政策以 Microsoft Store 平台公示内容为准。",
           "开源源代码（GitHub）：本应用源代码遵循 AGPL-3.0 许可证发布。在严格遵守 AGPL-3.0 全部条款的前提下，你可以自由地查看、修改、再分发以及自构建使用源代码，用于个人或商业目的；但是，任何衍生作品、再分发版本或基于本应用提供网络服务的行为，均须以 AGPL-3.0 公开相应完整源代码，并显著标注原始版权与修改记录。",
           "测试版本（GitHub Releases）：Sennpei Studio 不定期在 GitHub Releases 中以 Pre-release 标签发布测试构建。这些版本属于预发布性质的预览，可能存在已知或未知的缺陷、不完整功能与未经充分验证的行为，仅供功能评估、兼容性测试与问题反馈之用，不得用于生产环境或关键任务场景；开发者不对测试版本的稳定性、可用性、适配性、安全性或持续可用性作任何承诺，亦不承担任何支持、修复或赔偿责任。",
           "三种形态之间的关系：通过 Microsoft Store 销售的官方版本，其许可关系独立于源代码的 AGPL-3.0 许可，也独立于测试版本。购买 Microsoft Store 授权不构成对 AGPL-3.0 条款的修改或豁免；反之，依据 AGPL-3.0 自构建使用本应用源代码，亦不产生 Microsoft Store 渠道下的技术支持、试用延长或功能承诺。下载测试版本不视为取得任何商业授权，亦不构成对官方版本的替代。",
