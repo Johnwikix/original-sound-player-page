@@ -3,11 +3,23 @@ import HomePage from '@/views/HomePage.vue'
 import UserGuidePage from '@/views/UserGuidePage.vue'
 import FaqPage from '@/views/FaqPage.vue'
 import VisualizationPage from '@/views/VisualizationPage.vue'
-import DisclaimerPage from '@/views/DisclaimerPage.vue'
+const DisclaimerPage = () => import('@/views/DisclaimerPage.vue')
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    {
+      path: '/terms',
+      name: 'terms',
+      component: () => import('@/views/LegalPage.vue'),
+      props: { documentId: 'terms' },
+    },
+    {
+      path: '/privacy',
+      name: 'privacy',
+      component: () => import('@/views/LegalPage.vue'),
+      props: { documentId: 'privacy' },
+    },
     {
       path: '/',
       name: 'home',

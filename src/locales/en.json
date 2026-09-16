@@ -161,86 +161,9 @@
       "gh": "GitHub Repo"
     },
     "legal": {
-      "policy": "Project Policy",
-      "disclaimer": "Disclaimer"
-    }
-  },
-  "disclaimer": {
-    "eyebrow": "Legal",
-    "title": "Disclaimer",
-    "subtitle": "Please read the following terms carefully before using OriginalSound HQ. Installing, running, or otherwise using this application indicates that you have read, understood, and agreed to all contents of this statement.",
-    "lastUpdated": "Last updated: September 2026",
-    "sections": {
-      "nature": {
-        "title": "1. Nature and Scope",
-        "paragraphs": [
-          "OriginalSound HQ (hereinafter \"the Application\") is a local music player for Windows 10 and Windows 11. It reads and processes only the music files and system audio streams that you authorize on your own device.",
-          "The Application does not upload your music files, personal information, or playback history to any remote server. All data, except for local logs, remains on your device and is managed by you.",
-          "The Application is distributed in three forms: (i) the official pre-built version published on Microsoft Store under a \"30-day free trial + paid license\" commercial model; (ii) the source code published on the public GitHub repository (https://github.com/Johnwikix/original-sound-hq-player) under the GNU Affero General Public License, version 3 (AGPL-3.0); and (iii) test builds periodically published by Sennpei Studio as Pre-release assets on GitHub Releases, provided free of charge on an \"AS IS\" basis and intended for testing and evaluation only."
-        ]
-      },
-      "license": {
-        "title": "2. License Model and Commercial Terms",
-        "paragraphs": [
-          "Official version (Microsoft Store): The official pre-built version provides a 30-day free trial. After the trial expires, you must purchase a valid license through Microsoft Store to unlock the full feature set and continue using the Application. During the trial, the complete feature set is available; restrictions are only applied after expiration. Pricing, renewal, and refund policies are governed by the Microsoft Store platform.",
-          "Open-source code (GitHub): The source code of the Application is released under the AGPL-3.0 license. Subject to full compliance with AGPL-3.0, you are free to view, modify, redistribute, and self-build the source code for personal or commercial purposes; however, any derivative work, redistributed version, or network service based on the Application must publish the complete corresponding source code under AGPL-3.0, and clearly indicate the original copyright and modification records.",
-          "Test builds (GitHub Releases): Sennpei Studio periodically publishes test builds on GitHub Releases under the Pre-release tag. These versions are pre-release previews and may contain known or unknown defects, incomplete features, and behavior that has not been fully verified. They are provided solely for functional evaluation, compatibility testing, and issue reporting, and must not be used in production environments or mission-critical scenarios. The developer makes no commitment regarding the stability, availability, fitness, security, or continued availability of any test build, and assumes no obligation of support, remediation, or compensation.",
-          "Relationship among the three forms: The license granted through Microsoft Store is independent of the AGPL-3.0 license governing the source code, and also independent of the test builds. Purchasing a Microsoft Store license does not modify or waive any term of AGPL-3.0; conversely, self-building and using the source code under AGPL-3.0 does not entitle you to technical support, trial extensions, or feature commitments associated with the Microsoft Store channel. Downloading a test build does not constitute acquiring any commercial license, nor does it serve as a substitute for the official version.",
-          "Commercial use and branding: You may not offer commercial services, bundle and resell the official pre-built version, or resell Microsoft Store licenses themselves in the name of \"Sennpei Studio\" or any of its brands. You also may not remove, modify, or obscure any in-app copyright notice, license information, or attribution statement — the attribution and notice obligations under AGPL-3.0 §5 are not diminished by this statement."
-        ]
-      },
-      "warranty": {
-        "title": "3. Provided \"As-Is\", No Warranty",
-        "paragraphs": [
-          "The Application is provided on an \"AS IS\" basis, whether distributed as the official paid version, free trial version, test build, or AGPL-3.0 self-built version. Sennpei Studio and its developer make no express or implied warranties regarding its fitness for a particular purpose, stability, compatibility, security, uninterrupted operation, absence of errors or defects, or ability to meet your specific requirements.",
-          "You are responsible for evaluating whether the Application meets your needs and for assuming all risks arising from its use."
-        ]
-      },
-      "responsibility": {
-        "title": "4. User Responsibilities",
-        "paragraphs": [
-          "Please safeguard your music files and important data on your own device. Uninstalling or resetting the Application will not actively delete your personal files; however, you should understand that any software behavior carries inherent, unpredictable risks.",
-          "If you choose to self-build the Application, download a test build, or run a derived version on third-party platforms, you are solely responsible for evaluating the security, compliance, and stability of the corresponding output, and assume all resulting consequences."
-        ]
-      },
-      "system": {
-        "title": "5. System Component Interaction Risks",
-        "paragraphs": [
-          "During operation, the Application interacts with the following Windows system components: registering a system tray icon, creating WASAPI audio sessions, reading and writing log and settings files under your user profile directory, and invoking WASAPI / DirectSound interfaces.",
-          "Audio driver interaction: Exclusive modes (WASAPI Exclusive, ASIO, DSD Raw / DoP) bypass the system mixer and communicate directly with the audio driver. They may conflict with third-party audio enhancement software (system-wide equalizers, virtual sound cards, spatial audio plugins), which can result in no sound, audio glitches, sample rate anomalies, or Windows Audio Service restarts.",
-          "Third-party beautification and enhancement tools: If you have software such as StartAllBack, Rainmeter, TranslucentTB, third-party antivirus, or system optimization / theme tools installed, they may modify the same system components (such as DWM composition, Shell hooks, file associations) and cause anomalies in the Application's window backdrop, tray icon, hotkey response, or drag-and-drop behavior.",
-          "If you experience system anomalies—such as audio silence, missing tray icon, unresponsive hotkeys, or the application window failing to stay on top—after installing, updating, or uninstalling the Application, please first collect logs from Settings → About → Log Path (%USERPROFILE%\\Documents\\OriginalSoundPlayer\\Logs) and contact the developer for troubleshooting. Do not perform system-level rollbacks or reinstalls before the cause is identified."
-        ]
-      },
-      "liability": {
-        "title": "6. Limitation of Liability",
-        "paragraphs": [
-          "To the maximum extent permitted by applicable law, in no event shall Sennpei Studio and its developer be liable for any direct, indirect, incidental, special, punitive, consequential, or exemplary damages (including but not limited to loss of data, equipment damage, system component anomalies, business interruption, loss of profits, loss of goodwill, or cost of procuring substitute products or services) arising under any legal theory (including but not limited to contract, tort, negligence, strict liability, fraud, or misrepresentation), even if advised of the possibility of such damages.",
-          "This limitation applies to all forms of the Application: the official paid version, free trial version, test build, and any AGPL-3.0 self-built or redistributed derivative version.",
-          "In jurisdictions where applicable law prohibits the complete exclusion of liability, the total liability of Sennpei Studio and its developer shall be limited to the minimum amount permitted by applicable law."
-        ]
-      },
-      "thirdparty": {
-        "title": "7. Third-Party Components and Open-Source Licenses",
-        "paragraphs": [
-          "The Application uses several open-source third-party components, including but not limited to .NET, Windows App SDK, NAudio, FFmpeg, and others. Each component is governed by its own license. See the credits and licenses list on the in-app About page for details.",
-          "Any issues caused by third-party components are the responsibility of their original authors and corresponding license agreements. This statement does not assume additional responsibility for defects, security issues, or service interruptions in third-party components."
-        ]
-      },
-      "changes": {
-        "title": "8. Changes to This Statement",
-        "paragraphs": [
-          "Sennpei Studio reserves the right to update this statement at any time. Updated statements will take effect on this page, with the date noted in the \"Last updated\" field. Continued use of the Application constitutes acceptance of the updated statement.",
-          "Changes to this statement do not affect the validity or scope of Microsoft Store licenses already in effect, nor do they retroactively modify the pre-existing rights of source code users under AGPL-3.0."
-        ]
-      },
-      "contact": {
-        "title": "9. Contact",
-        "paragraphs": [
-          "If you have any questions about the terms of this statement, or need assistance with system anomalies encountered while using the Application, please contact the developer at dannypan9709@foxmail.com.",
-          "For purchase, refund, and invoicing matters related to Microsoft Store licenses, please contact Microsoft Store customer support first."
-        ]
-      }
+      "policy": "Privacy Policy",
+      "disclaimer": "Disclaimer",
+      "terms": "User Agreement"
     }
   }
 }

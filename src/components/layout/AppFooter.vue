@@ -24,10 +24,11 @@ const resourceLinks = computed(() => [
 ])
 
 const legalLinks = computed(() => [
+  { key: 'terms', label: t('footer.legal.terms'), to: '/terms' },
   {
     key: 'policy',
     label: t('footer.legal.policy'),
-    href: 'https://github.com/Johnwikix/original-sound-hq-player/blob/main/policy.md',
+    to: '/privacy',
   },
   { key: 'disclaimer', label: t('footer.legal.disclaimer'), to: '/disclaimer' },
 ])
@@ -82,8 +83,7 @@ const socialLinks = computed(() => [
           <h4 class="footer-title">{{ t('footer.col.legal') }}</h4>
           <ul class="footer-list">
             <li v-for="link in legalLinks" :key="link.key">
-              <a v-if="link.href" :href="link.href" rel="nofollow">{{ link.label }}</a>
-              <router-link v-else :to="link.to!">{{ link.label }}</router-link>
+              <router-link :to="link.to">{{ link.label }}</router-link>
             </li>
           </ul>
         </div>
