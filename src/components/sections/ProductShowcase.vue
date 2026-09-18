@@ -1,9 +1,15 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useReveal } from '../../composables/useReveal'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const { elementRef, isVisible } = useReveal()
+
+const showcaseImage = computed(() => {
+  const base = (import.meta.env.BASE_URL || '/') + 'screenshots/'
+  return `${base}${locale.value === 'en' ? 'library-songs' : 'playing-lyrics'}.jpg`
+})
 </script>
 
 <template>
@@ -11,7 +17,7 @@ const { elementRef, isVisible } = useReveal()
     <div class="showcase-container">
       <div class="screenshot-frame" data-reveal-child :style="{ '--i': 0 }">
         <img
-          src="https://store-images.s-microsoft.com/image/apps.48216.13587170393988356.0a486ee0-c00e-471b-87ee-c60857221b6d.bbe8af58-d979-4705-af17-e0f0152f81f2"
+          :src="showcaseImage"
           :alt="t('home.showcase.window_title')"
           width="1280"
           height="800"

@@ -25,7 +25,7 @@
     },
     "meta": {
       "formats": "Audio Formats",
-      "audio": "ASIO · WASAPI · DSD Raw/DoP"
+      "audio": "ASIO · WASAPI · DSD · Convolution"
     },
     "showcase": {
       "window_title": "OriginalSound HQ",
@@ -35,7 +35,7 @@
     "features": {
       "eyebrow": "Core features",
       "title": "Built for listening",
-      "subtitle": "Four core capabilities covering every need of local music playback."
+      "subtitle": "Six core capabilities covering local playback, DSP correction and listening stats."
     },
     "spectrum": {
       "eyebrow": "Companion tool",
@@ -48,7 +48,8 @@
       "feat3_title": "Low footprint",
       "feat3_desc": "Powered by DirectX hardware acceleration",
       "cta_primary": "Get the visualizer",
-      "cta_secondary": "Learn more"
+      "cta_secondary": "Learn more",
+      "now_playing": "Now Playing"
     }
   },
   "guide": {
@@ -97,6 +98,10 @@
       "close-button": {
         "title": "Close Button",
         "intro": "The behavior when the window close button is clicked."
+      },
+      "dsp": {
+        "title": "DSP & Sound Effects",
+        "intro": "Equalizer, loudness normalization, preamp, convolution correction and channel effects."
       }
     }
   },

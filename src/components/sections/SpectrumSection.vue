@@ -73,15 +73,15 @@ const { elementRef, isVisible } = useReveal()
 
         <div class="spectrum-visual" data-reveal-child :style="{ '--i': 1 }">
           <div class="visual-card">
-            <div class="visual-image-wrapper">
-              <img
-                src="https://store-images.s-microsoft.com/image/apps.53500.14251122581188954.3f2cb392-8351-43be-862f-9c8d47c72a76.8d1b8b95-c774-4bdc-b4c7-6ec91ea776fb"
-                :alt="t('home.spectrum.title')"
-                width="1280"
-                height="800"
-                loading="lazy"
-                decoding="async"
-              />
+            <div class="visual-stage">
+              <div class="visual-glow" aria-hidden="true"></div>
+              <div class="visual-now-playing">
+                <span class="visual-eq-icon" aria-hidden="true">
+                  <i></i><i></i><i></i><i></i>
+                </span>
+                <span class="visual-track">{{ t('home.spectrum.now_playing') }}</span>
+              </div>
+              <SpectrumBars :bars="40" :height="180" />
             </div>
             <div class="visual-spectrogram">
               <SpectrumBars :bars="48" :height="64" />
@@ -237,6 +237,79 @@ const { elementRef, isVisible } = useReveal()
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.visual-stage {
+  position: relative;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(131, 54, 230, 0.25), transparent 55%),
+    radial-gradient(ellipse at 90% 100%, rgba(6, 182, 212, 0.2), transparent 55%),
+    var(--bg-base);
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-4);
+}
+
+.visual-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(2, 2, 4, 0.55));
+  pointer-events: none;
+}
+
+.visual-now-playing {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--r-full);
+  border: 1px solid var(--border-default);
+  background: rgba(5, 5, 7, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1;
+}
+
+.visual-track {
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.visual-eq-icon {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 12px;
+}
+
+.visual-eq-icon i {
+  width: 3px;
+  border-radius: 1px;
+  background: var(--accent);
+  animation: eq-bounce 1s ease-in-out infinite;
+}
+
+.visual-eq-icon i:nth-child(1) { height: 60%; animation-delay: 0s; }
+.visual-eq-icon i:nth-child(2) { height: 100%; animation-delay: 0.2s; }
+.visual-eq-icon i:nth-child(3) { height: 40%; animation-delay: 0.35s; }
+.visual-eq-icon i:nth-child(4) { height: 80%; animation-delay: 0.5s; }
+
+@keyframes eq-bounce {
+  0%, 100% { transform: scaleY(0.5); }
+  50% { transform: scaleY(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visual-eq-icon i {
+    animation: none;
+  }
 }
 
 .visual-spectrogram {

@@ -42,9 +42,13 @@ useHead(() => ({
       <div class="legal-layout">
         <nav class="legal-contents" :aria-label="contentsLabel">
           <p>{{ contentsLabel }}</p>
-          <a v-for="(section, index) in document.sections" :key="section.title" :href="`#section-${index}`">
+          <RouterLink
+            v-for="(section, index) in document.sections"
+            :key="section.title"
+            :to="{ hash: `#section-${index}` }"
+          >
             {{ section.title }}
-          </a>
+          </RouterLink>
         </nav>
         <article :aria-label="document.title" class="legal-document">
           <section

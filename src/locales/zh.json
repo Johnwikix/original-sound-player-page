@@ -25,7 +25,7 @@
     },
     "meta": {
       "formats": "音频格式",
-      "audio": "ASIO · WASAPI · DSD Raw/DoP"
+      "audio": "ASIO · WASAPI · DSD · 卷积校正"
     },
     "showcase": {
       "window_title": "原音HQ播放器",
@@ -35,7 +35,7 @@
     "features": {
       "eyebrow": "核心特性",
       "title": "为聆听而生",
-      "subtitle": "四大核心能力，覆盖本地音乐播放的完整需求。"
+      "subtitle": "六大核心能力，覆盖本地音乐播放、音效校正与听感统计的完整需求。"
     },
     "spectrum": {
       "eyebrow": "配套工具",
@@ -48,7 +48,8 @@
       "feat3_title": "低占用",
       "feat3_desc": "基于 DirectX 硬件加速",
       "cta_primary": "下载可视化工具",
-      "cta_secondary": "了解更多"
+      "cta_secondary": "了解更多",
+      "now_playing": "正在播放"
     }
   },
   "guide": {
@@ -97,6 +98,10 @@
       "close-button": {
         "title": "关闭按钮",
         "intro": "点击窗口关闭按钮时的行为。"
+      },
+      "dsp": {
+        "title": "音效与 DSP",
+        "intro": "均衡器、响度均一化、前级增益、卷积校正与声道效果。"
       }
     }
   },

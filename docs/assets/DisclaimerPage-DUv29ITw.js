@@ -1,1 +1,0 @@
-import e from"./LegalPage-N-zk65g-.js";import{d as a,c as o,o as r}from"./index-CQG9HCAF.js";const i=a({__name:"DisclaimerPage",setup(c){return(t,m)=>(r(),o(e,{"document-id":"disclaimer"}))}});export{i as default};

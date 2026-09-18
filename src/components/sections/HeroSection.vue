@@ -1,32 +1,17 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import GlowButton from '../ui/GlowButton.vue'
 import ShaderBackground from './ShaderBackground.vue'
 import { heroFragmentSource } from './shaders/hero'
 
-const { t, locale } = useI18n()
+const { t } = useI18n()
 const title = ref<HTMLElement | null>(null)
-const reducedMotion = ref(false)
-
-const titleChars = computed(() => {
-  const text = t('home.hero.title')
-  return text.split('')
-})
-
-const charDelay = computed(() =>
-  reducedMotion.value ? 0 : Math.min(0.04, 0.6 / Math.max(titleChars.value.length, 1)),
-)
 
 onMounted(() => {
-  if (title.value) {
-    title.value.classList.add('animate-in')
-  }
-  const mql = window.matchMedia('(prefers-reduced-motion: reduce)')
-  reducedMotion.value = mql.matches
-  mql.addEventListener('change', (ev) => {
-    reducedMotion.value = ev.matches
-  })
+  // 渐变文字依赖 background-clip: text；对子 span 做 transform 动画会使
+  // Chrome 丢弃父级裁剪背景，标题整块不可见。改为对 h1 整体做入场动画。
+  title.value?.classList.add('animate-in')
 })
 </script>
 
@@ -42,15 +27,7 @@ onMounted(() => {
         {{ t('home.hero.eyebrow') }}
       </div>
 
-      <h2 class="hero-title" ref="title">
-        <span
-          v-for="(char, index) in titleChars"
-          :key="`${locale}-${index}`"
-          class="title-char"
-          :style="{ animationDelay: `${index * charDelay}s` }"
-          >{{ char === ' ' ? ' ' : char }}</span
-        >
-      </h2>
+      <h2 class="hero-title" ref="title">{{ t('home.hero.title') }}</h2>
 
       <p class="hero-subtitle">{{ t('home.hero.subtitle') }}</p>
 
@@ -121,7 +98,7 @@ onMounted(() => {
             <circle cx="6" cy="18" r="3" />
             <circle cx="18" cy="16" r="3" />
           </svg>
-          10+ {{ t('home.meta.formats') }}
+          12+ {{ t('home.meta.formats') }}
         </span>
         <span class="meta-divider" aria-hidden="true">·</span>
         <span class="meta-item">
@@ -227,26 +204,24 @@ onMounted(() => {
   letter-spacing: -0.04em;
   color: var(--text-primary);
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   text-wrap: balance;
-  background: linear-gradient(180deg, #ffffff 0%, #c9d1d9 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
   word-break: break-word;
 }
 
-.title-char {
-  display: inline-block;
+.hero-title:not(.animate-in) {
   opacity: 0;
   transform: translateY(20px);
-  animation: char-rise 0.6s var(--ease-out) forwards;
-  padding-bottom: 10px;
 }
 
-@keyframes char-rise {
+.hero-title.animate-in {
+  animation: title-rise 0.7s var(--ease-out) both;
+}
+
+@keyframes title-rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
@@ -254,10 +229,10 @@ onMounted(() => {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .title-char {
-    animation: none;
-    opacity: 1;
-    transform: none;
+  .hero-title {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
   }
 }
 

@@ -62,6 +62,15 @@ export const settingsDocs: DocChapter[] = [
         descriptionEn:
           'Click any track in the song list to begin playback. Use the play/pause, previous, and next buttons on the bottom playback bar to control.',
       },
+      {
+        name: '统计与桌面歌词',
+        nameEn: 'Stats & Desktop Lyrics',
+        type: 'text',
+        description:
+          '侧边栏「统计」页提供收听热力图、时段活跃度与 Top 榜单；播放栏的「词」按钮可开启悬停在桌面上的桌面歌词。',
+        descriptionEn:
+          'The Stats page in the sidebar offers a listening heatmap, hourly activity and Top charts; the lyrics button on the playback bar toggles the desktop lyrics overlay.',
+      },
     ],
   },
   {
@@ -76,23 +85,19 @@ export const settingsDocs: DocChapter[] = [
         nameEn: 'Output Device',
         type: 'select',
         description:
-          '选择音频输出设备。下拉列表会枚举系统中所有可用的输出端（如扬声器、耳机、USB DAC）。',
+          '选择音频输出设备与输出模式。默认跟随系统设备（共享模式，播放中插拔设备或变更格式会静默切换不中断）；WASAPI 独占绕过系统混音，支持推送/事件两种驱动与格式自动协商；ASIO 提供原生低延迟输出并支持 DSD Native 位流扩展。',
         descriptionEn:
-          'Select the audio output device. The dropdown enumerates all available outputs in the system (e.g., speakers, headphones, USB DAC).',
+          'Choose the audio output device and mode. The default follows the system device (shared mode — hotplug or format changes switch silently during playback). WASAPI exclusive bypasses system mixing with push/event drivers and automatic format negotiation; ASIO offers native low-latency output with DSD Native bitstream support.',
         options: [
-          'WASAPI 独占(推送)',
-          'WASAPI 独占(事件)',
-          'WASAPI 共享',
-          'WaveOut',
-          'DirectSound',
+          '默认设备（共享）',
+          'WASAPI 独占（推送/事件）',
+          'WASAPI 共享 / DirectSound',
           'ASIO',
         ],
         optionsEn: [
-          'WASAPI Exclusive (Push)',
-          'WASAPI Exclusive (Event)',
-          'WASAPI Shared',
-          'WaveOut',
-          'DirectSound',
+          'Default device (shared)',
+          'WASAPI Exclusive (Push/Event)',
+          'WASAPI Shared / DirectSound',
           'ASIO',
         ],
       },
@@ -154,6 +159,24 @@ export const settingsDocs: DocChapter[] = [
           'Toggle DSD output mode. DoP (DSD over PCM) packs DSD data into PCM frames, compatible with most DACs. Native outputs the raw DSD stream, requiring hardware support.',
       },
       {
+        name: '实验性 5.1 输出',
+        nameEn: 'Experimental 5.1 Output',
+        type: 'toggle',
+        description:
+          '默认关闭。仅用于 ASIO / WASAPI 独占的 5.1 PCM 输出（不含 Atmos）。ASIO 前六通道依次为：左、右、中置、低频、左环绕、右环绕。',
+        descriptionEn:
+          'Off by default. 5.1 PCM output for ASIO / WASAPI exclusive only (no Atmos). ASIO channel order: front-left, front-right, center, LFE, surround-left, surround-right.',
+      },
+      {
+        name: '实验性 Atmos HDMI 直通',
+        nameEn: 'Experimental Atmos HDMI Passthrough',
+        type: 'toggle',
+        description:
+          '默认关闭。仅 WASAPI 独占下支持 48 kHz 六声道 E-AC-3 / Atmos HDMI 位流直通，需要兼容的接收设备。通过音量调节，请在功放端调节音量。',
+        descriptionEn:
+          'Off by default. 48 kHz 6-channel E-AC-3 / Atmos HDMI bitstream passthrough on WASAPI exclusive only, requiring a compatible receiver. Volume is controlled on the receiver.',
+      },
+      {
         name: '淡入淡出',
         nameEn: 'Fade In/Out',
         type: 'toggle',
@@ -163,8 +186,71 @@ export const settingsDocs: DocChapter[] = [
     ],
   },
   {
-    key: 'interface',
+    key: 'dsp',
     number: '02',
+    icon: '🎛️',
+    titleKey: 'guide.chapters.dsp.title',
+    introKey: 'guide.chapters.dsp.intro',
+    items: [
+      {
+        name: 'DSP 总开关',
+        nameEn: 'DSP Master Switch',
+        type: 'toggle',
+        description:
+          '一键旁路全部音效（响度均一化、前级增益、EQ 和声道效果），并保留各项设置。音效设置仅应用于 PCM；DoP / Native DSD 位流播放时自动旁路。',
+        descriptionEn:
+          'Bypass all DSP effects at once (loudness normalization, preamp, EQ and channel effects) while keeping their settings. Effects apply to PCM only; DoP / Native DSD bitstream playback bypasses them automatically.',
+      },
+      {
+        name: '均衡器',
+        nameEn: 'Equalizer',
+        type: 'toggle',
+        description:
+          '十段 EQ，每个频段的增益（±12 dB）与 Q 值独立可调，支持保存、更新与删除命名预设；合成频响图表实时预览 EQ 与卷积的叠加曲线。',
+        descriptionEn:
+          'A 10-band EQ with independent ±12 dB gain and adjustable Q per band. Save, update and delete named presets; the combined-response chart previews the sum of EQ and convolution in real time.',
+      },
+      {
+        name: '音量均一化',
+        nameEn: 'Loudness Normalization',
+        type: 'toggle',
+        description:
+          '按 EBU R128 后台分析整曲响度，完成后平滑应用固定增益并缓存结果（不改文件、不压缩动态）。目标响度范围 −24 ~ −12 LUFS，默认 −18；分析未完成时优先保留动态。',
+        descriptionEn:
+          'Analyzes full-track loudness per EBU R128 in the background, then smoothly applies a fixed gain and caches the result (files untouched, dynamics preserved). Target range −24 to −12 LUFS, default −18.',
+      },
+      {
+        name: '统一前级增益',
+        nameEn: 'Unified Preamp',
+        type: 'toggle',
+        description:
+          '统一作用于 EQ 与卷积，手动设定或开启自动增益/衰减（按合成频响峰值计算补偿并预留 1 dB 余量），避免校正提升造成削波。',
+        descriptionEn:
+          'Applies to both EQ and convolution. Set manually or enable auto gain/attenuation (compensation from the combined response peak with 1 dB headroom) to avoid clipping.',
+      },
+      {
+        name: '卷积校正',
+        nameEn: 'Convolution Correction',
+        type: 'toggle',
+        description:
+          '两种校正来源：绘制 2–32 个可拖动控制点的校正曲线，或导入耳机/房间校正 WAV 脉冲响应（IR）。生成最小相位 FIR 实时卷积，按输出采样率自动重采样；编辑即时生效并自动保存，支持按输出设备绑定独立校正与命名预设管理。',
+        descriptionEn:
+          'Two correction sources: draw a curve with 2–32 draggable control points, or import a headphone/room WAV impulse response (IR). Generates real-time minimum-phase FIR convolution, resampled to the output rate; edits apply instantly and autosave, with per-device bindings and named presets.',
+      },
+      {
+        name: '声道与耳机效果',
+        nameEn: 'Channel & Headphone Effects',
+        type: 'toggle',
+        description:
+          '左右平衡（−100 ~ 100）、左右声道互换、合并为单声道、耳机交叉馈送（Crossfeed，减弱左右分离感）与立体声宽度（0% 完全单声道，扩宽时自动衰减以保留低频）。',
+        descriptionEn:
+          'Left/right balance (−100 to 100), channel swap, mono merge, headphone crossfeed (reduces left/right separation) and stereo width (0% = mono; widening auto-attenuates to preserve lows).',
+      },
+    ],
+  },
+  {
+    key: 'interface',
+    number: '03',
     icon: '🖥️',
     titleKey: 'guide.chapters.interface.title',
     introKey: 'guide.chapters.interface.intro',
@@ -191,7 +277,7 @@ export const settingsDocs: DocChapter[] = [
   },
   {
     key: 'advanced',
-    number: '03',
+    number: '04',
     icon: '⚙️',
     titleKey: 'guide.chapters.advanced.title',
     introKey: 'guide.chapters.advanced.intro',
@@ -240,7 +326,7 @@ export const settingsDocs: DocChapter[] = [
   },
   {
     key: 'shortcuts',
-    number: '04',
+    number: '05',
     icon: '⌨️',
     titleKey: 'guide.chapters.shortcuts.title',
     introKey: 'guide.chapters.shortcuts.intro',
@@ -322,7 +408,7 @@ export const settingsDocs: DocChapter[] = [
   },
   {
     key: 'cover',
-    number: '05',
+    number: '06',
     icon: '🎨',
     titleKey: 'guide.chapters.cover.title',
     introKey: 'guide.chapters.cover.intro',
@@ -374,24 +460,26 @@ export const settingsDocs: DocChapter[] = [
         nameEn: 'Shader Background',
         type: 'select',
         description:
-          '播放器界面的动态着色器背景。可选 6 种效果：Fluid（流体）、PS3XMB（PS3 风格）、GradientFlow（渐变流动）、WavyBackground（波浪）、ChromaticResonance（色彩共振）、LiquidFlow（液态流）。修改后需重启应用。',
+          '播放器界面的动态着色器背景。可选 7 种效果：Fluid（流体）、PS3XMB（PS3 风格）、RotatingMesh（旋转网格）、LiquidFlow（液态流）、GradientFlow（渐变流动）、WavyBackground（波浪）、ChromaticResonance（色彩共振）。修改后需重启应用。',
         descriptionEn:
-          'Dynamic shader background for the player UI. Choose from 6 effects: Fluid, PS3XMB, GradientFlow, WavyBackground, ChromaticResonance, LiquidFlow. Restart required after change.',
+          'Dynamic shader background for the player UI. Choose from 7 effects: Fluid, PS3XMB, RotatingMesh, LiquidFlow, GradientFlow, WavyBackground, ChromaticResonance. Restart required after change.',
         options: [
           'Fluid',
           'PS3XMB',
+          'RotatingMesh',
+          'LiquidFlow',
           'GradientFlow',
           'WavyBackground',
           'ChromaticResonance',
-          'LiquidFlow',
         ],
         optionsEn: [
           'Fluid',
           'PS3XMB',
+          'RotatingMesh',
+          'LiquidFlow',
           'GradientFlow',
           'WavyBackground',
           'ChromaticResonance',
-          'LiquidFlow',
         ],
       },
       {
@@ -438,7 +526,7 @@ export const settingsDocs: DocChapter[] = [
   },
   {
     key: 'lyrics',
-    number: '06',
+    number: '07',
     icon: '📝',
     titleKey: 'guide.chapters.lyrics.title',
     introKey: 'guide.chapters.lyrics.intro',
@@ -568,6 +656,15 @@ export const settingsDocs: DocChapter[] = [
         optionsEn: ['30 hz', '60 hz', '90 hz', '120 hz', '144 hz'],
       },
       {
+        name: '桌面歌词',
+        nameEn: 'Desktop Lyrics',
+        type: 'toggle',
+        description:
+          '独立桌面歌词窗口：逐字/逐行显示模式、锁定位置、字体字号与对齐、描边发光、双行显示（原文+翻译）、雾化/飘雪/雨滴特效与自定义配色。',
+        descriptionEn:
+          'Standalone desktop lyrics window: word-by-word or line modes, position lock, font/size/alignment, glow and outline, dual-line display (original + translation), fog/snow/rain effects and custom colors.',
+      },
+      {
         name: '自定义歌词颜色',
         nameEn: 'Custom Lyrics Color',
         type: 'color',
@@ -579,7 +676,7 @@ export const settingsDocs: DocChapter[] = [
   },
   {
     key: 'appearance',
-    number: '07',
+    number: '08',
     icon: '🌗',
     titleKey: 'guide.chapters.appearance.title',
     introKey: 'guide.chapters.appearance.intro',
@@ -641,7 +738,7 @@ export const settingsDocs: DocChapter[] = [
   },
   {
     key: 'close-button',
-    number: '08',
+    number: '09',
     icon: '🚪',
     titleKey: 'guide.chapters.close-button.title',
     introKey: 'guide.chapters.close_button.intro',
