@@ -17,9 +17,9 @@ export const featuresData: Feature[] = [
     title: '逐字歌词与着色器背景',
     titleEn: 'Word-by-word Lyrics & Shader Backgrounds',
     content:
-      '播放页支持逐字动态歌词特效，换行采用逐行缓动滚动（流波弹簧、逐行错峰等曲线可调），配合多种着色器流体背景与封面取色，营造沉浸式聆听氛围。',
+      '7 种动态着色器背景（流体、PS3 XMB、旋转网格、液态流、渐变流动、波动、色彩共振）按封面取色实时渲染，支持光波与雾化氛围；播放页逐字歌词逐字点亮、字符浮动缩放，换行采用流波弹簧、逐行错峰等缓动曲线（可调）。',
     contentEn:
-      'The now-playing page renders word-by-word animated lyrics with per-line easing scroll (spring wave, staggered lines and more), paired with shader fluid backgrounds and cover-based color extraction for an immersive listening atmosphere.',
+      'Seven dynamic shader backgrounds (Fluid, PS3 XMB, Rotating Mesh, Liquid Flow, Gradient Flow, Wavy, Chromatic Resonance) render live from cover colors with light-wave and fog ambience. Lyrics light up word by word with floating/scaling characters and eased per-line scrolling (FlowWave spring, staggered lines — both adjustable).',
     image: `${base}playing-lyrics.jpg`,
     imageEn: `${base}playing-lyrics.jpg`,
     accent: 'violet',
@@ -65,9 +65,9 @@ export const featuresData: Feature[] = [
     title: '桌面歌词',
     titleEn: 'Desktop Lyrics',
     content:
-      '独立桌面歌词窗口悬停在桌面上方，支持逐字/逐行模式、字体字号、描边发光、自定义配色与对齐方式，看歌词无需切回播放器。',
+      '独立桌面歌词窗口悬停在桌面上方：逐字/逐行模式、双行显示（原文+翻译）、描边发光、雾化/飘雪/雨滴特效与自定义配色，锁定不挡操作，看歌词无需切回播放器。',
     contentEn:
-      'A standalone desktop lyrics overlay with word-by-word or line modes, font and size options, glow and outline styles, custom colors and alignment — read lyrics without switching back to the player.',
+      'A standalone desktop lyrics overlay with word-by-word or line modes, dual-line display (original + translation), glow and outline, fog/snow/rain effects and custom colors — lockable, click-through, no need to switch back to the player.',
     image: `${base}desktop-lyrics-wide.jpg`,
     imageEn: `${base}desktop-lyrics-wide.jpg`,
     accent: 'violet',
@@ -80,8 +80,8 @@ export const featuresData: Feature[] = [
       'WASAPI 独占/共享、ASIO、DoP 与 DSD Native 位流输出，实验性 5.1 与 Atmos HDMI 直通；Mica、Acrylic 等 5 种应用背景材质，配合深浅主题与封面取色。',
     contentEn:
       'WASAPI exclusive/shared, ASIO, DoP and DSD Native bitstream output plus experimental 5.1 and Atmos HDMI passthrough; 5 backdrop materials including Mica and Acrylic with dark/light themes and cover tinting.',
-    image: `${base}dsp-settings.jpg`,
-    imageEn: `${base}dsp-settings.jpg`,
+    image: `${base}cover-shader.jpg`,
+    imageEn: `${base}cover-shader.jpg`,
     accent: 'amber',
   },
 ]
