@@ -12,6 +12,34 @@ export type FaqItem = {
 export const faqData: FaqItem[] = [
   {
     id: 1,
+    question: '无法从微软商店下载程序？',
+    questionEn: "Can't download the app from Microsoft Store?",
+    steps: [
+      '方式一：从 GitHub Releases 下载。在仓库的 Releases 页面获取测试版本安装包，免费提供，仅供测试与评估使用。',
+      '方式二：从 rg-adguard.net 下载离线 msix。访问商店链接生成工具，粘贴 Microsoft Store 中本应用的链接（https://apps.microsoft.com/detail/9NFW1RPPT999），选择对应的架构（x64）和通道（RP），生成离线 .msix 安装包链接并下载安装。',
+      '方式三：直接从源码构建。克隆本应用的 GitHub 源码仓库，按照仓库中的说明自行编译（源码依据 AGPL-3.0 许可开放）。',
+    ],
+    stepsEn: [
+      'Option 1: Download from GitHub Releases. Get the test builds from the repository Releases page, provided free of charge for testing and evaluation only.',
+      "Option 2: Download the offline .msix from rg-adguard.net. Visit the store link generator, paste the application's Store link (https://apps.microsoft.com/detail/9NFW1RPPT999), select the architecture (x64) and channel (RP), then generate the offline .msix package link and install it.",
+      'Option 3: Build directly from source. Clone the GitHub source repository and compile it yourself following the instructions in the repo (source code is licensed under AGPL-3.0).',
+    ],
+    links: [
+      {
+        label: 'GitHub Releases',
+        labelEn: 'GitHub Releases',
+        url: 'https://github.com/Johnwikix/original-sound-hq-player/releases',
+      },
+      { label: 'rg-adguard.net', labelEn: 'rg-adguard.net', url: 'https://store.rg-adguard.net' },
+      {
+        label: '源码仓库',
+        labelEn: 'Source Repository',
+        url: 'https://github.com/Johnwikix/original-sound-hq-player',
+      },
+    ],
+  },
+  {
+    id: 2,
     question: '应用无法启动？',
     questionEn: "App won't launch?",
     steps: [
@@ -40,7 +68,7 @@ export const faqData: FaqItem[] = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     question: 'Win10 系统缺少字体图标？',
     questionEn: 'Missing font icons on Windows 10?',
     steps: [
@@ -60,24 +88,6 @@ export const faqData: FaqItem[] = [
         url: 'https://aka.ms/SegoeFluentIcons',
       },
       { label: 'Segoe MDL2 Assets', labelEn: 'Segoe MDL2 Assets', url: 'https://aka.ms/segoemdl2' },
-    ],
-  },
-  {
-    id: 3,
-    question: '微软商店无法使用？',
-    questionEn: "Microsoft Store isn't working?",
-    steps: [
-      '访问 rg-adguard.net 商店链接生成工具。',
-      '粘贴 Microsoft Store 中本应用的链接（https://apps.microsoft.com/detail/9NFW1RPPT999）。',
-      '选择对应的架构（x64）和通道（RP），生成离线 .msix 安装包链接并下载安装。',
-    ],
-    stepsEn: [
-      'Visit rg-adguard.net, a Microsoft Store link generator.',
-      "Paste the application's Store link (https://apps.microsoft.com/detail/9NFW1RPPT999).",
-      'Select the architecture (x64) and channel (RP), generate the offline .msix package link, and install it.',
-    ],
-    links: [
-      { label: 'rg-adguard.net', labelEn: 'rg-adguard.net', url: 'https://store.rg-adguard.net' },
     ],
   },
   {

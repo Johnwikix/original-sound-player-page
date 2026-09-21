@@ -1,18 +1,20 @@
 # FAQ
 
-## 1. 应用无法启动？
+## 1. 无法从微软商店下载程序？
+
+1. 从 GitHub Releases 下载测试版本安装包（免费提供，仅供测试评估）：https://github.com/Johnwikix/original-sound-hq-player/releases
+2. 或访问 https://store.rg-adguard.net 输入应用的商店链接下载离线的msix安装包。
+3. 或直接从源码构建：克隆 https://github.com/Johnwikix/original-sound-hq-player 并按仓库说明自行编译。
+
+## 2. 应用无法启动？
 
 1. 请检查您的系统是否满足最低要求：win10 1809
 2. 如果满足最低要求，请尝试从[C++ Runtime packages for Desktop Bridge - Visual C++ | Microsoft Learn](https://learn.microsoft.com/en-us/troubleshoot/developer/visualstudio/cpp/libraries/c-runtime-packages-desktop-bridge#how-to-install-and-update-desktop-framework-packages) 和 [最新 Windows 应用 SDK 下载 - Windows apps | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/apps/windows-app-sdk/downloads) 下载您的x64架构对应的依赖，并使用管理员权限安装。
 3. 如果问题仍然存在，可按 `Win + R` 打开「运行」并输入 `%USERPROFILE%\Documents\OriginalSoundPlayer\Logs` 进入日志目录查看崩溃日志。
 
-## 2. win10系统缺少字体图标？
+## 3. win10系统缺少字体图标？
 
 1. 请从https://aka.ms/SegoeFluentIcons 和 https://aka.ms/segoemdl2 下载图标和字体
-
-## 3. 微软商店无法使用？
-
-1. 访问 https://store.rg-adguard.net 输入应用的商店链接下载离线的msix安装包。
 
 ## 4. 亚克力效果没有生效？
 

@@ -2,7 +2,15 @@
 
 ---
 
-## 1. App won't launch?
+## 1. Can't download the app from Microsoft Store?
+
+1. Download the test builds from **[GitHub Releases](https://github.com/Johnwikix/original-sound-hq-player/releases)** (provided free of charge, for testing and evaluation only).
+2. Or visit **[https://store.rg-adguard.net](https://store.rg-adguard.net)**, enter the app's store link, and download the offline `.msix` installer package.
+3. Or build directly from source: clone **[the source repository](https://github.com/Johnwikix/original-sound-hq-player)** and compile it yourself following the instructions in the repo.
+
+---
+
+## 2. App won't launch?
 
 1. First, check if your system meets the minimum requirements: Windows 10, version 1809.
 2. If you meet the requirements, try downloading the dependencies for your x64 architecture from **C++ Runtime packages for Desktop Bridge - Visual C++ | Microsoft Learn** and **Latest Windows App SDK Downloads - Windows apps | Microsoft Learn**. Make sure you install them with administrator privileges.
@@ -10,15 +18,9 @@
 
 ---
 
-## 2. Missing font icons on Windows 10?
+## 3. Missing font icons on Windows 10?
 
 1. Download the icons and fonts from **[https://aka.ms/SegoeFluentIcons](https://aka.ms/SegoeFluentIcons)** and **[https://aka.ms/segoemdl2](https://aka.ms/segoemdl2)**.
-
----
-
-## 3. Microsoft Store isn't working?
-
-1. Visit **[https://store.rg-adguard.net](https://store.rg-adguard.net)**, enter the app's store link, and download the offline `.msix` installer package.
 
 ---
 
