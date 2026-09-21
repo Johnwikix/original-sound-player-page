@@ -3,6 +3,8 @@
 ## 1. 无法从微软商店下载程序？
 
 1. 从 GitHub Releases 下载测试版本安装包（免费提供，仅供测试评估）：https://github.com/Johnwikix/original-sound-hq-player/releases
+   - 压缩包内为自签名 msix，可使用附带脚本安装：解压后在目录内执行 `powershell -ExecutionPolicy Bypass -File .\Install.ps1`（自动安装证书并部署应用，按提示确认 UAC；升级加 `-Force`）。
+   - 或手动信任证书：双击 `.cer` → 安装证书 → 存储位置「本地计算机」→ 勾选「将所有的证书都放入下列存储」→ 选择「受信任人」，再双击 `.msix` 完成安装。
 2. 或访问 https://store.rg-adguard.net 输入应用的商店链接下载离线的msix安装包。
 3. 或直接从源码构建：克隆 https://github.com/Johnwikix/original-sound-hq-player 并按仓库说明自行编译。
 

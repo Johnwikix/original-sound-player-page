@@ -1,1 +1,0 @@
-import e from"./LegalPage-CAJ3uxxl.js";import{d as a,c as o,o as r}from"./index-3ifclSaP.js";const i=a({__name:"DisclaimerPage",setup(c){return(t,m)=>(r(),o(e,{"document-id":"disclaimer"}))}});export{i as default};

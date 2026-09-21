@@ -5,6 +5,8 @@
 ## 1. Can't download the app from Microsoft Store?
 
 1. Download the test builds from **[GitHub Releases](https://github.com/Johnwikix/original-sound-hq-player/releases)** (provided free of charge, for testing and evaluation only).
+   - The zip contains a self-signed `.msix`; install it with the bundled script: extract the zip and run `powershell -ExecutionPolicy Bypass -File .\Install.ps1` in the extracted folder (it installs the certificate and deploys the app automatically; confirm the UAC prompt; add `-Force` when upgrading).
+   - Or trust the certificate manually: double-click the `.cer` → "Install Certificate" → store location "Local Machine" → check "Place all certificates in the following store" → select "Trusted People", then double-click the `.msix` to install.
 2. Or visit **[https://store.rg-adguard.net](https://store.rg-adguard.net)**, enter the app's store link, and download the offline `.msix` installer package.
 3. Or build directly from source: clone **[the source repository](https://github.com/Johnwikix/original-sound-hq-player)** and compile it yourself following the instructions in the repo.
 

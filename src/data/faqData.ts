@@ -15,12 +15,16 @@ export const faqData: FaqItem[] = [
     question: '无法从微软商店下载程序？',
     questionEn: "Can't download the app from Microsoft Store?",
     steps: [
-      '方式一：从 GitHub Releases 下载。在仓库的 Releases 页面获取测试版本安装包，免费提供，仅供测试与评估使用。',
+      '方式一：从 GitHub Releases 下载测试版本安装包（免费提供，仅供测试与评估使用）。压缩包内包含自签名的 .msix 安装包、.cer 证书文件与安装脚本，需先信任证书才能安装。',
+      '脚本安装（推荐）：解压压缩包，在解压目录中打开 PowerShell，执行 powershell -ExecutionPolicy Bypass -File .\\Install.ps1。脚本会自动将证书安装到受信任存储并部署应用，按提示确认管理员权限（UAC）即可；升级新版本时可追加 -Force 参数。',
+      '手动信任证书安装：双击压缩包内的 .cer 文件 → 「安装证书」→ 存储位置选择「本地计算机」→ 勾选「将所有的证书都放入下列存储」→ 选择「受信任人」，完成后再双击 .msix 安装包完成安装。',
       '方式二：从 rg-adguard.net 下载离线 msix。访问商店链接生成工具，粘贴 Microsoft Store 中本应用的链接（https://apps.microsoft.com/detail/9NFW1RPPT999），选择对应的架构（x64）和通道（RP），生成离线 .msix 安装包链接并下载安装。',
       '方式三：直接从源码构建。克隆本应用的 GitHub 源码仓库，按照仓库中的说明自行编译（源码依据 AGPL-3.0 许可开放）。',
     ],
     stepsEn: [
-      'Option 1: Download from GitHub Releases. Get the test builds from the repository Releases page, provided free of charge for testing and evaluation only.',
+      'Option 1: Download the test build package from GitHub Releases (free of charge, for testing and evaluation only). The zip contains a self-signed .msix package, a .cer certificate file, and install scripts; the certificate must be trusted before installation.',
+      'Script install (recommended): extract the zip, open PowerShell in the extracted folder, and run "powershell -ExecutionPolicy Bypass -File .\\Install.ps1". The script installs the certificate into the trusted store and deploys the app automatically; just confirm the UAC prompt. Append -Force when upgrading to a newer version.',
+      'Manual certificate trust: double-click the .cer file in the zip → "Install Certificate" → store location "Local Machine" → check "Place all certificates in the following store" → select "Trusted People". Then double-click the .msix package to install it.',
       "Option 2: Download the offline .msix from rg-adguard.net. Visit the store link generator, paste the application's Store link (https://apps.microsoft.com/detail/9NFW1RPPT999), select the architecture (x64) and channel (RP), then generate the offline .msix package link and install it.",
       'Option 3: Build directly from source. Clone the GitHub source repository and compile it yourself following the instructions in the repo (source code is licensed under AGPL-3.0).',
     ],
