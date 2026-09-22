@@ -1,1 +1,0 @@
-import e from"./LegalPage-CViFEWHr.js";import{d as a,c as o,o as r}from"./index-CVGibL_Z.js";const i=a({__name:"DisclaimerPage",setup(c){return(t,m)=>(r(),o(e,{"document-id":"disclaimer"}))}});export{i as default};

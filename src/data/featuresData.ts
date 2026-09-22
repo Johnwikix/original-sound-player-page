@@ -21,7 +21,7 @@ export const featuresData: Feature[] = [
     contentEn:
       'Seven dynamic shader backgrounds (Fluid, PS3 XMB, Rotating Mesh, Liquid Flow, Gradient Flow, Wavy, Chromatic Resonance) render live from cover colors with light-wave and fog ambience. Lyrics light up word by word with floating/scaling characters and eased per-line scrolling (FlowWave spring, staggered lines — both adjustable).',
     image: `${base}playing-lyrics.jpg`,
-    imageEn: `${base}playing-lyrics.jpg`,
+    imageEn: `${base}en/playing-lyrics.jpg`,
     accent: 'violet',
   },
   {
@@ -33,7 +33,7 @@ export const featuresData: Feature[] = [
     contentEn:
       'A custom 10-band equalizer with per-band gain and adjustable Q plus presets. Full-track loudness is analyzed in the background per EBU R128 and applied as a cached fixed gain — files are never modified and dynamics stay intact.',
     image: `${base}equalizer.jpg`,
-    imageEn: `${base}equalizer.jpg`,
+    imageEn: `${base}en/equalizer.jpg`,
     accent: 'cyan',
   },
   {
@@ -45,7 +45,7 @@ export const featuresData: Feature[] = [
     contentEn:
       'Draw a 2–32 point correction curve or import headphone/room WAV impulse responses (IR) for real-time minimum-phase FIR convolution. Bind corrections to output devices, edit live, manage named presets, and preview the combined response in real time.',
     image: `${base}convolution.jpg`,
-    imageEn: `${base}convolution.jpg`,
+    imageEn: `${base}en/convolution.jpg`,
     accent: 'amber',
   },
   {
@@ -57,7 +57,7 @@ export const featuresData: Feature[] = [
     contentEn:
       'Browse by songs, albums, artists, folders or favorites with automatic rescan; a listening heatmap, hourly activity chart and Top charts are built in, along with custom playlist management.',
     image: `${base}stats.jpg`,
-    imageEn: `${base}stats.jpg`,
+    imageEn: `${base}en/stats.jpg`,
     accent: 'cyan',
   },
   {
@@ -69,7 +69,7 @@ export const featuresData: Feature[] = [
     contentEn:
       'A standalone desktop lyrics overlay with word-by-word or line modes, dual-line display (original + translation), glow and outline, fog/snow/rain effects and custom colors — lockable, click-through, no need to switch back to the player.',
     image: `${base}desktop-lyrics-wide.jpg`,
-    imageEn: `${base}desktop-lyrics-wide.jpg`,
+    imageEn: `${base}en/desktop-lyrics-wide.jpg`,
     accent: 'violet',
   },
   {
@@ -81,7 +81,7 @@ export const featuresData: Feature[] = [
     contentEn:
       'WASAPI exclusive/shared, ASIO, DoP and DSD Native bitstream output plus experimental 5.1 and Atmos HDMI passthrough; 5 backdrop materials including Mica and Acrylic with dark/light themes and cover tinting.',
     image: `${base}cover-shader.jpg`,
-    imageEn: `${base}cover-shader.jpg`,
+    imageEn: `${base}en/cover-shader.jpg`,
     accent: 'amber',
   },
 ]

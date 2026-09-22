@@ -8,7 +8,7 @@ const { elementRef, isVisible } = useReveal()
 
 const showcaseImage = computed(() => {
   const base = (import.meta.env.BASE_URL || '/') + 'screenshots/'
-  return `${base}${locale.value === 'en' ? 'library-songs' : 'playing-lyrics'}.jpg`
+  return `${base}${locale.value === 'en' ? 'en/library-songs' : 'playing-lyrics'}.jpg`
 })
 </script>
 
